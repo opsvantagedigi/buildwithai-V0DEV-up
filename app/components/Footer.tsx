@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-6 lg:py-12">
         <div className="grid grid-cols-2 gap-x-10 gap-y-8 text-xs text-white/70 sm:grid-cols-2 md:text-sm lg:grid-cols-5">
           <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
               AI BUILDER
             </div>
             <ul className="space-y-2 font-inter">
@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
               WP &amp; AI TOOLS
             </div>
             <ul className="space-y-2 font-inter">
@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
               BUILD WITH US
             </div>
             <ul className="space-y-2 font-inter">
@@ -121,7 +121,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
               SOLUTIONS &amp; RESOURCES
             </div>
             <ul className="space-y-2 font-inter">
@@ -199,7 +199,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
               COMPANY
             </div>
             <ul className="space-y-2 font-inter">

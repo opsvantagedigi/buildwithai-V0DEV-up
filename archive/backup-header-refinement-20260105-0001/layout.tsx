@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Build With AI — AI Website Builder",
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <Header />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
