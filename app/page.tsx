@@ -36,8 +36,8 @@ export default function Dashboard() {
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
               />
-              <div className="flex items-center justify-between mt-6 pt-6 border-t border-border">
-                <div className="flex items-center gap-2 text-xs text-muted-foreground bg-muted px-3 py-1.5 rounded-full border border-border">
+              <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/5">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground bg-white/5 px-3 py-1.5 rounded-full border border-white/5">
                   <Sparkles className="size-3" />
                   <span>AI ready</span>
                 </div>

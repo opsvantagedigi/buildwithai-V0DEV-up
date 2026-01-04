@@ -1,5 +1,8 @@
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+@import "@fontsource/orbitron/index.css";
+@import "@fontsource/inter/index.css";
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --background: oklch(0.05 0 0);
@@ -73,8 +76,9 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -113,9 +117,16 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 ::selection {
@@ -129,5 +140,9 @@ body {
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.12);
+}
+
+.font-orbitron {
+  font-family: "Orbitron", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }

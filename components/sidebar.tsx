@@ -38,7 +38,7 @@ export function Sidebar() {
 
       <div className="p-4 border-t border-white/5">
         <div className="glass-panel rounded-2xl p-4 space-y-3">
-          <div className="size-10 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 border border-white/10 shadow-lg" />
+          <div className="size-10 rounded-full bg-linear-to-tr from-blue-500 to-purple-500 border border-white/10 shadow-lg" />
           <div>
             <p className="text-sm font-semibold">Starter Plan</p>
             <p className="text-xs text-muted-foreground">3 sites remaining</p>
