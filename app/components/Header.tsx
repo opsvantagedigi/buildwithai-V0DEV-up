@@ -58,7 +58,7 @@ export default function Header() {
         <div className="flex items-center justify-between gap-4 lg:justify-start">
           <Link href="/" className="flex items-center gap-3">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-tr from-brand-blue via-brand-purple to-brand-pink shadow-lg ring-2 ring-white/20">
-              <img src="/brand-icon.png" alt="Build With AI" className="h-5 w-5" />
+              <img src="/brand-icon.png" alt="Build With AI" className="h-9 w-9" />
             </span>
             <span className="text-xs font-orbitron font-extrabold tracking-[0.3em] bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-transparent sm:text-sm">
               BUILD WITH AI
