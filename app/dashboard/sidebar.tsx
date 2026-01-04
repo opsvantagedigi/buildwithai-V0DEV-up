@@ -8,7 +8,7 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <div className="h-full bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-6 flex flex-col justify-between">
+    <div className="h-full glass-panel rounded-2xl p-6 flex flex-col justify-between">
       <div className="space-y-6">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
@@ -32,7 +32,7 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      <div className="mt-8 rounded-lg border border-white/10 bg-white/5 px-3 py-2">
+      <div className="mt-8 glass-panel rounded-lg px-3 py-2">
         <p className="text-xs text-muted-foreground">
           <span className="font-medium text-white">Starter Plan</span> • 3 sites remaining
         </p>

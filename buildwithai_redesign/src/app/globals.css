@@ -1,8 +1,7 @@
+@import "tailwindcss/preflight";
 @import "@fontsource/orbitron/index.css";
 @import "@fontsource/inter/index.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/utilities";
 
 body {
   font-family: 'Inter', sans-serif;

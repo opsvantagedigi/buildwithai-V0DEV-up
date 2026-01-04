@@ -19,7 +19,7 @@ export default function DashboardPage() {
           </header>
 
           <section className="space-y-4">
-            <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+            <div className="glass-panel rounded-xl p-4">
               <textarea
                 rows={3}
                 className="w-full resize-none bg-transparent outline-none text-sm text-white placeholder:text-muted-foreground"
@@ -29,7 +29,7 @@ export default function DashboardPage() {
             <div className="flex items-center justify-end gap-3">
               <button
                 type="button"
-                className="inline-flex items-center rounded-lg border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-white/15"
+                className="inline-flex items-center rounded-lg border border-border bg-muted px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-muted/80"
               >
                 AI Ready
               </button>
@@ -49,7 +49,7 @@ export default function DashboardPage() {
             <AiTimeline />
           </section>
 
-          <footer className="pt-4 border-t border-white/5 text-right">
+          <footer className="pt-4 border-t border-border text-right">
             <p className="text-xs text-muted-foreground">
               Ritual Engine v1.0.4 • London Node
             </p>
