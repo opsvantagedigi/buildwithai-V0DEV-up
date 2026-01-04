@@ -16,10 +16,10 @@ export default function DashboardPage() {
 
         <div className="mx-auto flex max-w-4xl flex-col gap-10">
           <header className="space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <p className="font-orbitron text-[11px] tracking-[0.35em] text-muted-foreground uppercase">
+            <p className="font-heading text-[11px] tracking-[0.35em] text-muted-foreground uppercase">
               AI WEBSITE STUDIO
             </p>
-            <h1 className="glow-text bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-3xl md:text-4xl font-semibold text-transparent">
+            <h1 className="font-heading glow-text bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-3xl md:text-4xl font-semibold text-transparent">
               Tell the ritual what to build.
             </h1>
             <p className="max-w-xl text-sm text-muted-foreground">
@@ -82,10 +82,10 @@ export default function DashboardPage() {
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-orbitron text-[10px] tracking-[0.32em] text-muted-foreground uppercase">
+                  <p className="font-heading text-[10px] tracking-[0.32em] text-muted-foreground uppercase">
                     Ritual Engine
                   </p>
-                  <h2 className="text-sm font-medium text-white/90">AI Build Timeline</h2>
+                  <h2 className="font-heading text-sm font-medium text-white/90">AI Build Timeline</h2>
                 </div>
                 <span className="text-[10px] text-muted-foreground">
                   v1.0.4 • London Node

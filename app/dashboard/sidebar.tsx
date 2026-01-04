@@ -17,15 +17,15 @@ const navItems = [
 
 export default function Sidebar() {
 	return (
-		<div className="flex h-full flex-col justify-between rounded-2xl glass-panel p-6">
+		<div className="flex h-full flex-col justify-between rounded-2xl glass-panel p-6 font-sans">
 			<div className="space-y-6">
 				<div className="flex items-center gap-3">
 					<div className="size-8 rounded-xl bg-linear-to-tr from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] shadow-[0_0_22px_rgba(79,124,255,0.7)]" />
 					<div className="space-y-0.5">
-						<p className="font-orbitron text-[10px] uppercase tracking-[0.32em] text-muted-foreground">
+						<p className="font-heading text-[10px] uppercase tracking-[0.32em] text-muted-foreground">
 							Ritual
 						</p>
-						<p className="text-sm font-medium text-white">AI Website Studio</p>
+						<p className="font-heading text-sm font-medium text-white">AI Website Studio</p>
 					</div>
 				</div>
 

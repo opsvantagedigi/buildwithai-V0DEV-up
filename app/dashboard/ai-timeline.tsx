@@ -50,7 +50,7 @@ export default function AiTimeline() {
   }, []);
 
   return (
-    <div className="space-y-3 text-xs animate-in fade-in slide-in-from-bottom-4 duration-700">
+    <div className="space-y-3 text-xs font-sans animate-in fade-in slide-in-from-bottom-4 duration-700">
       {steps.map((step, index) => {
         const isActive = index === currentStep;
         const isComplete = index < currentStep;
@@ -77,7 +77,7 @@ export default function AiTimeline() {
             <div className="flex-1 space-y-1">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <p className="text-xs font-medium text-white/90">{step.title}</p>
+                  <p className="font-heading text-xs font-medium text-white/90">{step.title}</p>
                   {isActive && (
                     <span className="inline-flex items-center gap-1 rounded-full bg-emerald-400/15 px-2 py-0.5 text-[10px] font-medium text-emerald-300">
                       <Sparkles className="size-3" />
