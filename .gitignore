@@ -1,4 +1,8 @@
 node_modules/
 dist/
 .vercel
+.next
+tmp
+ci/logs
+ops/logs
 .env*.local

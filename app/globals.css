@@ -1,7 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: oklch(0.05 0 0);
@@ -125,7 +124,9 @@
 }
 
 .glass-panel {
-  @apply bg-card/40 backdrop-blur-xl border border-white/5;
+  background-color: color-mix(in oklch, var(--card) 40%, transparent);
+  border: 1px solid color-mix(in oklch, var(--foreground) 5%, transparent);
+  backdrop-filter: blur(24px);
 }
 
 .glow-text {

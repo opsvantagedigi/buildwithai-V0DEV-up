@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/buildwithai/middleware.ts"],"sourcesContent":["// Middleware moved to src/middleware.ts to ensure Vercel build includes middleware NFT.\r\n// See src/middleware.ts for the Content-Security-Policy implementation.\r\n\r\nexport {}\r\n"],"names":[],"mappings":"AAAA,wFAAwF;AACxF,wEAAwE"}}]
-}
