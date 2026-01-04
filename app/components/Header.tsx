@@ -1,11 +1,51 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Header() {
   const [isAiBuilderOpen, setIsAiBuilderOpen] = useState(false);
   const [isAiToolsOpen, setIsAiToolsOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const stored = window.localStorage.getItem("theme");
+    const doc = document.documentElement;
+
+    if (stored === "light" || stored === "dark") {
+      setTheme(stored);
+      if (stored === "dark") {
+        doc.classList.add("dark");
+      } else {
+        doc.classList.remove("dark");
+      }
+      return;
+    }
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const nextTheme: "light" | "dark" = prefersDark ? "dark" : "light";
+    setTheme(nextTheme);
+    if (nextTheme === "dark") {
+      doc.classList.add("dark");
+    } else {
+      doc.classList.remove("dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (typeof window === "undefined") return;
+    const doc = document.documentElement;
+    const nextTheme: "light" | "dark" = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    if (nextTheme === "dark") {
+      doc.classList.add("dark");
+    } else {
+      doc.classList.remove("dark");
+    }
+    window.localStorage.setItem("theme", nextTheme);
+  };
 
   const closeMenus = () => {
     setIsAiBuilderOpen(false);
@@ -20,7 +60,7 @@ export default function Header() {
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-tr from-brand-blue via-brand-purple to-brand-pink shadow-lg ring-2 ring-white/20">
               <img src="/brand-icon.png" alt="Build With AI" className="h-5 w-5" />
             </span>
-            <span className="text-xs font-orbitron font-bold tracking-[0.3em] bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-transparent sm:text-sm">
+            <span className="text-xs font-orbitron font-extrabold tracking-[0.3em] bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-transparent sm:text-sm">
               BUILD WITH AI
             </span>
           </Link>
@@ -154,10 +194,18 @@ export default function Header() {
             </Link>
             <Link
               href="/signup"
-              className="rounded-full bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] px-4 py-2 text-xs font-orbitron font-bold text-white shadow-lg shadow-brand-blue/40 transition hover:opacity-90 focus:outline-none sm:px-5 sm:text-sm"
+              className="rounded-full bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] px-4 py-2 text-xs font-orbitron font-bold text-black shadow-lg shadow-brand-blue/40 transition hover:opacity-90 focus:outline-none sm:px-5 sm:text-sm"
             >
               Get Started for FREE
             </Link>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/30 text-yellow-300 hover:bg-black/50 focus:outline-none"
+            >
+              <span className="text-xs">{theme === "dark" ? "☀" : "☾"}</span>
+            </button>
           </div>
 
           <div className="flex flex-wrap gap-3 lg:hidden">
@@ -175,10 +223,18 @@ export default function Header() {
             </Link>
             <Link
               href="/signup"
-              className="rounded-full bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] px-3 py-1 text-[0.7rem] font-orbitron font-bold text-white shadow-lg shadow-brand-blue/40 hover:opacity-90 focus:outline-none"
+              className="rounded-full bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] px-3 py-1 text-[0.7rem] font-orbitron font-bold text-black shadow-lg shadow-brand-blue/40 hover:opacity-90 focus:outline-none"
             >
               Get Started
             </Link>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/30 text-yellow-300 hover:bg-black/50 focus:outline-none"
+            >
+              <span className="text-xs">{theme === "dark" ? "☀" : "☾"}</span>
+            </button>
           </div>
         </nav>
       </div>
