@@ -1,0 +1,13 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.preferences.ignoreProjectList": [
+    "archive"
+  ],
+  "files.watcherExclude": {
+    "**/archive/**": true
+  },
+  "files.exclude": {
+    "**/archive/**": true
+  }
+}
