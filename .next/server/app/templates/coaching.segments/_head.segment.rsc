@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[56313,["/_next/static/chunks/08fcc19dedd1ef4a.js","/_next/static/chunks/08dba2a325b7663a.js"],"ViewportBoundary"]
-3:I[56313,["/_next/static/chunks/08fcc19dedd1ef4a.js","/_next/static/chunks/08dba2a325b7663a.js"],"MetadataBoundary"]
-4:"$Sreact.suspense"
-0:{"buildId":"qF4GZvVbb3Ecr2gQqPSBC","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Coaching Templates — BUILD WITH AI"}],["$","meta","1",{"name":"description","content":"Templates built for coaches with scheduling, testimonials, and lead capture."}],["$","meta","2",{"name":"keywords","content":"coaching templates,coach website"}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}

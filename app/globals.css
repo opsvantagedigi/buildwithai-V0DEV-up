@@ -1,188 +1,133 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
 
-/* Global font fallbacks applied to html and headings to enforce brand fonts */
-html {
-  font-family: InterLocal, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-
-h1, h2, h3 {
-  font-family: OrbitronLocal, Orbitron, InterLocal, system-ui, sans-serif;
-}
-
-body {
-  font-family: var(--font-inter);
-  background-color: #0A0F1F; /* Charcoal Blue base */
-  color: #E6EEF3;
-  min-height: 100vh;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-orbitron);
-}
-
-/* Semantic utility to apply the brand heading font where needed */
-.font-heading { font-family: var(--font-family-headings); }
-
-/* Semantic utility for body text if needed */
-.font-body { font-family: var(--font-family-body); }
-
-/* Local font-face definitions */
-@font-face {
-  font-family: InterLocal;
-  src: url('/fonts/inter/Inter-Regular.woff2') format('woff2');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: OrbitronLocal;
-  src: url('/fonts/orbitron/Orbitron-Regular.woff2') format('woff2');
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --font-family-body: 'InterLocal', system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', arial;
-  --font-family-headings: 'OrbitronLocal', 'InterLocal', system-ui, sans-serif;
-  --site-header-height: 72px;
-  --site-footer-height: 140px;
-  --color-base: #0A0F1F;
-  --glass-bg: rgb(255 255 255 / 6%);
-  --glass-border: rgb(255 255 255 / 8%);
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.15 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.12 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.15 0 0);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.15 0 0);
+  --input: oklch(0.12 0 0);
+  --ring: oklch(0.4 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
-@layer components {
-  .font-orbitron { font-family: var(--font-orbitron); }
-  .font-inter { font-family: var(--font-inter); }
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
 
-  .glass-header {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 0.5rem;
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-
-  .glass-footer {
-    background: rgba(255,255,255,0.03);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-
-  .menu-item {
-    transition: transform 180ms ease, box-shadow 180ms ease, color 150ms ease;
-    display: inline-block;
-  }
-  .menu-item:hover { transform: scale(1.05); }
-
-  .footer-link { color: rgba(255,255,255,0.9); }
-  .footer-section { padding: 0.25rem 0; }
-  .footer-heading { font-family: OrbitronLocal, Orbitron, sans-serif; font-weight:700; }
-  .footer-logo { font-family: OrbitronLocal, Orbitron, sans-serif; font-weight:800; }
-  .footer-social { display:flex; gap:0.5rem; }
-  .footer-legal { font-size: 0.85rem; color: rgba(255,255,255,0.65); }
-
-}
-
-/* Global container padding for premium spacing */
-.bw-container {
-  padding-inline: 1.5rem;
-  margin-inline: auto;
-}
-
-@media (min-width: 1024px) {
-  .bw-container {
-    padding-inline: 2.5rem;
+  body {
+    @apply bg-background text-foreground selection:bg-primary/20;
   }
 }
 
-/* Gradient text utility (Orbitron headings use this) */
-.gradient-text {
-  background: linear-gradient(90deg, #0b3b8a 0%, #0bb38a 50%, #f5d300 100%);
-  background-clip: text;
-  color: transparent;
+.glass-panel {
+  @apply bg-card/40 backdrop-blur-xl border border-white/5;
 }
 
-/* Glassmorphism helper */
-.glass {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
-}
-
-/* Layout helpers to account for fixed header/footer */
-.site-content {
-  padding-top: var(--site-header-height);
-  padding-bottom: var(--site-footer-height);
-  min-height: calc(100vh - var(--site-header-height) - var(--site-footer-height));
-}
-
-/* Global typography enforcement */
-h1, h2, h3 {
-  font-family: var(--font-family-headings);
-  line-height: 1.05;
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-
-  /* enforce gradient text on major headings */
-  background: linear-gradient(90deg, #0b3b8a 0%, #0bb38a 50%, #f5d300 100%);
-  background-clip: text;
-  color: transparent;
-}
-
-/* Body text defaults */
-p, span, li, a, input, label {
-  font-family: var(--font-family-body);
-  color: rgb(255 255 255 / 85%);
-}
-
-/* Spacing presets (tailwind-like helpers for non-tailwind places) */
-.section-py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-.section-py-32 { padding-top: 8rem; padding-bottom: 8rem; }
-.grid-gap-8 { gap: 2rem; }
-.grid-gap-12 { gap: 3rem; }
-
-/* Override legacy gradient utilities that conflict with base color */
-.bg-gradient-brand, .legacy-gradient, .bg-legacy {
-  background: var(--color-base) !important;
-}
-
-/* Utility to apply glass to card containers */
-.card {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(12px);
-}
-
-/* Header & logo refinements */
-.bw-logo-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.bw-logo-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.bw-logo-text {
-  font-family: var(--font-orbitron);
-  font-weight: 700;
-}
-
-.bw-header-link {
-  font-size: 1.05rem;
-}
-
-.bw-btn-orbitron {
-  font-family: var(--font-orbitron);
-  font-weight: 700;
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }

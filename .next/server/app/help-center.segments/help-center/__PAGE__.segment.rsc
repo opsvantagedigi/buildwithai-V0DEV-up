@@ -1,7 +1,0 @@
-1:"$Sreact.fragment"
-2:I[97144,["/_next/static/chunks/af34b5899737febc.js","/_next/static/chunks/9af2e632fdcfec07.js"],"default"]
-3:I[35196,["/_next/static/chunks/af34b5899737febc.js","/_next/static/chunks/9af2e632fdcfec07.js"],"default"]
-4:I[56313,["/_next/static/chunks/08fcc19dedd1ef4a.js","/_next/static/chunks/08dba2a325b7663a.js"],"OutletBoundary"]
-5:"$Sreact.suspense"
-0:{"buildId":"qF4GZvVbb3Ecr2gQqPSBC","rsc":["$","$1","c",{"children":[["$","main",null,{"children":[["$","$L2",null,{"kicker":"Support","title":"Help Center","subtitle":"Find guides, troubleshooting steps and product docs."}],["$","section",null,{"className":"max-w-6xl mx-auto px-6 py-8","children":[["$","h3",null,{"className":"text-lg font-medium","children":"Popular guides"}],["$","ul",null,{"className":"mt-4 list-disc pl-6 text-slate-700","children":[["$","li",null,{"children":["$","a",null,{"href":"/docs/getting-started","children":"Getting started"}]}],["$","li",null,{"children":["$","a",null,{"href":"/docs/publishing","children":"Publishing and domains"}]}]]}]]}],["$","$L3",null,{"items":[{"q":"Where are the docs?","a":"Visit the Docs hub for guides on building, domains, and publishing."},{"q":"How to contact support?","a":"Use the contact page or in-app support to open a ticket."}]}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/9af2e632fdcfec07.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
-6:null

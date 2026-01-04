@@ -1,3 +1,0 @@
-module.exports=[47297,a=>{"use strict";var b=a.i(18442);function c({id:a,label:c,helper:d,error:e,className:f="",...g}){let h=a||`gds-input-${Math.random().toString(36).slice(2,8)}`,i="string"==typeof e?e:void 0;return(0,b.jsxs)("div",{className:"gds-input-wrapper",children:[c?(0,b.jsx)("label",{htmlFor:h,className:"gds-input-label",children:c}):null,(0,b.jsx)("input",{id:h,className:`gds-input ${e?"gds-input-error":""} ${f}`,...g}),d&&!e&&(0,b.jsx)("span",{className:"gds-input-helper",children:d}),i&&(0,b.jsx)("span",{className:"gds-input-error-text",children:i})]})}a.s(["default",()=>c])}];
-
-//# sourceMappingURL=buildwithai_src_components_gds_Input_tsx_9cad8516._.js.map
