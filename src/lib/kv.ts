@@ -85,10 +85,9 @@ try {
 
   // Construct the module name so static analyzers can't find the literal
   const moduleName = '@' + 'vercel' + '/kv'
-  // Use eval to call require at runtime; this avoids bundlers resolving the import
-  // eslint-disable-next-line @typescript-eslint/no-implied-eval
-  // @ts-ignore
-  const kvModule = eval('require')(moduleName)
+  // Use CommonJS require at runtime (no eval) to keep this adapter optional
+  // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
+  const kvModule = require(moduleName)
 
   // Pick a candidate client from common export shapes
   let candidate: any = kvModule?.kv ?? kvModule?.default ?? kvModule

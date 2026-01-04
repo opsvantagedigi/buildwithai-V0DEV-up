@@ -22,10 +22,9 @@ try {
 
   // Construct the module name so static analyzers can't find the literal
   const moduleName = '@' + 'vercel' + '/kv'
-  // Use eval to call require at runtime; this avoids bundlers resolving the import
-  // eslint-disable-next-line @typescript-eslint/no-implied-eval
-  // @ts-ignore
-  const kv = eval('require')(moduleName)
+  // Use CommonJS require at runtime (no eval) to keep this adapter optional
+  // eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
+  const kv = require(moduleName)
   kvClient = kv.kv || kv
 } catch (e) {
   // package not installed or not available in this environment; try an
