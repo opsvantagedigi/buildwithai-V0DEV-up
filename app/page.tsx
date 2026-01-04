@@ -88,11 +88,6 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <footer className="mt-10 flex w-full max-w-4xl items-center justify-between border-t border-white/5 pt-4 text-[11px] text-muted-foreground">
-          <span>Ritual Studio • Root node</span>
-          <span className="text-muted-foreground/70">Global footer coming soon</span>
-        </footer>
       </main>
     </div>
   );

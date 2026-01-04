@@ -4,13 +4,13 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="mt-16 border-t border-white/10 bg-slate-950/80 backdrop-blur-xl">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-6 lg:py-12">
-        <div className="grid grid-cols-2 gap-x-10 gap-y-8 text-xs text-white/70 sm:grid-cols-2 md:text-sm lg:grid-cols-5">
-          <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:py-12">
+        <div className="grid grid-cols-1 gap-8 text-xs text-white/70 sm:grid-cols-2 md:text-sm lg:grid-cols-5">
+          <div className="space-y-3">
+            <div className="text-[0.65rem] font-orbitron font-semibold tracking-[0.25em] text-white/60">
               AI BUILDER
             </div>
-            <ul className="space-y-2 font-inter">
+            <ul className="space-y-1 font-inter">
               <li>
                 <Link href="/ai-website-builder" className="hover:text-white">
                   AI Website Builder
@@ -39,11 +39,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+          <div className="space-y-3">
+            <div className="text-[0.65rem] font-orbitron font-semibold tracking-[0.25em] text-white/60">
               WP &amp; AI TOOLS
             </div>
-            <ul className="space-y-2 font-inter">
+            <ul className="space-y-1 font-inter">
               <li>
                 <Link href="/pagespeed-booster" className="hover:text-white">
                   PageSpeed Booster
@@ -87,11 +87,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+          <div className="space-y-3">
+            <div className="text-[0.65rem] font-orbitron font-semibold tracking-[0.25em] text-white/60">
               BUILD WITH US
             </div>
-            <ul className="space-y-2 font-inter">
+            <ul className="space-y-1 font-inter">
               <li>
                 <Link href="/white-label-website-builder" className="hover:text-white">
                   White Label Website Builder
@@ -120,11 +120,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+          <div className="space-y-3">
+            <div className="text-[0.65rem] font-orbitron font-semibold tracking-[0.25em] text-white/60">
               SOLUTIONS &amp; RESOURCES
             </div>
-            <ul className="space-y-2 font-inter">
+            <ul className="space-y-1 font-inter">
               <li>
                 <Link href="/solutions/saas-platforms" className="hover:text-white">
                   SaaS Platforms
@@ -198,11 +198,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
-            <div className="text-[0.7rem] font-orbitron font-bold tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166]">
+          <div className="space-y-3">
+            <div className="text-[0.65rem] font-orbitron font-semibold tracking-[0.25em] text-white/60">
               COMPANY
             </div>
-            <ul className="space-y-2 font-inter">
+            <ul className="space-y-1 font-inter">
               <li>
                 <Link href="/about" className="hover:text-white">
                   About Us
