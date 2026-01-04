@@ -9,13 +9,6 @@ const nextConfig = {
     // Force Turbopack to treat this folder as the project root when multiple lockfiles exist
     root,
   },
-  experimental: {
-    turbo: {
-      resolveAlias: {
-        archive: false,
-      },
-    },
-  },
 }
 
 export default nextConfig
