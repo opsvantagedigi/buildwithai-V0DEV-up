@@ -17,7 +17,7 @@ export default function Dashboard() {
 
       <main className="flex-1 relative flex flex-col items-center justify-center p-8">
         {/* Subtle Background Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-white/2 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="w-full max-w-2xl z-10 space-y-12">
           <div className="text-center space-y-4">
@@ -28,11 +28,11 @@ export default function Dashboard() {
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-transparent rounded-[2rem] blur opacity-25 group-focus-within:opacity-50 transition duration-500" />
-            <div className="relative glass-panel rounded-[1.75rem] p-6 shadow-2xl transition-all duration-300 group-focus-within:shadow-white/[0.02]">
+            <div className="absolute -inset-1 bg-linear-to-r from-white/10 to-transparent rounded-4xl blur opacity-25 group-focus-within:opacity-50 transition duration-500" />
+            <div className="relative glass-panel rounded-[1.75rem] p-6 shadow-2xl transition-all duration-300 group-focus-within:shadow-white/2">
               <Textarea
                 placeholder="A minimalist portfolio for a creative developer with a dark aesthetic and bento grid layout..."
-                className="bg-transparent border-none focus-visible:ring-0 text-xl min-h-[140px] resize-none p-0 placeholder:text-muted-foreground/50 leading-relaxed"
+                className="bg-transparent border-none focus-visible:ring-0 text-xl min-h-35 resize-none p-0 placeholder:text-muted-foreground/50 leading-relaxed"
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
               />
