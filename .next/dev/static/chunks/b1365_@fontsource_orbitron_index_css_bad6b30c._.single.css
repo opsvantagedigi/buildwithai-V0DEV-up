@@ -1,0 +1,11 @@
+/* [project]/buildwithai/node_modules/@fontsource/orbitron/index.css [app-client] (css) */
+@font-face {
+  font-family: Orbitron;
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("../media/orbitron-latin-400-normal.6451282f.woff2") format("woff2"), url("../media/orbitron-latin-400-normal.43e82152.woff") format("woff");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/*# sourceMappingURL=b1365_%40fontsource_orbitron_index_css_bad6b30c._.single.css.map*/

@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ai-website-builder/layout,_N_T_/ai-website-builder/page,_N_T_/ai-website-builder"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ai-website-builder/__PAGE__",
+    "/ai-website-builder",
+    "/_index",
+    "/_head"
+  ]
+}

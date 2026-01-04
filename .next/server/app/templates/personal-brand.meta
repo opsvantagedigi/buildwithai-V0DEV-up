@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/templates/layout,_N_T_/templates/personal-brand/layout,_N_T_/templates/personal-brand/page,_N_T_/templates/personal-brand"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/templates/personal-brand/__PAGE__",
+    "/templates/personal-brand",
+    "/templates",
+    "/_index",
+    "/_head"
+  ]
+}

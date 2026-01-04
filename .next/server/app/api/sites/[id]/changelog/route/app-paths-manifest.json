@@ -1,0 +1,3 @@
+{
+  "/api/sites/[id]/changelog/route": "app/api/sites/[id]/changelog/route.js"
+}

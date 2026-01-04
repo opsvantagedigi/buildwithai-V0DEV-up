@@ -1,0 +1,231 @@
+{
+  "app": {
+    "[project]/buildwithai/src/app/_not-found/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/about/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/admin/builder/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/admin/domains/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/admin/kv/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/affiliates/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/ai-website-builder/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/blog/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/builder/domain/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/builder/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/builder/settings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/builder/site/[id]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/builder/start/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/careers/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/case-studies/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/compare/10web-vs-shopify/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/compare/10web-vs-squarespace/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/compare/10web-vs-wix/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/compare/10web-vs-wordpress/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/compare/ai-website-builders/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/contact/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/dashboard/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/docs/[...slug]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/docs/admin/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/docs/ai/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/docs/builder/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/docs/domains/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/docs/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/docs/platform/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/domains/[name]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/domains/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/ecommerce-ai-builder/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/features/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/gds-test/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/help-center/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/pricing/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/privacy-policy/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/releases/[version]/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/releases/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/site/[id]/analytics/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/site/[id]/changelog/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/site/[id]/settings/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/agency/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/coaching/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/ecommerce/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/fitness/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/personal-brand/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/photography/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/portfolio/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/real-estate/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/templates/restaurant/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/terms/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/trust-center/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ],
+    "[project]/buildwithai/src/app/wordpress-ai-builder/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/0acc7fdf55eb3220-s.p.532ccaa1.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

@@ -1,0 +1,3 @@
+module.exports=[88804,a=>{"use strict";var b=a.i(18442);function c(){return(0,b.jsxs)("main",{className:"max-w-3xl mx-auto py-12",children:[(0,b.jsx)("h1",{className:"text-2xl font-semibold mb-4",children:"Builder settings"}),(0,b.jsx)("p",{className:"text-sm text-slate-500",children:"This page will surface global settings for the Build With AI builder: defaults for typography, color palettes, AI behavior, and experimental features. For now, it is a placeholder to unblock routing and layout."})]})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=buildwithai_src_app_builder_settings_page_tsx_590a6832._.js.map
