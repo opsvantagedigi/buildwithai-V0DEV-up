@@ -32,7 +32,7 @@
     "maximumRedirects": 3,
     "dangerouslyAllowLocalIP": false,
     "dangerouslyAllowSVG": false,
-    "contentSecurityPolicy": "script-src 'self'; frame-src 'none'; sandbox;",
+    "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
     "contentDispositionType": "attachment",
     "localPatterns": [
       {
