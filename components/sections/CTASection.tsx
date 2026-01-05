@@ -10,7 +10,7 @@ export function CTASection({ section }: { section: CTASectionType }) {
 
   return (
     <section className="py-16 md:py-20">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className={`flex flex-col gap-4 ${alignClass}`}>
           {section.title && <h2 className="text-3xl font-semibold text-white">{section.title}</h2>}
           <div className="flex flex-wrap gap-3 justify-center">

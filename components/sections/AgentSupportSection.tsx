@@ -7,7 +7,7 @@ type AgentSupportSectionType = Extract<Section, { type: "agentSupport" }>
 export function AgentSupportSection({ section }: { section: AgentSupportSectionType }) {
   return (
     <section className="py-16 md:py-20">
-      <div className="container mx-auto px-4 grid gap-8 md:grid-cols-2 items-start">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-2 items-start">
         <div className="space-y-4">
           {section.title && <h2 className="text-3xl font-semibold text-white">{section.title}</h2>}
           <p className="text-slate-300 leading-relaxed">

@@ -13,7 +13,12 @@ export const homepage: Page = {
       blocks: [
         {
           kind: "paragraph",
-          text: "Build With AI is the cinematic AI Website Builder for founders and teams who want production-ready experiences without waiting on dev cycles.",
+          text: "The cinematic AI Website Builder for founders and teams. Ship production-ready experiences in seconds—without waiting on dev cycles.",
+          align: "left",
+        },
+        {
+          kind: "paragraph",
+          text: "Backed by a 24/7 AI Operator that watches your funnel and proposes fixes before users notice issues.",
           align: "left",
         },
         {
@@ -191,14 +196,14 @@ export const homepage: Page = {
       blocks: [
         {
           kind: "paragraph",
-          text: "Your always-on AI Operator can greet visitors, narrate updates, and adapt its tone to your brand across video and chat.",
+          text: "Your always-on AI Operator greets visitors, narrates updates, and adapts its tone to your brand across chat and live embeds.",
         },
         {
           kind: "list",
           items: [
-            "Streams intros with your agentMedia intro video and avatar.",
-            "Handles scripted demos or real-time responses tuned to your product.",
-            "Designed to live in widget, embed, or full-page takeovers.",
+            "Delivers scripted intros or real-time responses tuned to your product.",
+            "Designed to live in widget, embed, or full-page takeovers—no homepage video required.",
+            "Built for brand safety with mode-aware guardrails.",
           ],
           variant: "bulleted",
         },

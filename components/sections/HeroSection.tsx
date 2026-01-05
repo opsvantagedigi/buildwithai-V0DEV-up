@@ -7,15 +7,15 @@ type HeroSectionType = Extract<Section, { type: "hero" }>
 export function HeroSection({ section }: { section: HeroSectionType }) {
   return (
     <section className="relative overflow-hidden py-20 md:py-28">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl space-y-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl space-y-6">
           {section.eyebrow && (
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+            <div className="text-xs font-orbitron font-semibold uppercase tracking-[0.24em] text-cyan-200">
               {section.eyebrow}
             </div>
           )}
           {section.title && (
-            <h1 className="text-4xl md:text-6xl font-semibold leading-tight text-white">
+            <h1 className="text-4xl md:text-6xl font-orbitron font-extrabold leading-tight tracking-tight bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-transparent">
               {section.title}
             </h1>
           )}

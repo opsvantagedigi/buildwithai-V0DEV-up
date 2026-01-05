@@ -8,7 +8,7 @@ export function PricingSection({ section }: { section: PricingSectionType }) {
   const cols = section.columns ?? 3
   return (
     <section className="py-16 md:py-20">
-      <div className="container mx-auto px-4 space-y-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-8">
         {section.title && <h2 className="text-3xl font-semibold text-white">{section.title}</h2>}
         <div className={`grid gap-6 md:grid-cols-${cols}`.replace("md:grid-cols-2", cols === 2 ? "md:grid-cols-2" : `md:grid-cols-${cols}`)}>
           {section.blocks.map((block, idx) => (
