@@ -1,7 +1,10 @@
 "use client"
 
-import React, { useMemo, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import { agentMedia } from "@/config/agentMedia"
+import { OPERATOR_EMBED_URL } from "@/config/operator"
+import { CURRENT_OPERATOR_MODE } from "@/lib/ops/model"
+import { getOrCreateSessionId } from "@/lib/ops/session"
 
 const modes = [
   { id: "chat" as const, label: "Chat" },
@@ -11,11 +14,36 @@ const modes = [
 export function AgentWidget() {
   const [open, setOpen] = useState(false)
   const [mode, setMode] = useState<(typeof modes)[number]["id"]>("chat")
+  const sessionId = useMemo(() => getOrCreateSessionId(), [])
 
-  const statusText = useMemo(
-    () => (mode === "chat" ? "Scripted chat placeholder" : "Intro video placeholder"),
-    [mode],
-  )
+  const modeLabel = useMemo(() => {
+    if (CURRENT_OPERATOR_MODE.level === "B") return "Mode B · Proposes fixes (approval required)"
+    if (CURRENT_OPERATOR_MODE.level === "C") return "Mode C · Autonomous (guarded)"
+    return "Mode A · Observe"
+  }, [])
+
+  const statusText = useMemo(() => (mode === "chat" ? "Operator App · Chat" : "Operator App · Video"), [mode])
+
+  useEffect(() => {
+    const allowedOrigin = (() => {
+      try {
+        return new URL(OPERATOR_EMBED_URL).origin
+      } catch {
+        return undefined
+      }
+    })()
+
+    function handleMessage(event: MessageEvent) {
+      if (!event.data || typeof event.data !== "object") return
+      if (allowedOrigin && event.origin !== allowedOrigin) return
+      if ((event.data as { type?: string }).type === "operator:handshake") {
+        console.log("Operator handshake received:", event.data)
+      }
+    }
+
+    window.addEventListener("message", handleMessage)
+    return () => window.removeEventListener("message", handleMessage)
+  }, [])
 
   return (
     <>
@@ -41,7 +69,7 @@ export function AgentWidget() {
       </button>
 
       {open && (
-        <div className="fixed bottom-24 right-6 z-40 w-[360px] max-w-[calc(100vw-2rem)] space-y-3">
+        <div className="fixed bottom-24 right-6 z-40 w-90 max-w-[calc(100vw-2rem)] space-y-3">
           <div className="glass-panel rounded-3xl border border-white/10 bg-black/70 p-4 shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
             <div className="flex items-center gap-3">
               <div className="relative inline-block">
@@ -55,6 +83,7 @@ export function AgentWidget() {
               <div className="flex flex-col leading-tight">
                 <span className="text-sm font-semibold text-white">AI Operator</span>
                 <span className="text-xs text-slate-300">{statusText}</span>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400">{modeLabel}</div>
               </div>
               <div className="ml-auto rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-slate-200">
                 Monitoring uptime, errors & funnels
@@ -79,43 +108,22 @@ export function AgentWidget() {
             </div>
 
             <div className="mt-4 space-y-3">
-              {mode === "chat" ? (
-                <div className="space-y-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <div className="text-xs uppercase tracking-[0.18em] text-emerald-300">Chat (placeholder)</div>
-                  <div className="space-y-2 text-sm text-slate-200">
-                    <p className="rounded-xl bg-black/40 px-3 py-2">Hi! I’m your AI Operator. I’m monitoring uptime, errors, and key funnels.</p>
-                    <p className="rounded-xl bg-white/5 px-3 py-2">Show me today’s error spikes.</p>
-                    <p className="rounded-xl bg-black/40 px-3 py-2">I see 3 spikes in checkout. I can propose fixes and a rollback plan.</p>
-                  </div>
-                  <p className="text-xs text-slate-400">
-                    Live chat will come from the external Operator App embed. This is a scripted preview.
-                  </p>
-                </div>
-              ) : (
-                <div className="space-y-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <div className="text-xs uppercase tracking-[0.18em] text-emerald-300">Video (placeholder)</div>
-                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/60">
-                    <video
-                      className="h-48 w-full object-cover"
-                      src={agentMedia.introVideoUrl}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
-                  </div>
-                  <p className="text-xs text-slate-400">
-                    Future live video sessions will stream here via the external Operator App.
-                  </p>
-                </div>
-              )}
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <iframe
+                  src={`${OPERATOR_EMBED_URL}?sessionId=${sessionId}&mode=${mode}`}
+                  className="h-64 w-full rounded-xl border border-white/10 bg-black"
+                  title="Operator App"
+                  sandbox="allow-scripts allow-same-origin"
+                  allow="camera; microphone"
+                />
+              </div>
             </div>
 
             <div className="mt-4 rounded-2xl border border-white/10 bg-linear-to-r from-white/5 via-white/5 to-white/0 p-4 text-sm text-slate-200">
               <div className="text-xs uppercase tracking-[0.2em] text-amber-300">Roadmap</div>
               <ul className="mt-2 space-y-1 text-slate-200">
-                <li><span className="font-semibold text-white">Mode B (now):</span> diagnoses issues and proposes fixes with human approval.</li>
-                <li><span className="font-semibold text-white">Mode C (future):</span> autonomous fixes with rollback, audit trail, and guardrails.</li>
+                <li><span className="font-semibold text-white">Mode B (now):</span> diagnoses issues and proposes fixes; human approval required.</li>
+                <li><span className="font-semibold text-white">Mode C (future):</span> guarded autonomous remediation with rollback and audit trail.</li>
               </ul>
             </div>
           </div>
