@@ -33,9 +33,9 @@ export default function Header() {
         </div>
 
         <nav className="font-inter text-xs text-white/70 sm:text-sm">
-          <div className="hidden items-center gap-6 lg:flex">
+          <div className="hidden items-center gap-5 lg:flex lg:flex-nowrap">
             {headerLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-white/80 hover:text-white">
+              <Link key={link.href} href={link.href} className="text-white/80 hover:text-white whitespace-nowrap">
                 {link.label}
               </Link>
             ))}
