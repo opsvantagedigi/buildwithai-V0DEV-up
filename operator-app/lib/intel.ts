@@ -1,4 +1,5 @@
 import { listLogs } from "@/lib/audit"
+import { runPrimeSeeder } from "@/lib/dev-seeder"
 import type {
   AuditLogEntry,
   Diagnosis,
@@ -82,6 +83,9 @@ function allIncidents(): IncidentRecord[] {
 }
 
 export function getRecentIncidents(limit = 100): IncidentRecord[] {
+  if (process.env.NODE_ENV === "development") {
+    runPrimeSeeder()
+  }
   return allIncidents().slice(0, limit)
 }
 
