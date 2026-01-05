@@ -195,6 +195,147 @@ export interface OperatorPersona {
   tone: "concise" | "teaching" | "reassuring"
   brandNotes?: string[]
   signatureLine?: string
+  focus?: "stability" | "learning" | "speed"
+  prefersBullets?: boolean
+}
+
+export interface SimpleTrend {
+  label: string
+  direction: "up" | "down" | "flat"
+  confidence: number
+}
+
+export interface CognitionConfidence {
+  id?: string
+  target: "diagnosis" | "proposal" | "prediction" | "warning"
+  score: number
+  rationale: string
+}
+
+export interface CognitionRationale {
+  summary: string
+  factors: string[]
+}
+
+export interface CognitionTrace {
+  steps: string[]
+  conclusion: string
+}
+
+export interface CognitiveDriftReport {
+  status: "stable" | "watch" | "drifting"
+  indicators: string[]
+  driftScore: number
+}
+
+export interface CognitiveStabilityScore {
+  score: number
+  factors: string[]
+}
+
+export interface PrimeCognitionBundle {
+  confidences: CognitionConfidence[]
+  rationales: CognitionRationale[]
+  traces: CognitionTrace[]
+  drift: CognitiveDriftReport
+  stability: CognitiveStabilityScore
+}
+
+export interface StabilityIndex {
+  score: number
+  level: "calm" | "watch" | "critical"
+  factors: string[]
+  computedAt: string
+}
+
+export interface EarlyWarning {
+  id: string
+  title: string
+  severity: RiskLevel
+  rationale: string
+  actions: string[]
+  window: "immediate" | "short-term" | "mid-term"
+  source: "foresight" | "prime" | "reflection"
+}
+
+export interface ForesightPrediction {
+  id: string
+  likelihood: number
+  impact: RiskLevel
+  summary: string
+  drivers: string[]
+  horizon: "short" | "mid" | "long"
+}
+
+export interface AutonomySimulation {
+  id: string
+  description: string
+  risk: RiskLevel
+  outcome: "pass" | "fail" | "uncertain"
+  steps: string[]
+  approvalsNeeded?: number
+}
+
+export interface FixStrategyScore {
+  strategy: string
+  score: number
+  rationale: string
+}
+
+export interface ReliabilityForecast {
+  score: number
+  horizon: "short" | "mid" | "long"
+  rationale: string[]
+}
+
+export interface PrimeInsight {
+  id: string
+  title: string
+  narrative: string
+  reliabilityScore: number
+  scope: "global" | "tenant" | "site"
+}
+
+export interface PrimeBriefing {
+  headline: string
+  highlights: string[]
+  reliabilityScore: number
+}
+
+export interface ReflectionSummary {
+  period: "daily" | "weekly" | "monthly" | "subsystem"
+  highlights: string[]
+  risks: string[]
+  recommendations: string[]
+}
+
+export interface PrimeNarrativeBundle {
+  headline: string
+  weekly: string[]
+  monthly: string[]
+  feed: string[]
+  briefing: string[]
+}
+
+export interface KnowledgeLink {
+  from: string
+  to: string
+  relation: string
+}
+
+export interface KnowledgeRecommendation {
+  title: string
+  summary: string
+  actions: string[]
+}
+
+export interface KnowledgeGraph {
+  incidents: IncidentRecord[]
+  patterns: IncidentPattern[]
+  proposals: RemediationProposal[]
+  playbooks: Playbook[]
+  articles: KnowledgeArticle[]
+  links: KnowledgeLink[]
 }
 
 export interface VoiceSummary {
