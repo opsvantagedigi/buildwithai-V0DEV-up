@@ -60,7 +60,26 @@ export default function Footer() {
               Build With AI delivers cinematic layouts, on-brand copy, and production-ready code. Orbitron for headings,
               Inter for body, and the signature deep blue → green → yellow brand gradient.
             </p>
-            <p className="font-inter text-white/50 text-sm">TODO: Add newsletter signup and social links.</p>
+            <div className="font-inter text-white/60 text-sm space-y-2">
+              <div className="text-white/70">Stay connected with the platform:</div>
+              <div className="flex flex-wrap items-center gap-3 text-white/70">
+                <Link href="/docs" className="hover:text-white">
+                  Docs
+                </Link>
+                <span className="text-white/30">•</span>
+                <Link href="/builder" className="hover:text-white">
+                  Builder
+                </Link>
+                <span className="text-white/30">•</span>
+                <Link href="/domains" className="hover:text-white">
+                  Domains
+                </Link>
+                <span className="text-white/30">•</span>
+                <Link href="/pricing" className="hover:text-white">
+                  Pricing
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
