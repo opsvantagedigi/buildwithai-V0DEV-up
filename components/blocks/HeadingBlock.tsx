@@ -4,8 +4,8 @@ import { Block } from "@/lib/layout/schema"
 type HeadingBlockType = Extract<Block, { kind: "heading" }> | Extract<Block, { kind: "subheading" }>
 
 export function HeadingBlock({ block }: { block: HeadingBlockType }) {
-  const level = block.kind === "heading" ? block.level ?? 2 : block.level ?? 3
-  const Tag = (`h${level}` as unknown) as keyof JSX.IntrinsicElements
+  const level: 1 | 2 | 3 | 4 = block.kind === "heading" ? block.level ?? 2 : 3
+  const Tag = (`h${level}` as "h1" | "h2" | "h3" | "h4")
 
   const baseClass =
     block.kind === "heading"
