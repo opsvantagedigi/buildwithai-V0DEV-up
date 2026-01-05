@@ -141,3 +141,18 @@ body {
 .font-orbitron {
   font-family: "Orbitron", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
+.font-inter {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.brand-gradient-bg {
+  background-image: linear-gradient(135deg, #0b1f4b, #12b981, #facc15);
+}
+
+.brand-gradient-text {
+  background-image: linear-gradient(135deg, #4f7cff, #2ee6a6, #ffd166);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

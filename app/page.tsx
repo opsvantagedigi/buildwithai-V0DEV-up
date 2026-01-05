@@ -1,256 +1,246 @@
-"use client"
-
+import type { Metadata } from "next"
 import Link from "next/link"
-import { useState } from "react"
+import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "../components/ui/button"
-import { Textarea } from "../components/ui/textarea"
-import { Wand2, ArrowRight, Layout, Zap, Globe, Sparkles, CheckCircle2 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Build With AI — Create Without Limits",
+  description:
+    "Build With AI is a cinematic AI Website Builder that transforms your ideas into production-ready websites in seconds.",
+}
 
 export default function HomePage() {
-  const [prompt, setPrompt] = useState("")
-
   return (
-    <div className="relative flex min-h-screen bg-background text-foreground overflow-hidden font-sans">
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-70">
-        <div className="absolute -left-24 top-24 h-64 w-64 rounded-full bg-linear-to-tr from-[#4f7cff]/35 via-[#2ee6a6]/25 to-[#ffd166]/20 blur-[120px]" />
-        <div className="absolute -right-30 -bottom-20 h-64 w-64 rounded-full bg-linear-to-tr from-[#4f7cff]/20 via-[#2ee6a6]/10 to-[#ffd166]/18 blur-[120px]" />
+    <div className="relative flex min-h-screen overflow-hidden bg-background text-foreground font-sans">
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-80">
+        <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-linear-to-tr from-[#0b1f4b]/70 via-[#22c55e]/40 to-[#facc15]/30 blur-[140px]" />
+        <div className="absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-linear-to-tr from-[#4f7cff]/40 via-[#2ee6a6]/30 to-[#ffd166]/25 blur-[150px]" />
       </div>
 
-      <main className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-6 py-16 md:px-10">
-        <header className="space-y-3 text-center animate-in fade-in slide-in-from-bottom-4 duration-700">
-          <p className="font-heading text-[11px] tracking-[0.35em] text-muted-foreground uppercase">
-            AI WEBSITE STUDIO
-          </p>
-          <h1 className="font-heading glow-text bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-3xl md:text-5xl font-semibold text-transparent">
-            Describe what you want to build.
-          </h1>
-          <p className="mx-auto max-w-xl text-sm md:text-base text-muted-foreground">
-            One sentence. Your intent becomes infrastructure. The studio turns your brief into cinematic layouts, copy,
-            and flows ready to ship.
-          </p>
-        </header>
+      <main className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col gap-24 px-6 py-16 md:px-10 md:py-20">
+        {/* Hero */}
+        <section className="grid items-center gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+          <div className="space-y-5">
+            <p className="font-heading text-[11px] tracking-[0.35em] text-muted-foreground uppercase">
+              CINEMATIC AI WEBSITE BUILDER
+            </p>
+            <h1 className="font-heading text-4xl font-semibold leading-tight brand-gradient-text md:text-5xl">
+              Build With AI. Create Without Limits.
+            </h1>
+            <p className="max-w-xl text-sm md:text-base text-muted-foreground font-inter">
+              A cinematic AI Website Builder for founders, creators, and teams who care about story, speed, and
+              control.
+            </p>
 
-        <section className="mt-10 w-full max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-700">
-          <div className="relative group">
-            <div className="pointer-events-none absolute -inset-1 rounded-[1.75rem] bg-linear-to-r from-[#4f7cff]/25 via-[#2ee6a6]/12 to-[#ffd166]/10 opacity-60 blur transition-opacity duration-500 group-focus-within:opacity-90" />
-            <div className="relative glass-panel rounded-[1.75rem] p-6 md:p-8 shadow-2xl transition-all duration-300 group-focus-within:shadow-[0_0_35px_rgba(79,124,255,0.6)]">
-              <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                <div className="space-y-1 text-left">
-                  <p className="font-heading text-[11px] font-medium uppercase tracking-[0.26em] text-emerald-300/90">
-                    Ritual Brief
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    Describe the site you want to build. We handle structure, copy, and motion.
-                  </p>
-                </div>
-                <div className="mt-1 flex items-center gap-2 text-[10px] text-muted-foreground">
-                  <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-1">
-                    <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Realtime builder online</span>
-                  </span>
-                </div>
+            <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+              <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-inter">
+                <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Realtime layout generation
+              </span>
+              <span className="inline-flex items-center gap-1 rounded-full border border-white/5 bg-black/40 px-3 py-1 font-inter">
+                <Sparkles className="size-3 text-amber-300" />
+                Hybrid cinematic style
+              </span>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link href="/builder">
+                <Button
+                  size="lg"
+                  className="rounded-full px-7 py-5 text-sm font-semibold font-inter bg-linear-to-r from-[#4f7cff] via-[#22c55e] to-[#facc15] text-black shadow-[0_0_35px_rgba(79,124,255,0.75)] hover:opacity-90"
+                >
+                  Start Building
+                  <ArrowRight className="ml-2 size-4" />
+                </Button>
+              </Link>
+              <Link
+                href="/features"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-inter text-white/90 hover:bg-white/10"
+              >
+                Explore Features
+              </Link>
+            </div>
+
+            <p className="mt-4 text-[11px] uppercase tracking-[0.22em] text-muted-foreground font-inter">
+              No templates. No drag-and-drop. Just your story, rendered.
+            </p>
+          </div>
+
+          {/* Imagery description as cinematic preview */}
+          <div className="relative">
+            <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-linear-to-tr from-[#4f7cff]/35 via-[#22c55e]/20 to-[#facc15]/15 opacity-70 blur-xl" />
+            <div className="relative glass-panel flex flex-col justify-between rounded-3xl p-5 shadow-2xl">
+              <div className="mb-4 flex items-center justify-between text-[11px] text-muted-foreground">
+                <span className="font-heading tracking-[0.28em] uppercase text-white/80">Live Preview</span>
+                <span className="rounded-full bg-emerald-400/15 px-2 py-0.5 text-emerald-300">AI Generating</span>
               </div>
-
-              <Textarea
-                placeholder="Example: A cinematic marketing site for an AI developer studio called Ritual. Low-light neon aesthetic, focused pricing, social proof, and a clean docs funnel."
-                className="mt-4 min-h-35 w-full resize-none border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-muted-foreground/70 shadow-[0_18px_45px_rgba(0,0,0,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4f7cff]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                value={prompt}
-                onChange={(event) => setPrompt(event.target.value)}
-              />
-
-              <div className="mt-4 flex flex-col gap-3 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-white/80">
-                    <span className="size-1.5 rounded-full bg-emerald-400" />
-                    <span>AI Ready</span>
-                  </span>
-                  <span className="hidden sm:inline text-muted-foreground/70">
-                    Uses your brief to map sections, flows, and CTAs.
-                  </span>
+              <div className="space-y-3 rounded-2xl bg-black/60 p-4">
+                <div className="rounded-xl border border-white/10 bg-black/60 p-3 text-xs font-inter text-muted-foreground">
+                  “A futuristic interface showing a website morphing in real time as a prompt is typed. Soft neon
+                  edges, floating UI blocks, subtle parallax.”
                 </div>
-                <div className="flex flex-wrap items-center gap-2 justify-end">
-                  <Link
-                    href="/dashboard"
-                    className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-medium text-white/90 transition duration-300 hover:bg-white/10"
-                  >
-                    <span>Open studio</span>
-                    <ArrowRight className="size-3" />
-                  </Link>
-                  <Button type="button" className="rounded-full px-4 py-1.5 text-[11px] font-medium">
-                    <Wand2 className="mr-1 size-3" />
-                    Generate first pass
-                  </Button>
+                <div className="grid gap-2 text-[11px] text-muted-foreground/90 md:grid-cols-2">
+                  <div className="space-y-1 rounded-xl border border-white/10 bg-white/5 p-3">
+                    <p className="font-heading text-xs text-white">Prompt</p>
+                    <p className="font-inter">“Launch site for an AI studio with pricing, docs, and blog.”</p>
+                  </div>
+                  <div className="space-y-1 rounded-xl border border-white/10 bg-white/5 p-3">
+                    <p className="font-heading text-xs text-white">Layout</p>
+                    <p className="font-inter">Hero, narrative strip, feature grid, pricing, and docs funnel.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <div className="mt-32 w-full space-y-32">
-          {/* 1. Value Proposition Section */}
-          <section className="text-center">
-            <h2 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
-              Turn your vision into <span className="glow-text text-[#2ee6a6]">production-ready</span> sites.
+        {/* Why Build With AI */}
+        <section className="space-y-10">
+          <div className="text-center">
+            <h2 className="font-heading text-3xl font-semibold text-white md:text-4xl">
+              Your vision. Our intelligence.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              Stop fighting with drag-and-drop builders. Describe your business, your vibe, and your goals. We handle
-              the rest with pixel-perfect precision.
+            <p className="mt-4 mx-auto max-w-2xl text-sm md:text-base text-muted-foreground font-inter">
+              Build With AI understands your product, audience, and aesthetic, then turns that intent into cinematic
+              layouts, narrative structure, and production-ready code.
             </p>
-          </section>
+          </div>
 
-          {/* 2. 4-Column Feature Grid */}
-          <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: <Layout className="size-5 text-[#4f7cff]" />,
-                title: "Cinematic Layouts",
-                desc: "High-end aesthetic defaults that make every site look premium.",
-              },
-              {
-                icon: <Zap className="size-5 text-[#2ee6a6]" />,
-                title: "Instant Deploy",
-                desc: "Go from brief to live URL in under 60 seconds with one click.",
-              },
-              {
-                icon: <Globe className="size-5 text-[#ffd166]" />,
-                title: "Global CDN",
-                desc: "Edge-cached performance ensuring your site is fast worldwide.",
-              },
-              {
-                icon: <Sparkles className="size-5 text-purple-400" />,
-                title: "AI Copywriting",
-                desc: "Context-aware copy tailored specifically to your target audience.",
-              },
-            ].map((feature, i) => (
-              <div key={i} className="glass-panel group rounded-2xl p-6 transition-all hover:bg-white/5">
-                <div className="mb-4 inline-flex size-10 items-center justify-center rounded-xl bg-white/5 ring-1 ring-white/10 group-hover:ring-white/20">
-                  {feature.icon}
-                </div>
-                <h3 className="font-heading text-base font-medium text-white">{feature.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{feature.desc}</p>
-              </div>
-            ))}
-          </section>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {["AI Layout Engine", "Cinematic Components", "Multi-Site Dashboard", "Zero Lock-In"].map(
+              (title, index) => {
+                const descriptions = [
+                  "Full-page structures generated from natural language prompts.",
+                  "Beautiful, responsive blocks crafted for storytelling.",
+                  "Manage brands, funnels, and experiments from a single workspace.",
+                  "Export your code, or deploy instantly — the choice is yours.",
+                ]
 
-          {/* 3. Horizontal Demo Strip */}
-          <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/40 p-1 md:p-2">
-            <div className="absolute inset-0 bg-linear-to-b from-transparent to-black/60 pointer-events-none z-10" />
-            <div className="flex gap-4 p-4 animate-scroll whitespace-nowrap">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div
-                  key={i}
-                  className="min-w-[300px] aspect-video rounded-xl bg-slate-900 border border-white/5 overflow-hidden"
-                >
-                  <img
-                    src={`/premium-saas-ui-screenshot-.jpg?key=sh9oh&height=300&width=530&query=premium-saas-ui-screenshot-${i}`}
-                    alt={`Demo ${i}`}
-                    className="h-full w-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
+                return (
+                  <article
+                    key={title}
+                    className="glass-panel flex flex-col justify-between rounded-2xl p-5 text-sm text-muted-foreground font-inter"
+                  >
+                    <div>
+                      <p className="font-heading text-[11px] uppercase tracking-[0.25em] text-emerald-300/90">
+                        Pillar 0{index + 1}
+                      </p>
+                      <h3 className="mt-2 text-base font-semibold text-white">{title}</h3>
+                      <p className="mt-2 text-xs leading-relaxed">{descriptions[index]}</p>
+                    </div>
+                  </article>
+                )
+              },
+            )}
+          </div>
 
-          {/* 4. Template Preview Section */}
-          <section className="space-y-12">
-            <div className="text-center">
-              <h2 className="font-heading text-3xl font-semibold">Start with a masterclass.</h2>
-              <p className="mt-4 text-muted-foreground">
-                Select a starting point and let the AI customize every detail.
+          <div className="text-center">
+            <Link
+              href="/features"
+              className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-xs font-inter uppercase tracking-[0.22em] text-white/90 hover:bg-white/10"
+            >
+              See Everything It Can Do
+              <ArrowRight className="ml-2 size-3" />
+            </Link>
+          </div>
+        </section>
+
+        {/* Live Preview */}
+        <section className="grid items-center gap-8 rounded-3xl border border-white/10 bg-black/40 p-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:p-8">
+          <div>
+            <h2 className="font-heading text-2xl font-semibold text-white md:text-3xl">See your ideas come alive.</h2>
+            <p className="mt-3 max-w-lg text-sm md:text-base text-muted-foreground font-inter">
+              Type a few words. Watch the layout respond. Every keystroke updates the composition, typography, and story
+              so you can feel your site before it exists.
+            </p>
+            <Link
+              href="/builder"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-xs font-semibold font-inter text-slate-950 hover:bg-slate-100"
+            >
+              Try the Builder
+              <ArrowRight className="ml-1.5 size-3.5" />
+            </Link>
+          </div>
+
+          <div className="space-y-3 text-xs font-inter text-muted-foreground">
+            <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-4">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Prompt → Layout</p>
+              <p className="mt-2 text-white/90">“Landing page for a pre-launch AI wearable.”</p>
+              <p className="mt-2 text-muted-foreground">
+                Builder responds with hero, story rail, feature grid, pricing tiers, FAQ, and early-access form.
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              {[
-                { title: "Ritual Dark", category: "Agency" },
-                { title: "Nexus Pro", category: "SaaS" },
-              ].map((template, i) => (
-                <div key={i} className="group relative overflow-hidden rounded-2xl border border-white/10">
-                  <div className="aspect-video w-full bg-slate-900">
-                    <img
-                      src={`/dark-modern-website-template-.jpg?key=wd25d&height=400&width=700&query=dark-modern-website-template-${i}`}
-                      alt={template.title}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent p-6 flex flex-col justify-end">
-                    <p className="text-[10px] uppercase tracking-widest text-[#2ee6a6]">{template.category}</p>
-                    <h3 className="mt-1 font-heading text-xl font-medium text-white">{template.title}</h3>
-                  </div>
-                </div>
-              ))}
+            <div className="flex items-center justify-between text-[10px] text-muted-foreground/80">
+              <span>Latency: 1.4s • Regions: Global Edge</span>
+              <span>Powered by Hybrid Cinematic Engine</span>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* 5. Pricing Teaser */}
-          <section className="glass-panel mx-auto max-w-3xl rounded-3xl p-8 md:p-12 text-center">
-            <h2 className="font-heading text-3xl font-semibold">Ready to ship?</h2>
-            <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div className="rounded-2xl bg-white/5 p-6 text-left border border-white/5">
-                <h4 className="font-heading text-lg font-medium text-white">Starter</h4>
-                <p className="mt-1 text-2xl font-bold text-white">
-                  $0<span className="text-sm font-normal text-muted-foreground">/mo</span>
-                </p>
-                <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="size-3 text-[#2ee6a6]" /> 3 AI Generations/mo
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="size-3 text-[#2ee6a6]" /> Custom Subdomain
-                  </li>
-                </ul>
-              </div>
-              <div className="rounded-2xl bg-[#4f7cff]/10 p-6 text-left border border-[#4f7cff]/20">
-                <h4 className="font-heading text-lg font-medium text-white">Pro Studio</h4>
-                <p className="mt-1 text-2xl font-bold text-white">
-                  $24<span className="text-sm font-normal text-muted-foreground">/mo</span>
-                </p>
-                <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="size-3 text-[#2ee6a6]" /> Unlimited Generations
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="size-3 text-[#2ee6a6]" /> Custom Domains & SEO
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* 6. Trust/Social Proof Section */}
-          <section className="text-center">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Powering the next generation of builders
+        {/* Who It's For */}
+        <section className="space-y-10">
+          <div className="text-center">
+            <h2 className="font-heading text-3xl font-semibold text-white md:text-4xl">Who it’s for</h2>
+            <p className="mt-4 mx-auto max-w-2xl text-sm md:text-base text-muted-foreground font-inter">
+              Build With AI is designed for people who need cinematic quality and startup speed — without sacrificing
+              control over the details.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-8 opacity-40 grayscale filter lg:gap-16">
-              {["Linear", "Vercel", "Stripe", "Supabase", "Anthropic"].map((logo) => (
-                <span key={logo} className="font-heading text-lg font-bold text-white tracking-tighter">
-                  {logo}
-                </span>
-              ))}
-            </div>
-          </section>
+          </div>
 
-          {/* 7. Final CTA Block */}
-          <section className="pb-20">
-            <div className="relative overflow-hidden rounded-[2rem] bg-linear-to-br from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] p-px">
-              <div className="flex flex-col items-center justify-center rounded-[2rem] bg-black/90 px-8 py-16 text-center">
-                <h2 className="font-heading text-3xl font-bold text-white md:text-5xl">
-                  Start building your future today.
-                </h2>
-                <p className="mt-6 max-w-lg text-muted-foreground">
-                  Join 10,000+ creators building premium websites with Ritual AI.
-                </p>
-                <Button
-                  size="lg"
-                  className="mt-10 rounded-full px-8 py-6 text-base font-semibold transition-transform hover:scale-105"
-                >
-                  <Wand2 className="mr-2 size-5" />
-                  Get Started for Free
-                </Button>
-              </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <article className="glass-panel flex flex-col rounded-2xl p-5 font-inter">
+              <h3 className="font-heading text-base font-semibold text-white">Founders</h3>
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
+                <li>Ship investor-ready landing pages in a single session.</li>
+                <li>Test new narratives, pricing, and funnels without dev cycles.</li>
+                <li>Keep full ownership of your code and data.</li>
+              </ul>
+            </article>
+
+            <article className="glass-panel flex flex-col rounded-2xl p-5 font-inter">
+              <h3 className="font-heading text-base font-semibold text-white">Agencies</h3>
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
+                <li>Turn creative briefs into pitch-ready prototypes in minutes.</li>
+                <li>Manage dozens of brands and experiments in one dashboard.</li>
+                <li>Export clean code to your existing stacks and workflows.</li>
+              </ul>
+            </article>
+
+            <article className="glass-panel flex flex-col rounded-2xl p-5 font-inter">
+              <h3 className="font-heading text-base font-semibold text-white">Creators</h3>
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
+                <li>Launch cinematic personal sites, portfolios, and drops.</li>
+                <li>Use AI to draft copy, sections, and flows — then edit by hand.</li>
+                <li>Stay on-brand across multiple sites, launches, and collabs.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        {/* Legacy */}
+        <section className="mb-8 rounded-3xl border border-white/10 bg-black/60 p-7 md:p-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="max-w-xl space-y-3">
+              <h2 className="font-heading text-3xl font-semibold text-white">Built on wisdom. Powered by AI.</h2>
+              <p className="text-sm md:text-base text-muted-foreground font-inter">
+                A platform inspired by legacy, family, and the belief that every creator deserves a voice. Build With AI
+                is where human stories meet cinematic technology.
+              </p>
             </div>
-          </section>
-        </div>
+            <div className="flex flex-col items-start gap-3 md:items-end">
+              <p className="text-xs text-muted-foreground font-inter max-w-xs">
+                From early drafts and family projects to venture-backed launches, your work lives in one place — and it
+                always feels like you.
+              </p>
+              <Link href="/builder">
+                <Button className="rounded-full bg-linear-to-r from-[#4f7cff] via-[#22c55e] to-[#facc15] px-6 py-2 text-xs font-semibold font-inter text-black shadow-[0_0_28px_rgba(79,124,255,0.7)] hover:opacity-90">
+                  Build Your Legacy Site
+                  <ArrowRight className="ml-2 size-3.5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   )
