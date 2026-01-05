@@ -1,11 +1,17 @@
 "use client"
 
 import Link from "next/link"
+import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
 import { headerLinks } from "@/config/nav"
 
 export default function Header() {
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark")
@@ -38,14 +44,16 @@ export default function Header() {
             >
               Get Started for FREE
             </Link>
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/30 text-yellow-300 hover:bg-black/50 focus:outline-none"
-            >
-              <span className="text-xs">{theme === "dark" ? "☀" : "☾"}</span>
-            </button>
+            {mounted && (
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/30 text-yellow-300 hover:bg-black/50 focus:outline-none"
+              >
+                <span className="text-xs">{theme === "dark" ? "☀" : "☾"}</span>
+              </button>
+            )}
           </div>
 
           <div className="flex flex-wrap gap-3 lg:hidden">
@@ -64,14 +72,16 @@ export default function Header() {
             >
               Get Started
             </Link>
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/30 text-yellow-300 hover:bg-black/50 focus:outline-none"
-            >
-              <span className="text-xs">{theme === "dark" ? "☀" : "☾"}</span>
-            </button>
+            {mounted && (
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-black/30 text-yellow-300 hover:bg-black/50 focus:outline-none"
+              >
+                <span className="text-xs">{theme === "dark" ? "☀" : "☾"}</span>
+              </button>
+            )}
           </div>
         </nav>
       </div>

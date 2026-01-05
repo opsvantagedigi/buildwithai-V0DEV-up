@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import { BuilderLiveClient } from "./client"
 
 export const metadata: Metadata = {
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 }
 
 export default function BuilderLivePage() {
-  return <BuilderLiveClient />
+  return (
+    <Suspense fallback={null}>
+      <BuilderLiveClient />
+    </Suspense>
+  )
 }
