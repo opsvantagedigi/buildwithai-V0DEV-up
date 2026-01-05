@@ -12,6 +12,7 @@
     "@fontsource/inter": "5.2.8",
     "@fontsource/orbitron": "5.2.8",
     "@radix-ui/react-slot": "1.1.1",
+    "@vercel/blob": "^2.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.454.0",
