@@ -1,5 +1,27 @@
 export type AutonomyLevel = "A" | "B" | "C"
 
+export type RiskLevel = "low" | "medium" | "high"
+
+export type EmailCategory =
+  | "fix-applied"
+  | "fix-failed"
+  | "rollback-executed"
+  | "approval-required"
+  | "high-risk-blocked"
+  | "daily-summary"
+  | "critical-monitoring"
+
+export interface EmailNotificationResult {
+  sent: boolean
+  messageId?: string
+  reason?: string
+}
+
+export interface ChatMessage {
+  from: "user" | "operator"
+  text: string
+}
+
 export interface MonitoringEvent {
   id: string
   timestamp: string
@@ -17,6 +39,8 @@ export interface Diagnosis {
   evidence: string[]
   suspectedCauses: string[]
   confidence: number
+  severity?: MonitoringEvent["severity"]
+  risk?: RiskLevel
 }
 
 export interface RemediationStep {
@@ -29,7 +53,55 @@ export interface RemediationProposal {
   id: string
   diagnosisId: string
   steps: RemediationStep[]
-  risk: "low" | "medium" | "high"
+  risk: RiskLevel
   expectedImpact: string
   requiresApproval: boolean
+}
+
+export interface RollbackPlan {
+  id: string
+  steps: string[]
+  verificationCriteria: string[]
+  expectedState: string
+}
+
+export interface Snapshot {
+  id: string
+  timestamp: string
+  reason: string
+  diffSummary: string
+  affectedFiles: string[]
+  riskLevel: RiskLevel
+}
+
+export type AuditActionType =
+  | "fix-applied"
+  | "fix-failed"
+  | "rollback-executed"
+  | "approval-required"
+  | "fix-rejected"
+  | "email-sent"
+  | "email-failed"
+
+export interface AuditLogEntry {
+  id: string
+  timestamp: string
+  actionType: AuditActionType
+  risk: RiskLevel
+  diagnosisId?: string
+  proposalId?: string
+  rollbackId?: string
+  snapshotId?: string
+  verificationResult?: "passed" | "failed"
+  message?: string
+}
+
+export interface FixExecutionResult {
+  status: "applied" | "pending-approval" | "rejected" | "rolled-back"
+  risk: RiskLevel
+  snapshotId?: string
+  rollbackId?: string
+  logId?: string
+  verificationPassed?: boolean
+  message: string
 }

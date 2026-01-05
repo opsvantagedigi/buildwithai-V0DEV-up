@@ -1,39 +1,31 @@
 import { NextResponse } from "next/server"
-import type { Diagnosis, MonitoringEvent, RemediationProposal } from "@/lib/types"
+import { analyzeEvents } from "@/lib/diagnostics"
+import { proposeFixes } from "@/lib/fixes"
+import { generateRollbackPlan } from "@/lib/rollback"
+import { sendEmail } from "@/lib/email"
+import type { Diagnosis, MonitoringEvent } from "@/lib/types"
 
 export async function POST(req: Request) {
   const body = await req.json().catch(() => undefined)
-  const events: MonitoringEvent[] = Array.isArray(body)
-    ? body
-    : body && Array.isArray(body.events)
+  const events: MonitoringEvent[] = Array.isArray(body?.events)
     ? body.events
+    : Array.isArray(body)
+    ? body
     : []
 
-  const event = events[0]
+  const diagnoses = analyzeEvents(events)
+  const proposals = proposeFixes(diagnoses)
+  const rollbacks = diagnoses.map((d: Diagnosis) => generateRollbackPlan(d.id))
 
-  const diagnoses: Diagnosis[] = [
-    {
-      id: `diag-${event?.id ?? "unknown"}`,
-      eventId: event?.id ?? "unknown",
-      summary: event
-        ? `Observed activity from "${event.source}" with message: "${event.message}".`
-        : "Observed generic widget activity.",
-      evidence: event ? [event.message] : [],
-      suspectedCauses: ["Normal Operator widget engagement"],
-      confidence: 0.7,
-    },
-  ]
+  const criticalEvents = events.filter((evt) => evt.severity === "critical")
+  if (criticalEvents.length > 0) {
+    const summary = criticalEvents.map((evt) => `${evt.id}: ${evt.message}`).join("\n")
+    await sendEmail({
+      category: "critical-monitoring",
+      subject: `Critical events detected (${criticalEvents.length})`,
+      text: summary,
+    })
+  }
 
-  const proposals: RemediationProposal[] = [
-    {
-      id: "prop-1",
-      diagnosisId: diagnoses[0].id,
-      steps: [],
-      risk: "low",
-      expectedImpact: "Improve observability of widget engagement and session behavior.",
-      requiresApproval: true,
-    },
-  ]
-
-  return NextResponse.json({ diagnoses, proposals })
+  return NextResponse.json({ diagnoses, proposals, rollbacks })
 }
