@@ -4,6 +4,7 @@ import "./globals.css"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import { ThemeProvider } from "@/components/theme-provider"
+import { AgentWidget } from "@/components/agent/AgentWidget"
 
 export const metadata: Metadata = {
   title: "Build With AI — AI Website Builder",
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Header />
           {children}
           <Footer />
+          <AgentWidget />
         </ThemeProvider>
       </body>
     </html>
