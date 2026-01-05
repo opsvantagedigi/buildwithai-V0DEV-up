@@ -1,3 +1,4 @@
+import { summarizeIncidentHistoryForDiagnostics } from "@/lib/intel"
 import type { MonitoringEvent, Diagnosis, RiskLevel } from "@/lib/types"
 
 function mapSeverityToRisk(severity?: MonitoringEvent["severity"]): RiskLevel {
@@ -25,4 +26,31 @@ export function analyzeEvents(events: MonitoringEvent[]): Diagnosis[] {
     severity: event.severity,
     risk: mapSeverityToRisk(event.severity),
   }))
+}
+
+export function annotateDiagnosesWithHistory(diagnoses: Diagnosis[]): Diagnosis[] {
+  const history = summarizeIncidentHistoryForDiagnostics(diagnoses)
+  return diagnoses.map((diag) => {
+    const h = history[diag.id]
+    if (!h) return diag
+    const historyScore = (h.successes ?? 0) - (h.failures ?? 0) + (h.occurrences ?? 0)
+    return {
+      ...diag,
+      occurrenceCount: h.occurrences,
+      historyScore,
+      historicallyFragile: (h.failures ?? 0) > (h.successes ?? 0),
+      historicallyReliable: (h.successes ?? 0) >= 2 && (h.failures ?? 0) === 0,
+      hotspot: (h.occurrences ?? 0) >= 3,
+    }
+  })
+}
+
+export function rankDiagnosesByHistory(diagnoses: Diagnosis[]): Diagnosis[] {
+  const annotated = annotateDiagnosesWithHistory(diagnoses)
+  return [...annotated].sort((a, b) => {
+    const aScore = (a.occurrenceCount ?? 0) + (a.historyScore ?? 0)
+    const bScore = (b.occurrenceCount ?? 0) + (b.historyScore ?? 0)
+    if (aScore === bScore) return (b.confidence ?? 0) - (a.confidence ?? 0)
+    return bScore - aScore
+  })
 }

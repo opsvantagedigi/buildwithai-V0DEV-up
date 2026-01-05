@@ -41,6 +41,11 @@ export interface Diagnosis {
   confidence: number
   severity?: MonitoringEvent["severity"]
   risk?: RiskLevel
+  occurrenceCount?: number
+  historyScore?: number
+  historicallyFragile?: boolean
+  historicallyReliable?: boolean
+  hotspot?: boolean
 }
 
 export interface RemediationStep {
@@ -56,6 +61,11 @@ export interface RemediationProposal {
   risk: RiskLevel
   expectedImpact: string
   requiresApproval: boolean
+  historicalSuccessRate?: number
+  historicalFailureRate?: number
+  timesApplied?: number
+  timesRolledBack?: number
+  historyNote?: string
 }
 
 export interface RollbackPlan {
@@ -82,6 +92,49 @@ export type AuditActionType =
   | "fix-rejected"
   | "email-sent"
   | "email-failed"
+
+export interface IncidentRecord {
+  id: string
+  timestamp: string
+  source?: string
+  summary?: string
+  eventId?: string
+  snapshotId?: string
+  diagnosisId?: string
+  proposalId?: string
+  rollbackId?: string
+  risk?: RiskLevel
+  severity?: MonitoringEvent["severity"]
+  kind?: MonitoringEvent["kind"]
+  actionType?: AuditActionType
+  message?: string
+  tags?: string[]
+}
+
+export interface IncidentPattern {
+  key: string
+  type: "diagnosis" | "source" | "proposal"
+  occurrences: number
+  lastSeenAt: string
+  relatedDiagnosisIds?: string[]
+  relatedProposalIds?: string[]
+  successCount?: number
+  failureCount?: number
+  rollbackCount?: number
+  approvalCount?: number
+}
+
+export interface IncidentSummary {
+  totalIncidents: number
+  fixSuccessCount: number
+  fixFailureCount: number
+  rollbackCount: number
+  highRiskBlockedCount: number
+  approvalsRequiredCount?: number
+  emailsSentCount?: number
+  emailsFailedCount?: number
+  topPatterns: IncidentPattern[]
+}
 
 export interface AuditLogEntry {
   id: string

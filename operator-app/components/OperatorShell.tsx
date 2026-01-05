@@ -6,13 +6,14 @@ import AutonomyPanel from "./AutonomyPanel"
 import FixReviewPanel from "./FixReviewPanel"
 import MonitoringPanel from "./MonitoringPanel"
 import EmailSettingsPanel from "./EmailSettingsPanel"
+import IntelligencePanel from "./IntelligencePanel"
 import VideoPanel from "./VideoPanel"
 import type { AutonomyLevel } from "@/lib/types"
 import type { OperatorHandshakeMessage } from "@/lib/protocol"
 
 type OperatorShellProps = {
   sessionId: string
-  mode: "chat" | "video" | "monitor" | "fix-review" | "autonomy" | "email-settings"
+  mode: "chat" | "video" | "monitor" | "fix-review" | "autonomy" | "email-settings" | "intel"
   level?: AutonomyLevel
 }
 
@@ -35,6 +36,7 @@ export default function OperatorShell({ sessionId, mode, level }: OperatorShellP
       {mode === "fix-review" && <FixReviewPanel sessionId={sessionId} level={level} />}
       {mode === "autonomy" && <AutonomyPanel sessionId={sessionId} level={level} />}
       {mode === "email-settings" && <EmailSettingsPanel sessionId={sessionId} level={level} />}
+      {mode === "intel" && <IntelligencePanel sessionId={sessionId} level={level} />}
     </div>
   )
 }

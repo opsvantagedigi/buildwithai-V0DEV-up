@@ -11,13 +11,13 @@ import type {
 export type OperatorHandshakeMessage = {
   type: "operator:handshake"
   sessionId: string
-  mode: "chat" | "video" | "monitor" | "fix-review" | "autonomy" | "email-settings"
+  mode: "chat" | "video" | "monitor" | "fix-review" | "autonomy" | "email-settings" | "intel"
   level?: AutonomyLevel
 }
 
 export type OperatorModeChangedMessage = {
   type: "operator:mode-changed"
-  mode: "chat" | "video" | "monitor" | "fix-review" | "autonomy" | "email-settings"
+  mode: "chat" | "video" | "monitor" | "fix-review" | "autonomy" | "email-settings" | "intel"
   level?: AutonomyLevel
 }
 

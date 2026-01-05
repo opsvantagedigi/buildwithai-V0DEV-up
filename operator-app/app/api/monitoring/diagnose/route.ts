@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server"
-import { analyzeEvents } from "@/lib/diagnostics"
-import { proposeFixes } from "@/lib/fixes"
+import { analyzeEvents, annotateDiagnosesWithHistory, rankDiagnosesByHistory } from "@/lib/diagnostics"
+import { proposeFixes, prioritizeFixesByHistory } from "@/lib/fixes"
 import { generateRollbackPlan } from "@/lib/rollback"
 import { sendEmail } from "@/lib/email"
+import { detectAnomalies, recordIncident } from "@/lib/intel"
 import type { Diagnosis, MonitoringEvent } from "@/lib/types"
 
 export async function POST(req: Request) {
@@ -13,9 +14,28 @@ export async function POST(req: Request) {
     ? body
     : []
 
-  const diagnoses = analyzeEvents(events)
-  const proposals = proposeFixes(diagnoses)
+  const analyzed = analyzeEvents(events)
+  analyzed.forEach((diag) => {
+    const event = events.find((e) => e.id === diag.eventId)
+    recordIncident({
+      summary: diag.summary,
+      eventId: event?.id,
+      diagnosisId: diag.id,
+      risk: diag.risk,
+      severity: diag.severity,
+      source: event?.source,
+      kind: event?.kind,
+      message: event?.message,
+    })
+  })
+
+  const annotatedDiagnoses = annotateDiagnosesWithHistory(analyzed)
+  const diagnoses = rankDiagnosesByHistory(annotatedDiagnoses)
+
+  const proposals = prioritizeFixesByHistory(proposeFixes(diagnoses))
   const rollbacks = diagnoses.map((d: Diagnosis) => generateRollbackPlan(d.id))
+
+  const { anomalies, summary: anomalySummary } = detectAnomalies(events)
 
   const criticalEvents = events.filter((evt) => evt.severity === "critical")
   if (criticalEvents.length > 0) {
@@ -27,5 +47,5 @@ export async function POST(req: Request) {
     })
   }
 
-  return NextResponse.json({ diagnoses, proposals, rollbacks })
+  return NextResponse.json({ diagnoses, proposals, rollbacks, anomalies, anomalySummary, intel: { anomalies, anomalySummary } })
 }
