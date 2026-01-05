@@ -93,6 +93,56 @@ export type FAQItemBlock = {
   answer: string
 }
 
+export type SectionType =
+  | "hero"
+  | "features"
+  | "testimonials"
+  | "pricing"
+  | "faq"
+  | "cta"
+  | "agentShowcase"
+  | "agentSupport"
+
+export type BaseSection<T extends SectionType = SectionType> = {
+  id?: string
+  type: T
+  blocks: Block[]
+  eyebrow?: string
+  title?: string
+  layout?: string
+  theme?: "light" | "dark" | "brand"
+}
+
+export type HeroSection = BaseSection<"hero"> & {
+  backgroundImage?: string
+  highlight?: string
+}
+
+export type FeaturesSection = BaseSection<"features"> & {
+  columns?: 2 | 3 | 4
+}
+
+export type TestimonialsSection = BaseSection<"testimonials"> & {
+  columns?: 2 | 3
+}
+
+export type PricingSection = BaseSection<"pricing"> & {
+  columns?: 2 | 3 | 4
+}
+
+export type FAQSection = BaseSection<"faq">
+
+export type CTASection = BaseSection<"cta"> & {
+  align?: "left" | "center"
+}
+
+export type AgentShowcaseSection = BaseSection<"agentShowcase"> & {
+  showVideo?: boolean
+  showImage?: boolean
+}
+
+export type AgentSupportSection = BaseSection<"agentSupport">
+
 export type Section =
   | HeroSection
   | FeaturesSection
@@ -102,58 +152,6 @@ export type Section =
   | CTASection
   | AgentShowcaseSection
   | AgentSupportSection
-
-export type SectionType = Section["type"]
-
-export type BaseSection = {
-  id: string
-  type: SectionType
-  blocks: Block[]
-  eyebrow?: string
-  title?: string
-  layout?: string
-  theme?: "light" | "dark" | "brand"
-}
-
-export type HeroSection = BaseSection & {
-  type: "hero"
-  backgroundImage?: string
-  highlight?: string
-}
-
-export type FeaturesSection = BaseSection & {
-  type: "features"
-  columns?: 2 | 3 | 4
-}
-
-export type TestimonialsSection = BaseSection & {
-  type: "testimonials"
-  columns?: 2 | 3
-}
-
-export type PricingSection = BaseSection & {
-  type: "pricing"
-  columns?: 2 | 3 | 4
-}
-
-export type FAQSection = BaseSection & {
-  type: "faq"
-}
-
-export type CTASection = BaseSection & {
-  type: "cta"
-  align?: "left" | "center"
-}
-
-export type AgentShowcaseSection = BaseSection & {
-  type: "agentShowcase"
-  showVideo?: boolean
-  showImage?: boolean
-}
-
-export type AgentSupportSection = BaseSection & {
-  type: "agentSupport"
-}
 
 export type Page = {
   slug: string

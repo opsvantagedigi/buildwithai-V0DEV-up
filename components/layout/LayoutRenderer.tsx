@@ -3,25 +3,25 @@
 import React from "react"
 import { Block, Page, Section } from "@/lib/layout/schema"
 
-import { HeroSection } from "@/components/sections/HeroSection"
-import { FeatureGridSection } from "@/components/sections/FeatureGridSection"
-import { TestimonialSection } from "@/components/sections/TestimonialSection"
-import { PricingSection } from "@/components/sections/PricingSection"
-import { FAQSection } from "@/components/sections/FAQSection"
-import { CTASection } from "@/components/sections/CTASection"
-import { AgentShowcaseSection } from "@/components/sections/AgentShowcaseSection"
-import { AgentSupportSection } from "@/components/sections/AgentSupportSection"
+import { HeroSection } from "../sections/HeroSection"
+import { FeatureGridSection } from "../sections/FeatureGridSection"
+import { TestimonialSection } from "../sections/TestimonialSection"
+import { PricingSection } from "../sections/PricingSection"
+import { FAQSection } from "../sections/FAQSection"
+import { CTASection } from "../sections/CTASection"
+import { AgentShowcaseSection } from "../sections/AgentShowcaseSection"
+import { AgentSupportSection } from "../sections/AgentSupportSection"
 
-import { HeadingBlock } from "@/components/blocks/HeadingBlock"
-import { TextBlock } from "@/components/blocks/TextBlock"
-import { ButtonBlock } from "@/components/blocks/ButtonBlock"
-import { VideoBlock } from "@/components/blocks/VideoBlock"
-import { IconRowBlock } from "@/components/blocks/IconRowBlock"
-import { StatBlock } from "@/components/blocks/StatBlock"
-import { FAQItemBlock } from "@/components/blocks/FAQItemBlock"
-import { ImageBlock } from "@/components/blocks/ImageBlock"
-import { ListBlock } from "@/components/blocks/ListBlock"
-import { QuoteBlock } from "@/components/blocks/QuoteBlock"
+import { HeadingBlock } from "../blocks/HeadingBlock"
+import { TextBlock } from "../blocks/TextBlock"
+import { ButtonBlock } from "../blocks/ButtonBlock"
+import { VideoBlock } from "../blocks/VideoBlock"
+import { IconRowBlock } from "../blocks/IconRowBlock"
+import { StatBlock } from "../blocks/StatBlock"
+import { FAQItemBlock } from "../blocks/FAQItemBlock"
+import { ImageBlock } from "../blocks/ImageBlock"
+import { ListBlock } from "../blocks/ListBlock"
+import { QuoteBlock } from "../blocks/QuoteBlock"
 
 const BLOCK_COMPONENTS: Record<Block["kind"], React.ComponentType<{ block: Block }>> = {
   heading: HeadingBlock,
@@ -62,7 +62,7 @@ function SectionRenderer({ section }: { section: Section }) {
 
 export function LayoutRenderer({ page }: { page: Page }) {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-slate-950 to-black text-slate-50">
+    <main className="min-h-screen bg-linear-to-b from-black via-slate-950 to-black text-slate-50">
       {page.sections.map((section, index) => (
         <SectionRenderer key={section.id ?? `${section.type}-${index}`} section={section} />
       ))}
