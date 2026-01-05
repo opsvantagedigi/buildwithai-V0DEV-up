@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useTransition } from "react"
+import { useState, useTransition, type FormEvent } from "react"
 import { useRouter } from "next/navigation"
 import type { OperatorRole, OperatorUser } from "@/lib/operator-auth-node"
 
@@ -15,6 +15,10 @@ export default function OperatorUsersTable({ users }: Props) {
   const [pending, startTransition] = useTransition()
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
+  const [showCreate, setShowCreate] = useState(false)
+  const [newEmail, setNewEmail] = useState("")
+  const [newPassword, setNewPassword] = useState("")
+  const [newRole, setNewRole] = useState<OperatorRole>("operator")
 
   const mutate = async (path: string, body: object) => {
     setError(null)
@@ -43,9 +47,106 @@ export default function OperatorUsersTable({ users }: Props) {
     await mutate("/api/operator/users/delete", { email })
   }
 
+  const onCreate = async (e: FormEvent) => {
+    e.preventDefault()
+    const ok = await mutate("/api/operator/users/add", { email: newEmail, password: newPassword, role: newRole })
+    setNewPassword("")
+    if (ok) {
+      setNewEmail("")
+      setNewRole("operator")
+      setShowCreate(false)
+    }
+  }
+
   return (
     <div style={{ display: "grid", gap: 12 }}>
       {error && <div style={{ color: "#fca5a5", fontSize: 13 }}>{error}</div>}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <button
+          type="button"
+          onClick={() => setShowCreate((v) => !v)}
+          disabled={busy || pending}
+          style={{
+            padding: "10px 14px",
+            borderRadius: 10,
+            border: "1px solid #1f2937",
+            background: "#2563eb",
+            color: "white",
+            fontWeight: 600,
+            cursor: busy || pending ? "not-allowed" : "pointer",
+          }}
+        >
+          {showCreate ? "Cancel" : "Create User"}
+        </button>
+      </div>
+      {showCreate && (
+        <form
+          onSubmit={onCreate}
+          style={{
+            display: "grid",
+            gap: 10,
+            padding: 12,
+            border: "1px solid #1f2937",
+            borderRadius: 10,
+            background: "#0b1224",
+          }}
+        >
+          <div style={{ display: "grid", gap: 6 }}>
+            <label style={{ fontSize: 13, color: "#cbd5e1" }}>Email</label>
+            <input
+              type="email"
+              value={newEmail}
+              onChange={(e) => setNewEmail(e.target.value)}
+              required
+              disabled={busy || pending}
+              style={{ padding: 10, borderRadius: 8, border: "1px solid #1f2937", background: "#040711", color: "#e5e7eb" }}
+            />
+          </div>
+          <div style={{ display: "grid", gap: 6 }}>
+            <label style={{ fontSize: 13, color: "#cbd5e1" }}>Password</label>
+            <input
+              type="password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              required
+              disabled={busy || pending}
+              style={{ padding: 10, borderRadius: 8, border: "1px solid #1f2937", background: "#040711", color: "#e5e7eb" }}
+            />
+          </div>
+          <div style={{ display: "grid", gap: 6 }}>
+            <label style={{ fontSize: 13, color: "#cbd5e1" }}>Role</label>
+            <select
+              value={newRole}
+              onChange={(e) => setNewRole(e.target.value as OperatorRole)}
+              disabled={busy || pending}
+              style={{ padding: 10, borderRadius: 8, border: "1px solid #1f2937", background: "#040711", color: "#e5e7eb" }}
+            >
+              {roleOptions.map((r) => (
+                <option key={r} value={r}>
+                  {r}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
+            <button
+              type="submit"
+              disabled={busy || pending}
+              style={{
+                padding: "10px 14px",
+                borderRadius: 10,
+                border: "1px solid #1f2937",
+                background: "#16a34a",
+                color: "white",
+                fontWeight: 600,
+                cursor: busy || pending ? "not-allowed" : "pointer",
+              }}
+            >
+              Create
+            </button>
+          </div>
+        </form>
+      )}
       <table style={{ width: "100%", borderCollapse: "collapse", background: "#0f172a", borderRadius: 10, overflow: "hidden" }}>
         <thead style={{ background: "#111827", color: "#cbd5e1", textAlign: "left" }}>
           <tr>

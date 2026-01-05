@@ -1,8 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
 import readline from "readline"
-// @ts-ignore
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 const USER_FILE = path.join(process.cwd(), "data", "operator-users.json")
 const EMAIL = "admin@buildwithai.digital"

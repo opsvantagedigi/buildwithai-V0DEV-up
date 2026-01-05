@@ -71,6 +71,19 @@ export async function deleteUser(email: string): Promise<boolean> {
   return true
 }
 
+export async function createUser(email: string, password: string, role: OperatorRole): Promise<OperatorUser | null> {
+  const users = await readUsers()
+  const key = normalizeEmail(email)
+  if (users.some((u) => normalizeEmail(u.email) === key)) {
+    return null
+  }
+  const passwordHash = await bcrypt.hash(password, 10)
+  const user: OperatorUser = { email, passwordHash, role, createdAt: new Date().toISOString() }
+  users.push(user)
+  await writeUsers(users)
+  return user
+}
+
 export async function loginOperator(email: string, password: string): Promise<OperatorSessionPayload | null> {
   const user = await findUser(email)
   if (!user) return null
