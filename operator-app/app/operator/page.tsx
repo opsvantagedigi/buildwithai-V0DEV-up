@@ -1,7 +1,7 @@
 import IntelligencePanel from "@/components/IntelligencePanel"
 import OperatorTopBar from "@/components/OperatorTopBar"
 import { redirect } from "next/navigation"
-import { verifyOperatorSession } from "@/lib/operator-auth"
+import { verifyOperatorSession } from "@/lib/operator-session"
 
 export default async function OperatorPage() {
   const session = await verifyOperatorSession()

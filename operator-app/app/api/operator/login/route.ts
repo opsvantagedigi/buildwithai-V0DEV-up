@@ -1,9 +1,18 @@
 import { NextResponse } from "next/server"
-import { loginOperator } from "@/lib/operator-auth"
+import { loginOperator, createSignedSessionToken } from "@/lib/operator-auth-node"
+import { logOperatorAction } from "@/lib/operator-audit"
+
+export const runtime = "nodejs"
 
 const ATTEMPT_WINDOW_MS = 15 * 60 * 1000
 const MAX_ATTEMPTS = 5
 const loginAttempts = new Map<string, { count: number; first: number }>()
+
+function getClientMeta(request: Request) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || undefined
+  const userAgent = request.headers.get("user-agent") || undefined
+  return { ip, userAgent }
+}
 
 function normalizeKey(email: string) {
   return email.trim().toLowerCase()
@@ -39,6 +48,7 @@ export async function POST(request: Request) {
     const body = await request.json().catch(() => null)
     const email = body?.email as string | undefined
     const password = body?.password as string | undefined
+    const meta = getClientMeta(request)
 
     if (!email || !password) {
       return NextResponse.json({ error: "Email and password are required" }, { status: 400 })
@@ -47,17 +57,29 @@ export async function POST(request: Request) {
     const key = normalizeKey(email)
 
     if (isRateLimited(key)) {
+      await logOperatorAction({ action: "access-denied", targetEmail: email, details: "login rate limited", ...meta })
       return NextResponse.json({ error: "Too many login attempts. Please try again later." }, { status: 429 })
     }
 
-    const ok = await loginOperator(email, password)
-    if (!ok) {
+    const session = await loginOperator(email, password)
+    if (!session) {
       recordFailedAttempt(key)
+      await logOperatorAction({ action: "login-failed", targetEmail: email, details: "invalid credentials", ...meta })
       return NextResponse.json({ error: "Invalid credentials" }, { status: 401 })
     }
 
+    const token = createSignedSessionToken(session)
+    const res = NextResponse.json({ success: true })
+    res.cookies.set("operator_session", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 60 * 60 * 24,
+    })
     clearAttempts(key)
-    return NextResponse.json({ success: true })
+    await logOperatorAction({ action: "login-success", actorEmail: session.email, actorRole: session.role, ...meta })
+    return res
   } catch (err) {
     return NextResponse.json({ error: "Unexpected error" }, { status: 500 })
   }

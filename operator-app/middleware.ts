@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server"
-import { verifyOperatorSession } from "@/lib/operator-auth"
+import { verifyOperatorSession } from "@/lib/operator-session"
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl

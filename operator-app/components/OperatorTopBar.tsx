@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import type { OperatorRole } from "@/lib/operator-auth"
+import type { OperatorRole } from "@/lib/operator-session"
 
 type Props = {
   email: string
