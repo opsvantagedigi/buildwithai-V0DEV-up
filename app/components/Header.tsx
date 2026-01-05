@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
@@ -23,7 +24,7 @@ export default function Header() {
         <div className="flex items-center justify-between gap-4 lg:justify-start">
           <Link href="/" className="flex items-center gap-3">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-tr from-brand-blue via-brand-purple to-brand-pink shadow-lg ring-2 ring-white/20">
-              <img src="/brand-icon.png" alt="Build With AI" className="h-9 w-9" />
+              <Image src="/brand-icon.png" alt="Build With AI" width={36} height={36} className="h-9 w-9" priority />
             </span>
             <span className="text-xs font-orbitron font-extrabold tracking-[0.3em] bg-linear-to-tr from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-transparent sm:text-sm">
               BUILD WITH AI
