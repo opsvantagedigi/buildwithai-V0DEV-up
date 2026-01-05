@@ -9,26 +9,40 @@ export async function POST(req: Request) {
     ? body.events
     : []
 
-  const firstEventId = events[0]?.id ?? "event-1"
+  const event = events[0]
+  const context = (event?.context as { sessionId?: string; mode?: string } | undefined) ?? {}
 
-  const diagnoses: Diagnosis[] = [
-    {
-      id: "diag-1",
-      eventId: firstEventId,
-      summary: "Mock diagnosis",
-      evidence: [],
-      suspectedCauses: [],
-      confidence: 0.5,
-    },
-  ]
+  const diagnoses: Diagnosis[] = event
+    ? [
+        {
+          id: `diag-${event.id ?? "unknown"}`,
+          eventId: event.id ?? "unknown",
+          summary: `Observed widget activity from source "${event.source ?? "unknown"}"${
+            context.mode ? ` in mode "${context.mode}"` : ""
+          }${context.sessionId ? ` (session ${context.sessionId})` : ""}.`,
+          evidence: [event.message],
+          suspectedCauses: ["Normal Operator widget usage"],
+          confidence: 0.7,
+        },
+      ]
+    : [
+        {
+          id: "diag-unknown",
+          eventId: "unknown",
+          summary: "Observed widget activity.",
+          evidence: [],
+          suspectedCauses: ["Normal Operator widget usage"],
+          confidence: 0.6,
+        },
+      ]
 
   const proposals: RemediationProposal[] = [
     {
       id: "prop-1",
-      diagnosisId: "diag-1",
+      diagnosisId: diagnoses[0].id,
       steps: [],
       risk: "low",
-      expectedImpact: "Mock impact",
+      expectedImpact: "Improve observability of widget engagement and session behavior.",
       requiresApproval: true,
     },
   ]

@@ -1,9 +1,11 @@
 "use client"
 
-import React, { useEffect, useMemo, useState } from "react"
+import React, { useEffect, useMemo, useRef, useState } from "react"
 import { agentMedia } from "@/config/agentMedia"
 import { OPERATOR_EMBED_URL } from "@/config/operator"
 import { CURRENT_OPERATOR_MODE } from "@/lib/ops/model"
+import type { MonitoringEvent } from "@/lib/ops/model"
+import { sendMonitoringEvents } from "@/lib/ops/client"
 import { getOrCreateSessionId } from "@/lib/ops/session"
 
 const modes = [
@@ -14,7 +16,14 @@ const modes = [
 export function AgentWidget() {
   const [open, setOpen] = useState(false)
   const [mode, setMode] = useState<(typeof modes)[number]["id"]>("chat")
+  const [lastDiagnosisSummary, setLastDiagnosisSummary] = useState<string | null>(null)
   const sessionId = useMemo(() => getOrCreateSessionId(), [])
+  const sentSessionsRef = useRef<Set<string>>(new Set())
+
+  const monitoringBaseUrl = useMemo(
+    () => process.env.NEXT_PUBLIC_OPERATOR_MONITORING_URL ?? "https://operator.buildwithai.digital/api/monitoring",
+    [],
+  )
 
   const modeLabel = useMemo(() => {
     if (CURRENT_OPERATOR_MODE.level === "B") return "Mode B · Proposes fixes (approval required)"
@@ -36,14 +45,50 @@ export function AgentWidget() {
     function handleMessage(event: MessageEvent) {
       if (!event.data || typeof event.data !== "object") return
       if (allowedOrigin && event.origin !== allowedOrigin) return
-      if ((event.data as { type?: string }).type === "operator:handshake") {
-        console.log("Operator handshake received:", event.data)
+      const data = event.data as { type?: string; sessionId?: string; mode?: string }
+      if (data.type === "operator:handshake") {
+        const sessionKey = data.sessionId ?? "unknown"
+        if (!sentSessionsRef.current.has(sessionKey)) {
+          sentSessionsRef.current.add(sessionKey)
+
+          const monitoringEvent: MonitoringEvent = {
+            id: crypto.randomUUID(),
+            timestamp: new Date().toISOString(),
+            source: "agent-widget",
+            severity: "info",
+            kind: "custom",
+            message: "AgentWidget opened and Operator handshake received.",
+            context: {
+              sessionId: data.sessionId,
+              mode: data.mode,
+            },
+          }
+
+          void (async () => {
+            await sendMonitoringEvents([monitoringEvent])
+            try {
+              const response = await fetch(`${monitoringBaseUrl}/diagnose`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ events: [monitoringEvent] }),
+              })
+              if (!response.ok) return
+              const payload = (await response.json()) as {
+                diagnoses?: Array<{ summary?: string }>
+              }
+              const summary = payload.diagnoses?.[0]?.summary ?? null
+              if (summary) setLastDiagnosisSummary(summary)
+            } catch (error) {
+              console.error("Failed to fetch diagnosis", error)
+            }
+          })()
+        }
       }
     }
 
     window.addEventListener("message", handleMessage)
     return () => window.removeEventListener("message", handleMessage)
-  }, [])
+  }, [monitoringBaseUrl])
 
   return (
     <>
@@ -89,6 +134,10 @@ export function AgentWidget() {
                 Monitoring uptime, errors & funnels
               </div>
             </div>
+
+            {lastDiagnosisSummary && (
+              <div className="mt-2 text-[11px] text-slate-300">Last diagnosis: {lastDiagnosisSummary}</div>
+            )}
 
             <div className="mt-4 flex items-center gap-2">
               {modes.map((m) => (

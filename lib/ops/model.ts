@@ -8,6 +8,9 @@
  */
 export type AutonomyLevel = "A" | "B" | "C"
 
+/** Expected sources emitting monitoring events. */
+export type MonitoringSource = "homepage" | "agent-widget" | "system"
+
 /**
  * A single monitoring signal from the platform or an integrated system.
  */
@@ -17,7 +20,7 @@ export interface MonitoringEvent {
   /** ISO 8601 timestamp for when the event occurred. */
   timestamp: string
   /** Logical source of the event, such as a service, route, or subsystem. */
-  source: string
+  source: MonitoringSource
   /** Severity of the event. */
   severity: "info" | "warning" | "error" | "critical"
   /** Category of signal emitted. */

@@ -9,8 +9,10 @@ export async function POST(req: Request) {
     ? body.events
     : []
 
-  // For now, just log for visibility in development.
-  console.log("/api/monitoring/events", { count: events.length, events })
+  console.log("[OperatorApp] /api/monitoring/events", {
+    count: events.length,
+    sample: events[0],
+  })
 
-  return NextResponse.json({ ok: true })
+  return NextResponse.json({ ok: true, count: events.length })
 }
