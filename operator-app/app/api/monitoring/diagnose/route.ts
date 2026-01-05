@@ -4,6 +4,7 @@ import { proposeFixes, prioritizeFixesByHistory } from "@/lib/fixes"
 import { generateRollbackPlan } from "@/lib/rollback"
 import { sendEmail } from "@/lib/email"
 import { detectAnomalies, recordIncident } from "@/lib/intel"
+import { generatePredictiveSuggestions } from "@/lib/predictive"
 import type { Diagnosis, MonitoringEvent } from "@/lib/types"
 
 export async function POST(req: Request) {
@@ -34,6 +35,7 @@ export async function POST(req: Request) {
 
   const proposals = prioritizeFixesByHistory(proposeFixes(diagnoses))
   const rollbacks = diagnoses.map((d: Diagnosis) => generateRollbackPlan(d.id))
+  const predictive = generatePredictiveSuggestions(diagnoses)
 
   const { anomalies, summary: anomalySummary } = detectAnomalies(events)
 
@@ -47,5 +49,12 @@ export async function POST(req: Request) {
     })
   }
 
-  return NextResponse.json({ diagnoses, proposals, rollbacks, anomalies, anomalySummary, intel: { anomalies, anomalySummary } })
+  return NextResponse.json({
+    diagnoses,
+    proposals,
+    rollbacks,
+    anomalies,
+    anomalySummary,
+    intel: { anomalies, anomalySummary, predictive },
+  })
 }

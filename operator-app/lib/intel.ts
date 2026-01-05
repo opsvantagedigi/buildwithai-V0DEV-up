@@ -31,6 +31,8 @@ function toIncidentFromAudit(log: AuditLogEntry): IncidentRecord {
     risk: log.risk,
     actionType: log.actionType,
     message: log.message,
+    tenantId: (log as IncidentRecord).tenantId,
+    siteId: (log as IncidentRecord).siteId,
   }
 }
 
@@ -51,6 +53,8 @@ export function recordIncident(record: AuditLogEntry | Partial<IncidentRecord>) 
     actionType: "actionType" in record ? record.actionType : undefined,
     message: "message" in record ? record.message : undefined,
     tags: "tags" in record && record.tags ? record.tags : [],
+    tenantId: "tenantId" in record ? record.tenantId : undefined,
+    siteId: "siteId" in record ? record.siteId : undefined,
   }
 
   incidentStore.push(entry)
@@ -91,7 +95,8 @@ export function deriveIncidentPatterns(records: IncidentRecord[], limit = 20): I
     updater?: (p: IncidentPattern, rec: IncidentRecord) => void,
   ) => {
     if (!key) return
-    const mapKey = `${type}:${key}`
+    const scopeKey = `${record.tenantId ?? "global"}:${record.siteId ?? "global"}`
+    const mapKey = `${scopeKey}:${type}:${key}`
     const existing = patterns[mapKey] ?? {
       key,
       type,
@@ -99,6 +104,8 @@ export function deriveIncidentPatterns(records: IncidentRecord[], limit = 20): I
       lastSeenAt: record.timestamp,
       relatedDiagnosisIds: [],
       relatedProposalIds: [],
+      tenantId: record.tenantId,
+      siteId: record.siteId,
     }
 
     existing.occurrences += 1

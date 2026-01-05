@@ -109,6 +109,8 @@ export interface IncidentRecord {
   actionType?: AuditActionType
   message?: string
   tags?: string[]
+  tenantId?: string
+  siteId?: string
 }
 
 export interface IncidentPattern {
@@ -122,6 +124,8 @@ export interface IncidentPattern {
   failureCount?: number
   rollbackCount?: number
   approvalCount?: number
+  tenantId?: string
+  siteId?: string
 }
 
 export interface IncidentSummary {
@@ -134,6 +138,70 @@ export interface IncidentSummary {
   emailsSentCount?: number
   emailsFailedCount?: number
   topPatterns: IncidentPattern[]
+}
+
+export interface PredictiveFixSuggestion {
+  id: string
+  diagnosisId?: string
+  patternKey?: string
+  confidence: number
+  summary: string
+  suggestedSteps: RemediationStep[]
+  risk?: RiskLevel
+  rationale?: string
+  basedOnIncidents?: string[]
+}
+
+export interface KnowledgeArticle {
+  id: string
+  title: string
+  summary: string
+  relatedDiagnosisIds?: string[]
+  relatedProposalIds?: string[]
+  relatedPatternKeys?: string[]
+  createdAt: string
+  updatedAt: string
+  source: "operator" | "human"
+  tags?: string[]
+  body: string
+  tenantId?: string
+  siteId?: string
+}
+
+export interface PlaybookStep {
+  order: number
+  description: string
+  expectedOutcome?: string
+}
+
+export interface Playbook {
+  id: string
+  name: string
+  description: string
+  triggers?: {
+    patternKey?: string
+    diagnosisSummaryContains?: string
+    pathContains?: string
+  }
+  steps: PlaybookStep[]
+  createdAt: string
+  updatedAt: string
+  tenantId?: string
+  siteId?: string
+}
+
+export interface OperatorPersona {
+  name: string
+  tone: "concise" | "teaching" | "reassuring"
+  brandNotes?: string[]
+  signatureLine?: string
+}
+
+export interface VoiceSummary {
+  title: string
+  bullets: string[]
+  recommendedActions?: string[]
+  timeframe?: string
 }
 
 export interface AuditLogEntry {
