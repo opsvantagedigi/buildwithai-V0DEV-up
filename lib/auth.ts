@@ -17,6 +17,10 @@ export function requireAuth(request: NextRequest, nextPath: string) {
   return NextResponse.redirect(redirectUrl)
 }
 
+export async function getSession(request: NextRequest) {
+  return { authenticated: isAuthenticated(request) }
+}
+
 export function ensurePostAuth(request: Request | NextRequest) {
   // Accept both NextRequest (middleware) and Fetch API Request (route handlers)
   const cookieHeader = request.headers.get("cookie") || ""
