@@ -14,5 +14,5 @@ export async function POST(req: Request) {
     sample: events[0],
   })
 
-  return NextResponse.json({ ok: true, count: events.length })
+  return NextResponse.json({ ok: true })
 }

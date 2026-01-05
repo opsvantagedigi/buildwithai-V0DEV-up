@@ -8,19 +8,23 @@
  */
 export type AutonomyLevel = "A" | "B" | "C"
 
-/** Expected sources emitting monitoring events. */
-export type MonitoringSource = "homepage" | "agent-widget" | "system"
+export interface AutonomyDescription {
+  title: string
+  subtitle: string
+}
 
 /**
  * A single monitoring signal from the platform or an integrated system.
  */
+export type MonitoringSource = "homepage" | "agent-widget" | "system"
+
 export interface MonitoringEvent {
   /** Stable identifier for this event. */
   id: string
   /** ISO 8601 timestamp for when the event occurred. */
   timestamp: string
-  /** Logical source of the event, such as a service, route, or subsystem. */
-  source: MonitoringSource
+  /** Logical source of the event (e.g., "homepage", "agent-widget", "system"). */
+  source: MonitoringSource | string
   /** Severity of the event. */
   severity: "info" | "warning" | "error" | "critical"
   /** Category of signal emitted. */
@@ -103,6 +107,31 @@ export interface OperatorModeState {
   effectiveSince: string
   /** Optional notes that capture rationale or guardrails. */
   notes?: string
+}
+
+export function describeAutonomy(level: AutonomyLevel): AutonomyDescription {
+  switch (level) {
+    case "A":
+      return {
+        title: "Mode A · Observe",
+        subtitle: "Monitors signals only. No change proposals.",
+      }
+    case "B":
+      return {
+        title: "Mode B · Proposes fixes",
+        subtitle: "Diagnoses issues and recommends fixes. Human approval required.",
+      }
+    case "C":
+      return {
+        title: "Mode C · Autonomous (guarded)",
+        subtitle: "Can apply fixes with rollback and audit, under strict guardrails.",
+      }
+    default:
+      return {
+        title: "Unknown mode",
+        subtitle: "Operator mode is not configured.",
+      }
+  }
 }
 
 /**

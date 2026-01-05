@@ -3,9 +3,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { agentMedia } from "@/config/agentMedia"
 import { OPERATOR_EMBED_URL } from "@/config/operator"
-import { CURRENT_OPERATOR_MODE } from "@/lib/ops/model"
-import type { MonitoringEvent } from "@/lib/ops/model"
-import { sendMonitoringEvents } from "@/lib/ops/client"
+import { CURRENT_OPERATOR_MODE, describeAutonomy, type MonitoringEvent } from "@/lib/ops/model"
+import { requestDiagnosis, sendMonitoringEvents } from "@/lib/ops/client"
 import { getOrCreateSessionId } from "@/lib/ops/session"
 
 const modes = [
@@ -17,19 +16,11 @@ export function AgentWidget() {
   const [open, setOpen] = useState(false)
   const [mode, setMode] = useState<(typeof modes)[number]["id"]>("chat")
   const [lastDiagnosisSummary, setLastDiagnosisSummary] = useState<string | null>(null)
+  const [diagnosisLoading, setDiagnosisLoading] = useState(false)
   const sessionId = useMemo(() => getOrCreateSessionId(), [])
-  const sentSessionsRef = useRef<Set<string>>(new Set())
+  const hasSentHandshakeEventRef = useRef(false)
 
-  const monitoringBaseUrl = useMemo(
-    () => process.env.NEXT_PUBLIC_OPERATOR_MONITORING_URL ?? "https://operator.buildwithai.digital/api/monitoring",
-    [],
-  )
-
-  const modeLabel = useMemo(() => {
-    if (CURRENT_OPERATOR_MODE.level === "B") return "Mode B · Proposes fixes (approval required)"
-    if (CURRENT_OPERATOR_MODE.level === "C") return "Mode C · Autonomous (guarded)"
-    return "Mode A · Observe"
-  }, [])
+  const autonomyDescription = useMemo(() => describeAutonomy(CURRENT_OPERATOR_MODE.level), [])
 
   const statusText = useMemo(() => (mode === "chat" ? "Operator App · Chat" : "Operator App · Video"), [mode])
 
@@ -45,12 +36,10 @@ export function AgentWidget() {
     function handleMessage(event: MessageEvent) {
       if (!event.data || typeof event.data !== "object") return
       if (allowedOrigin && event.origin !== allowedOrigin) return
-      const data = event.data as { type?: string; sessionId?: string; mode?: string }
-      if (data.type === "operator:handshake") {
-        const sessionKey = data.sessionId ?? "unknown"
-        if (!sentSessionsRef.current.has(sessionKey)) {
-          sentSessionsRef.current.add(sessionKey)
 
+      const payload = event.data as { type?: string; sessionId?: string; mode?: string }
+      if (payload.type === "operator:handshake") {
+        if (!hasSentHandshakeEventRef.current) {
           const monitoringEvent: MonitoringEvent = {
             id: crypto.randomUUID(),
             timestamp: new Date().toISOString(),
@@ -59,36 +48,30 @@ export function AgentWidget() {
             kind: "custom",
             message: "AgentWidget opened and Operator handshake received.",
             context: {
-              sessionId: data.sessionId,
-              mode: data.mode,
+              sessionId: payload.sessionId,
+              mode: payload.mode,
             },
           }
 
-          void (async () => {
-            await sendMonitoringEvents([monitoringEvent])
-            try {
-              const response = await fetch(`${monitoringBaseUrl}/diagnose`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ events: [monitoringEvent] }),
-              })
-              if (!response.ok) return
-              const payload = (await response.json()) as {
-                diagnoses?: Array<{ summary?: string }>
+          sendMonitoringEvents([monitoringEvent])
+          setDiagnosisLoading(true)
+          requestDiagnosis([monitoringEvent])
+            .then((result) => {
+              if (result?.diagnoses?.length) {
+                setLastDiagnosisSummary(result.diagnoses[0].summary)
               }
-              const summary = payload.diagnoses?.[0]?.summary ?? null
-              if (summary) setLastDiagnosisSummary(summary)
-            } catch (error) {
-              console.error("Failed to fetch diagnosis", error)
-            }
-          })()
+            })
+            .finally(() => setDiagnosisLoading(false))
+          hasSentHandshakeEventRef.current = true
         }
+
+        console.log("Operator handshake received:", payload)
       }
     }
 
     window.addEventListener("message", handleMessage)
     return () => window.removeEventListener("message", handleMessage)
-  }, [monitoringBaseUrl])
+  }, [])
 
   return (
     <>
@@ -128,16 +111,13 @@ export function AgentWidget() {
               <div className="flex flex-col leading-tight">
                 <span className="text-sm font-semibold text-white">AI Operator</span>
                 <span className="text-xs text-slate-300">{statusText}</span>
-                <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400">{modeLabel}</div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-400">{autonomyDescription.title}</div>
+                <div className="text-[11px] text-slate-400">{autonomyDescription.subtitle}</div>
               </div>
               <div className="ml-auto rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-slate-200">
                 Monitoring uptime, errors & funnels
               </div>
             </div>
-
-            {lastDiagnosisSummary && (
-              <div className="mt-2 text-[11px] text-slate-300">Last diagnosis: {lastDiagnosisSummary}</div>
-            )}
 
             <div className="mt-4 flex items-center gap-2">
               {modes.map((m) => (
@@ -159,7 +139,7 @@ export function AgentWidget() {
             <div className="mt-4 space-y-3">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <iframe
-                  src={`${OPERATOR_EMBED_URL}?sessionId=${sessionId}&mode=${mode}`}
+                  src={`${OPERATOR_EMBED_URL}?sessionId=${sessionId}&mode=${mode}&level=${CURRENT_OPERATOR_MODE.level}`}
                   className="h-64 w-full rounded-xl border border-white/10 bg-black"
                   title="Operator App"
                   sandbox="allow-scripts allow-same-origin"
@@ -174,6 +154,20 @@ export function AgentWidget() {
                 <li><span className="font-semibold text-white">Mode B (now):</span> diagnoses issues and proposes fixes; human approval required.</li>
                 <li><span className="font-semibold text-white">Mode C (future):</span> guarded autonomous remediation with rollback and audit trail.</li>
               </ul>
+              {lastDiagnosisSummary && (
+                <div className="mt-3 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 px-3 py-2 text-xs text-emerald-100">
+                  <div className="mb-1 text-[10px] uppercase tracking-[0.18em] text-emerald-300">Last diagnosis</div>
+                  <p>{lastDiagnosisSummary}</p>
+                  {CURRENT_OPERATOR_MODE.level === "B" && (
+                    <p className="mt-1 text-[10px] text-emerald-300/80">
+                      Operator is in Mode B: proposals only, no automatic changes.
+                    </p>
+                  )}
+                </div>
+              )}
+              {diagnosisLoading && !lastDiagnosisSummary && (
+                <div className="mt-3 text-[11px] text-slate-400">Analysing widget activity with the Operator…</div>
+              )}
             </div>
           </div>
         </div>

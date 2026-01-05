@@ -10,31 +10,19 @@ export async function POST(req: Request) {
     : []
 
   const event = events[0]
-  const context = (event?.context as { sessionId?: string; mode?: string } | undefined) ?? {}
 
-  const diagnoses: Diagnosis[] = event
-    ? [
-        {
-          id: `diag-${event.id ?? "unknown"}`,
-          eventId: event.id ?? "unknown",
-          summary: `Observed widget activity from source "${event.source ?? "unknown"}"${
-            context.mode ? ` in mode "${context.mode}"` : ""
-          }${context.sessionId ? ` (session ${context.sessionId})` : ""}.`,
-          evidence: [event.message],
-          suspectedCauses: ["Normal Operator widget usage"],
-          confidence: 0.7,
-        },
-      ]
-    : [
-        {
-          id: "diag-unknown",
-          eventId: "unknown",
-          summary: "Observed widget activity.",
-          evidence: [],
-          suspectedCauses: ["Normal Operator widget usage"],
-          confidence: 0.6,
-        },
-      ]
+  const diagnoses: Diagnosis[] = [
+    {
+      id: `diag-${event?.id ?? "unknown"}`,
+      eventId: event?.id ?? "unknown",
+      summary: event
+        ? `Observed activity from "${event.source}" with message: "${event.message}".`
+        : "Observed generic widget activity.",
+      evidence: event ? [event.message] : [],
+      suspectedCauses: ["Normal Operator widget engagement"],
+      confidence: 0.7,
+    },
+  ]
 
   const proposals: RemediationProposal[] = [
     {

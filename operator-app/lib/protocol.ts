@@ -4,6 +4,7 @@ export type OperatorHandshakeMessage = {
   type: "operator:handshake"
   sessionId: string
   mode: "chat" | "video"
+  level?: AutonomyLevel
 }
 
 export type OperatorModeChangedMessage = {
