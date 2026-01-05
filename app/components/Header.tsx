@@ -26,7 +26,7 @@ export default function Header() {
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-linear-to-tr from-brand-blue via-brand-purple to-brand-pink shadow-lg ring-2 ring-white/20">
               <Image src="/brand-icon.png" alt="Build With AI" width={36} height={36} className="h-9 w-9" priority />
             </span>
-            <span className="text-xs font-orbitron font-extrabold tracking-[0.3em] bg-linear-to-tr from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-transparent sm:text-sm">
+            <span className="text-xs font-orbitron font-extrabold tracking-[0.3em] bg-linear-to-tr from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] bg-clip-text text-transparent whitespace-nowrap sm:text-sm">
               BUILD WITH AI
             </span>
           </Link>
@@ -41,7 +41,7 @@ export default function Header() {
             ))}
             <Link
               href="/signup"
-              className="rounded-full bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] px-4 py-2 text-xs font-orbitron font-bold text-black shadow-lg shadow-brand-blue/40 transition hover:opacity-90 focus:outline-none sm:px-5 sm:text-sm"
+              className="rounded-full bg-linear-to-r from-[#4f7cff] via-[#2ee6a6] to-[#ffd166] px-4 py-2 text-xs font-orbitron font-bold text-black shadow-lg shadow-brand-blue/40 transition hover:opacity-90 focus:outline-none whitespace-nowrap sm:px-5 sm:text-sm"
             >
               Get Started for FREE
             </Link>
