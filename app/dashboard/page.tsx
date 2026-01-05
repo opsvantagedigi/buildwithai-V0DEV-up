@@ -29,6 +29,25 @@ export default function DashboardPage() {
             </p>
           </header>
 
+          <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: "Sites", href: "/dashboard/sites", desc: "Manage drafts and live domains." },
+              { title: "Analytics", href: "/dashboard/analytics", desc: "Track traffic and conversion." },
+              { title: "Domains", href: "/dashboard/domains", desc: "Attach and monitor domains." },
+              { title: "Templates", href: "/dashboard/templates", desc: "Reuse cinematic layouts." },
+              { title: "Settings", href: "/dashboard/settings", desc: "Workspace and account controls." },
+            ].map((item) => (
+              <a
+                key={item.title}
+                href={item.href}
+                className="glass-panel rounded-2xl p-4 text-white/80 transition hover:border-white/20"
+              >
+                <p className="font-heading text-sm text-white">{item.title}</p>
+                <p className="text-sm text-white/60">{item.desc}</p>
+              </a>
+            ))}
+          </section>
+
           <section className="relative animate-in fade-in slide-in-from-bottom-4 duration-700">
             <div className="pointer-events-none absolute -inset-1 rounded-[1.75rem] bg-linear-to-r from-[#4f7cff]/25 via-[#2ee6a6]/12 to-[#ffd166]/10 opacity-60 blur transition-opacity duration-500" />
             <div className="relative glass-panel rounded-[1.75rem] p-6 md:p-8 shadow-2xl">

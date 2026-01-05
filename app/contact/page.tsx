@@ -61,7 +61,7 @@ export default function ContactPage() {
               <textarea
                 id="message"
                 name="message"
-                className="min-h-[120px] w-full rounded-lg border border-white/15 bg-black/70 px-3 py-2 text-xs text-white placeholder:text-muted-foreground/70 focus:outline-none focus:ring-1 focus:ring-emerald-400"
+                className="min-h-30 w-full rounded-lg border border-white/15 bg-black/70 px-3 py-2 text-xs text-white placeholder:text-muted-foreground/70 focus:outline-none focus:ring-1 focus:ring-emerald-400"
                 placeholder="Tell us about your project, questions, or ideas."
               />
             </div>

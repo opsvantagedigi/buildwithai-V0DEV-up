@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const SECTIONS = [
   { title: "Getting Started", href: "/docs/getting-started", description: "Set up your account and create your first site." },
-  { title: "Builder Guide", href: "/docs/builder-guide", description: "Deep dive into the AI Website Builder workspace." },
+  { title: "Builder Guide", href: "/docs/builder", description: "Deep dive into the AI Website Builder workspace." },
   { title: "Domains", href: "/docs/domains", description: "Connect, manage, and troubleshoot domains." },
   { title: "Deployment", href: "/docs/deployment", description: "Deployment flows, environments, and performance." },
   { title: "API", href: "/docs/api", description: "Programmatic access to the Build With AI platform." },

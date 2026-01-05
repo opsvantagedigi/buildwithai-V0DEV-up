@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import { cookies } from "next/headers"
 import { ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -7,7 +8,12 @@ export const metadata: Metadata = {
   description: "Find and connect the perfect domain, powered by registrar-grade domain intelligence.",
 }
 
-export default function DomainsPage() {
+export default async function DomainsPage() {
+  const cookieStore = await cookies()
+  const isAuthed = cookieStore.get("auth")?.value === "1"
+  const nextUrl = encodeURIComponent("/domains")
+  const ctaHref = isAuthed ? "/dashboard/domains" : `/login?next=${nextUrl}`
+
   return (
     <div className="relative flex min-h-screen overflow-hidden bg-background text-foreground font-sans">
       <div className="pointer-events-none absolute inset-0 -z-10 opacity-70">
@@ -74,13 +80,14 @@ export default function DomainsPage() {
 
           <div className="flex justify-end">
             <Link
-              href="/dashboard/domains"
+              href={ctaHref}
               className="inline-flex items-center justify-center rounded-full bg-white px-6 py-2.5 text-xs font-semibold text-slate-950 hover:bg-slate-100"
             >
               Register &amp; Attach
               <ArrowRight className="ml-2 size-3.5" />
             </Link>
           </div>
+          <p className="text-white/60 text-xs">TODO: Wire search input to /api/domains/search and handle authenticated registration via /api/domains/register.</p>
         </section>
       </main>
     </div>
