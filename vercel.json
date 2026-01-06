@@ -1,4 +1,3 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "domains": ["buildwithai.digital"]
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }
