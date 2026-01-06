@@ -5,6 +5,6 @@ R.c("server/chunks/ssr/1dff6_next_dist_94a25509._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__0581f0b9._.js")
 R.c("server/chunks/ssr/1dff6_next_dist_f85c2723._.js")
 R.c("server/chunks/ssr/1dff6_next_dist_5bf88bcc._.js")
-R.c("server/chunks/ssr/_next-internal_server_app__global-error_page_actions_75761787.js")
+R.c("server/chunks/ssr/apps_operator__next-internal_server_app__global-error_page_actions_18fc93d9.js")
 R.m(41366)
 module.exports=R.m(41366).exports

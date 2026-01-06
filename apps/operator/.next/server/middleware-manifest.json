@@ -3,9 +3,9 @@
   "middleware": {
     "/": {
       "files": [
-        "server/edge/chunks/[root-of-the-server]__8e1fdd22._.js",
-        "server/edge/chunks/1dff6_next_dist_40569643._.js",
-        "server/edge/chunks/turbopack-edge-wrapper_fd1d8e39.js"
+        "server/edge/chunks/[root-of-the-server]__c27d93d7._.js",
+        "server/edge/chunks/1dff6_next_dist_8bd96a27._.js",
+        "server/edge/chunks/turbopack-apps_operator_edge-wrapper_8ecec23e.js"
       ],
       "name": "middleware",
       "page": "/",
@@ -18,7 +18,7 @@
       "wasm": [],
       "assets": [],
       "env": {
-        "__NEXT_BUILD_ID": "4uHVjU79tcAQHVrLD25qa",
+        "__NEXT_BUILD_ID": "VHYYNUj5LM_OCyqwHnI4p",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "y/ypu3cAooBKKeY5IPsQNZr9OCILyC8+KBqni+eJhNg=",
         "__NEXT_PREVIEW_MODE_ID": "c47f16a35a5df1ce2d456b643f7049cf",
         "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "6894f93e8a5b8bd6c2299edc1d4375aa4988029f514571592da73714e41f5e58",
@@ -36,10 +36,10 @@
         "server/interception-route-rewrite-manifest.js",
         "server/server-reference-manifest.js",
         "server/app/favicon.ico/route_client-reference-manifest.js",
-        "server/edge/chunks/_next-internal_server_app_favicon_ico_route_actions_9a40e195.js",
-        "server/edge/chunks/[root-of-the-server]__340fab42._.js",
-        "server/edge/chunks/1dff6_next_dist_7259e436._.js",
-        "server/edge/chunks/turbopack-edge-wrapper_0eb75364.js"
+        "server/edge/chunks/apps_operator__next-internal_server_app_favicon_ico_route_actions_89c9babe.js",
+        "server/edge/chunks/[root-of-the-server]__ff65aeb9._.js",
+        "server/edge/chunks/1dff6_next_dist_6deeb9c9._.js",
+        "server/edge/chunks/turbopack-apps_operator_edge-wrapper_46fd8af2.js"
       ],
       "name": "app/favicon.ico/route",
       "page": "/favicon.ico/route",
@@ -52,7 +52,7 @@
       "wasm": [],
       "assets": [],
       "env": {
-        "__NEXT_BUILD_ID": "4uHVjU79tcAQHVrLD25qa",
+        "__NEXT_BUILD_ID": "VHYYNUj5LM_OCyqwHnI4p",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "y/ypu3cAooBKKeY5IPsQNZr9OCILyC8+KBqni+eJhNg=",
         "__NEXT_PREVIEW_MODE_ID": "c47f16a35a5df1ce2d456b643f7049cf",
         "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "6894f93e8a5b8bd6c2299edc1d4375aa4988029f514571592da73714e41f5e58",
