@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getSession } from "./apps/marketing/lib/auth"
+import { getSession } from "./lib/auth"
 
 const PROTECTED_ROUTES = [
   "/dashboard",
