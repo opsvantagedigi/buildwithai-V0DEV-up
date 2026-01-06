@@ -12,8 +12,8 @@ const nextConfig = {
     unoptimized: true,
   },
   turbopack: {
-    // Force Turbopack to treat this project root as the workspace root, silencing lockfile root warnings.
-    root: __dirname,
+    // Set Turbopack root to workspace root so Next is resolvable in pnpm workspaces.
+    root: path.resolve(__dirname, '../..'),
   },
  
 }

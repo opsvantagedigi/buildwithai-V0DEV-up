@@ -3,7 +3,7 @@ import fs from "fs/promises"
 import path from "path"
 import readline from "readline"
 import bcrypt from "bcryptjs"
-import { readUsers, writeUsers, OperatorRole, OperatorUser } from "../lib/operator-auth-node"
+import { readUsers, writeUsers, OperatorRole, OperatorUser } from "../../lib/operator-auth-node"
 
 const USER_STORE = path.join(process.cwd(), "data", "operator-users.json")
 
