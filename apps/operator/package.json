@@ -1,0 +1,28 @@
+{
+  "name": "operator-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "create-operator-admin": "ts-node scripts/create-operator-admin.ts",
+    "operator-users": "node scripts/operator-users.ts"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "next": "16.0.10",
+    "nodemailer": "^6.9.15",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.0"
+  }
+}

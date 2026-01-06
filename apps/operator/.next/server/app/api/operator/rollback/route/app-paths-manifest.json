@@ -1,0 +1,3 @@
+{
+  "/api/operator/rollback/route": "app/api/operator/rollback/route.js"
+}

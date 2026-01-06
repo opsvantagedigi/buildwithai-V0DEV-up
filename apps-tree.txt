@@ -1,0 +1,1492 @@
+Folder PATH listing
+Volume serial number is F279-4F67
+C:\USERS\AJAYSIDAL\BUILDWITHAI-V0DEV-UP\BUILDWITHAI-V0DEV-UP\APPS
++---marketing
+|   |   components.json
+|   |   next-env.d.ts
+|   |   next.config.mjs
+|   |   package.json
+|   |   postcss.config.mjs
+|   |   tailwind.config.js
+|   |   tsconfig.json
+|   |   
+|   +---app
+|   |   |   globals.css
+|   |   |   layout.tsx
+|   |   |   not-found.tsx
+|   |   |   page.tsx
+|   |   |   
+|   |   +---about
+|   |   |       page.tsx
+|   |   |       
+|   |   +---ai-tools
+|   |   |   |   page.tsx
+|   |   |   |   
+|   |   |   +---colors
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---components
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---copywriter
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---domains
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---layout
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---seo
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   \---sitemap
+|   |   |           page.tsx
+|   |   |           
+|   |   +---api
+|   |   |   +---builder
+|   |   |   |   +---generate-layout
+|   |   |   |   |       route.ts
+|   |   |   |   |       
+|   |   |   |   \---save-page
+|   |   |   |           route.ts
+|   |   |   |           
+|   |   |   +---domains
+|   |   |   |   +---register
+|   |   |   |   |       route.ts
+|   |   |   |   |       
+|   |   |   |   +---search
+|   |   |   |   |       route.ts
+|   |   |   |   |       
+|   |   |   |   \---[domainId]
+|   |   |   |       \---status
+|   |   |   |               route.ts
+|   |   |   |               
+|   |   |   \---sites
+|   |   |       \---[siteId]
+|   |   |           +---pages
+|   |   |           |       route.ts
+|   |   |           |       
+|   |   |           \---publish
+|   |   |                   route.ts
+|   |   |                   
+|   |   +---blog
+|   |   |   |   page.tsx
+|   |   |   |   
+|   |   |   \---[slug]
+|   |   |           page.tsx
+|   |   |           
+|   |   +---builder
+|   |   |   |   page.tsx
+|   |   |   |   
+|   |   |   \---live
+|   |   |           client.tsx
+|   |   |           page.tsx
+|   |   |           
+|   |   +---careers
+|   |   |       page.tsx
+|   |   |       
+|   |   +---contact
+|   |   |       page.tsx
+|   |   |       
+|   |   +---cookies
+|   |   |       page.tsx
+|   |   |       
+|   |   +---dashboard
+|   |   |   |   ai-timeline.tsx
+|   |   |   |   page.tsx
+|   |   |   |   sidebar.tsx
+|   |   |   |   
+|   |   |   +---analytics
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---domains
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---settings
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---sites
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   \---templates
+|   |   |           page.tsx
+|   |   |           
+|   |   +---docs
+|   |   |   |   page.tsx
+|   |   |   |   
+|   |   |   +---api
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---builder
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---builder-guide
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---deployment
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---domains
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   +---getting-started
+|   |   |   |       page.tsx
+|   |   |   |       
+|   |   |   \---troubleshooting
+|   |   |           page.tsx
+|   |   |           
+|   |   +---domains
+|   |   |       page.tsx
+|   |   |       
+|   |   +---features
+|   |   |       page.tsx
+|   |   |       
+|   |   +---forgot-password
+|   |   |       page.tsx
+|   |   |       reset-form.tsx
+|   |   |       
+|   |   +---login
+|   |   |       page.tsx
+|   |   |       
+|   |   +---pricing
+|   |   |       page.tsx
+|   |   |       
+|   |   +---privacy
+|   |   |       page.tsx
+|   |   |       
+|   |   +---signup
+|   |   |       page.tsx
+|   |   |       
+|   |   \---terms
+|   |           page.tsx
+|   |           
+|   +---components
+|   |   |   Footer.tsx
+|   |   |   Header.tsx
+|   |   |   theme-provider.tsx
+|   |   |   
+|   |   +---agent
+|   |   |       AgentWidget.tsx
+|   |   |       
+|   |   +---blocks
+|   |   |       ButtonBlock.tsx
+|   |   |       FAQItemBlock.tsx
+|   |   |       HeadingBlock.tsx
+|   |   |       IconRowBlock.tsx
+|   |   |       ImageBlock.tsx
+|   |   |       ListBlock.tsx
+|   |   |       QuoteBlock.tsx
+|   |   |       StatBlock.tsx
+|   |   |       TextBlock.tsx
+|   |   |       VideoBlock.tsx
+|   |   |       
+|   |   +---layout
+|   |   |       LayoutRenderer.tsx
+|   |   |       
+|   |   +---sections
+|   |   |       AgentShowcaseSection.tsx
+|   |   |       AgentSupportSection.tsx
+|   |   |       CTASection.tsx
+|   |   |       FAQSection.tsx
+|   |   |       FeatureGridSection.tsx
+|   |   |       HeroSection.tsx
+|   |   |       PricingSection.tsx
+|   |   |       TestimonialSection.tsx
+|   |   |       
+|   |   \---ui
+|   |           button.tsx
+|   |           textarea.tsx
+|   |           
+|   +---config
+|   |   |   agentMedia.ts
+|   |   |   nav.ts
+|   |   |   operator.ts
+|   |   |   
+|   |   \---pages
+|   |           homepage.ts
+|   |           
+|   +---lib
+|   |   |   auth.ts
+|   |   |   utils.ts
+|   |   |   
+|   |   +---layout
+|   |   |       schema.ts
+|   |   |       
+|   |   \---ops
+|   |           client.ts
+|   |           model.ts
+|   |           session.ts
+|   |           
+|   +---public
+|   |       apple-icon.png
+|   |       brand-icon.png
+|   |       dark-modern-website-template-.jpg
+|   |       icon-dark-32x32.png
+|   |       icon-light-32x32.png
+|   |       icon.svg
+|   |       placeholder-logo.png
+|   |       placeholder-logo.svg
+|   |       placeholder-user.jpg
+|   |       placeholder.jpg
+|   |       placeholder.svg
+|   |       premium-saas-ui-screenshot-.jpg
+|   |       
+|   \---styles
+|           globals.css
+|           
+\---operator
+    |   middleware.ts
+    |   next-env.d.ts
+    |   next.config.js
+    |   package.json
+    |   pnpm-lock.yaml
+    |   tsconfig.json
+    |   
+    +---.next
+    |   |   app-path-routes-manifest.json
+    |   |   build-manifest.json
+    |   |   BUILD_ID
+    |   |   export-marker.json
+    |   |   fallback-build-manifest.json
+    |   |   images-manifest.json
+    |   |   next-minimal-server.js.nft.json
+    |   |   next-server.js.nft.json
+    |   |   package.json
+    |   |   prerender-manifest.json
+    |   |   required-server-files.json
+    |   |   routes-manifest.json
+    |   |   trace
+    |   |   trace-build
+    |   |   turbopack
+    |   |   
+    |   +---cache
+    |   |       .previewinfo
+    |   |       .rscinfo
+    |   |       .tsbuildinfo
+    |   |       
+    |   +---dev
+    |   |   |   build-manifest.json
+    |   |   |   fallback-build-manifest.json
+    |   |   |   package.json
+    |   |   |   prerender-manifest.json
+    |   |   |   routes-manifest.json
+    |   |   |   trace
+    |   |   |   
+    |   |   +---cache
+    |   |   |       .rscinfo
+    |   |   |       next-devtools-config.json
+    |   |   |       
+    |   |   +---logs
+    |   |   |       next-development.log
+    |   |   |       
+    |   |   +---server
+    |   |   |   |   app-paths-manifest.json
+    |   |   |   |   interception-route-rewrite-manifest.js
+    |   |   |   |   middleware-build-manifest.js
+    |   |   |   |   middleware-manifest.json
+    |   |   |   |   next-font-manifest.js
+    |   |   |   |   next-font-manifest.json
+    |   |   |   |   pages-manifest.json
+    |   |   |   |   server-reference-manifest.js
+    |   |   |   |   server-reference-manifest.json
+    |   |   |   |   
+    |   |   |   +---app
+    |   |   |   |   |   page.js
+    |   |   |   |   |   page.js.map
+    |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   
+    |   |   |   |   +---api
+    |   |   |   |   |   +---intel
+    |   |   |   |   |   |   +---knowledge
+    |   |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   |   
+    |   |   |   |   |   |   |   \---route
+    |   |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |   |           
+    |   |   |   |   |   |   +---knowledge-graph
+    |   |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   |   
+    |   |   |   |   |   |   |   \---route
+    |   |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |   |           
+    |   |   |   |   |   |   +---prime
+    |   |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   |   
+    |   |   |   |   |   |   |   \---route
+    |   |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |   |           
+    |   |   |   |   |   |   +---prime-narrative
+    |   |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   |   
+    |   |   |   |   |   |   |   \---route
+    |   |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |   |           
+    |   |   |   |   |   |   +---reflection
+    |   |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   |   
+    |   |   |   |   |   |   |   \---route
+    |   |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |   |           
+    |   |   |   |   |   |   \---summary
+    |   |   |   |   |   |       |   route.js
+    |   |   |   |   |   |       |   route.js.map
+    |   |   |   |   |   |       |   route_client-reference-manifest.js
+    |   |   |   |   |   |       |   
+    |   |   |   |   |   |       \---route
+    |   |   |   |   |   |               app-paths-manifest.json
+    |   |   |   |   |   |               build-manifest.json
+    |   |   |   |   |   |               server-reference-manifest.json
+    |   |   |   |   |   |               
+    |   |   |   |   |   \---operator
+    |   |   |   |   |       +---login
+    |   |   |   |   |       |   |   route.js
+    |   |   |   |   |       |   |   route.js.map
+    |   |   |   |   |       |   |   route_client-reference-manifest.js
+    |   |   |   |   |       |   |   
+    |   |   |   |   |       |   \---route
+    |   |   |   |   |       |           app-paths-manifest.json
+    |   |   |   |   |       |           build-manifest.json
+    |   |   |   |   |       |           server-reference-manifest.json
+    |   |   |   |   |       |           
+    |   |   |   |   |       \---logout
+    |   |   |   |   |           |   route.js
+    |   |   |   |   |           |   route.js.map
+    |   |   |   |   |           |   route_client-reference-manifest.js
+    |   |   |   |   |           |   
+    |   |   |   |   |           \---route
+    |   |   |   |   |                   app-paths-manifest.json
+    |   |   |   |   |                   build-manifest.json
+    |   |   |   |   |                   server-reference-manifest.json
+    |   |   |   |   |                   
+    |   |   |   |   +---operator
+    |   |   |   |   |   |   page.js
+    |   |   |   |   |   |   page.js.map
+    |   |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---page
+    |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |           build-manifest.json
+    |   |   |   |   |           next-font-manifest.json
+    |   |   |   |   |           react-loadable-manifest.json
+    |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |           
+    |   |   |   |   +---operator-login
+    |   |   |   |   |   |   page.js
+    |   |   |   |   |   |   page.js.map
+    |   |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---page
+    |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |           build-manifest.json
+    |   |   |   |   |           next-font-manifest.json
+    |   |   |   |   |           react-loadable-manifest.json
+    |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |           
+    |   |   |   |   \---page
+    |   |   |   |           app-paths-manifest.json
+    |   |   |   |           build-manifest.json
+    |   |   |   |           next-font-manifest.json
+    |   |   |   |           react-loadable-manifest.json
+    |   |   |   |           server-reference-manifest.json
+    |   |   |   |           
+    |   |   |   +---chunks
+    |   |   |   |   |   1dff6_next_167a9fbc._.js
+    |   |   |   |   |   1dff6_next_167a9fbc._.js.map
+    |   |   |   |   |   1dff6_next_34905424._.js
+    |   |   |   |   |   1dff6_next_34905424._.js.map
+    |   |   |   |   |   1dff6_next_4daa5e68._.js
+    |   |   |   |   |   1dff6_next_4daa5e68._.js.map
+    |   |   |   |   |   1dff6_next_99c49146._.js
+    |   |   |   |   |   1dff6_next_99c49146._.js.map
+    |   |   |   |   |   1dff6_next_aa922f9b._.js
+    |   |   |   |   |   1dff6_next_aa922f9b._.js.map
+    |   |   |   |   |   1dff6_next_d495f0a7._.js
+    |   |   |   |   |   1dff6_next_d495f0a7._.js.map
+    |   |   |   |   |   1dff6_next_f71d42f8._.js
+    |   |   |   |   |   1dff6_next_f71d42f8._.js.map
+    |   |   |   |   |   node_modules__pnpm_89494718._.js
+    |   |   |   |   |   node_modules__pnpm_89494718._.js.map
+    |   |   |   |   |   [root-of-the-server]__2ec06343._.js
+    |   |   |   |   |   [root-of-the-server]__2ec06343._.js.map
+    |   |   |   |   |   [root-of-the-server]__30ed3efc._.js
+    |   |   |   |   |   [root-of-the-server]__30ed3efc._.js.map
+    |   |   |   |   |   [root-of-the-server]__4cf21711._.js
+    |   |   |   |   |   [root-of-the-server]__4cf21711._.js.map
+    |   |   |   |   |   [root-of-the-server]__994cb075._.js
+    |   |   |   |   |   [root-of-the-server]__994cb075._.js.map
+    |   |   |   |   |   [root-of-the-server]__f089d453._.js
+    |   |   |   |   |   [root-of-the-server]__f089d453._.js.map
+    |   |   |   |   |   [root-of-the-server]__f7c1a869._.js
+    |   |   |   |   |   [root-of-the-server]__f7c1a869._.js.map
+    |   |   |   |   |   [root-of-the-server]__fb3d3eac._.js
+    |   |   |   |   |   [root-of-the-server]__fb3d3eac._.js.map
+    |   |   |   |   |   [root-of-the-server]__ff158205._.js
+    |   |   |   |   |   [root-of-the-server]__ff158205._.js.map
+    |   |   |   |   |   [turbopack]_runtime.js
+    |   |   |   |   |   [turbopack]_runtime.js.map
+    |   |   |   |   |   _next-internal_server_app_api_intel_knowledge-graph_route_actions_fe0138b2.js
+    |   |   |   |   |   _next-internal_server_app_api_intel_knowledge-graph_route_actions_fe0138b2.js.map
+    |   |   |   |   |   _next-internal_server_app_api_intel_knowledge_route_actions_68605014.js
+    |   |   |   |   |   _next-internal_server_app_api_intel_knowledge_route_actions_68605014.js.map
+    |   |   |   |   |   _next-internal_server_app_api_intel_prime-narrative_route_actions_6f584fc5.js
+    |   |   |   |   |   _next-internal_server_app_api_intel_prime-narrative_route_actions_6f584fc5.js.map
+    |   |   |   |   |   _next-internal_server_app_api_intel_prime_route_actions_c88d5927.js
+    |   |   |   |   |   _next-internal_server_app_api_intel_prime_route_actions_c88d5927.js.map
+    |   |   |   |   |   _next-internal_server_app_api_intel_reflection_route_actions_88c7dd66.js
+    |   |   |   |   |   _next-internal_server_app_api_intel_reflection_route_actions_88c7dd66.js.map
+    |   |   |   |   |   _next-internal_server_app_api_intel_summary_route_actions_d1ade429.js
+    |   |   |   |   |   _next-internal_server_app_api_intel_summary_route_actions_d1ade429.js.map
+    |   |   |   |   |   _next-internal_server_app_api_operator_login_route_actions_3b69f1e1.js
+    |   |   |   |   |   _next-internal_server_app_api_operator_login_route_actions_3b69f1e1.js.map
+    |   |   |   |   |   _next-internal_server_app_api_operator_logout_route_actions_51eddb68.js
+    |   |   |   |   |   _next-internal_server_app_api_operator_logout_route_actions_51eddb68.js.map
+    |   |   |   |   |   
+    |   |   |   |   \---ssr
+    |   |   |   |           1dff6_next_824eb173._.js
+    |   |   |   |           1dff6_next_824eb173._.js.map
+    |   |   |   |           1dff6_next_dist_8d8cb15a._.js
+    |   |   |   |           1dff6_next_dist_8d8cb15a._.js.map
+    |   |   |   |           1dff6_next_dist_c63073d0._.js
+    |   |   |   |           1dff6_next_dist_c63073d0._.js.map
+    |   |   |   |           1dff6_next_dist_client_components_9e67838b._.js
+    |   |   |   |           1dff6_next_dist_client_components_9e67838b._.js.map
+    |   |   |   |           1dff6_next_dist_client_components_builtin_forbidden_ffd215e8.js
+    |   |   |   |           1dff6_next_dist_client_components_builtin_forbidden_ffd215e8.js.map
+    |   |   |   |           1dff6_next_dist_client_components_builtin_global-error_66953fd8.js
+    |   |   |   |           1dff6_next_dist_client_components_builtin_global-error_66953fd8.js.map
+    |   |   |   |           1dff6_next_dist_client_components_builtin_unauthorized_cc7a8467.js
+    |   |   |   |           1dff6_next_dist_client_components_builtin_unauthorized_cc7a8467.js.map
+    |   |   |   |           1dff6_next_dist_d22bb629._.js
+    |   |   |   |           1dff6_next_dist_d22bb629._.js.map
+    |   |   |   |           1dff6_next_dist_e861362a._.js
+    |   |   |   |           1dff6_next_dist_e861362a._.js.map
+    |   |   |   |           node_modules__pnpm_5c5789c3._.js
+    |   |   |   |           node_modules__pnpm_5c5789c3._.js.map
+    |   |   |   |           [root-of-the-server]__1aaf5479._.js
+    |   |   |   |           [root-of-the-server]__1aaf5479._.js.map
+    |   |   |   |           [root-of-the-server]__507c347a._.js
+    |   |   |   |           [root-of-the-server]__507c347a._.js.map
+    |   |   |   |           [root-of-the-server]__76066fa2._.js
+    |   |   |   |           [root-of-the-server]__76066fa2._.js.map
+    |   |   |   |           [root-of-the-server]__7bcdeb47._.js
+    |   |   |   |           [root-of-the-server]__7bcdeb47._.js.map
+    |   |   |   |           [root-of-the-server]__7f148858._.js
+    |   |   |   |           [root-of-the-server]__7f148858._.js.map
+    |   |   |   |           [root-of-the-server]__915eb1be._.js
+    |   |   |   |           [root-of-the-server]__915eb1be._.js.map
+    |   |   |   |           [root-of-the-server]__f1627132._.js
+    |   |   |   |           [root-of-the-server]__f1627132._.js.map
+    |   |   |   |           [turbopack]_runtime.js
+    |   |   |   |           [turbopack]_runtime.js.map
+    |   |   |   |           _9e9b16e8._.js
+    |   |   |   |           _9e9b16e8._.js.map
+    |   |   |   |           _next-internal_server_app_operator-login_page_actions_3c741950.js
+    |   |   |   |           _next-internal_server_app_operator-login_page_actions_3c741950.js.map
+    |   |   |   |           _next-internal_server_app_operator_page_actions_b1e6df31.js
+    |   |   |   |           _next-internal_server_app_operator_page_actions_b1e6df31.js.map
+    |   |   |   |           _next-internal_server_app_page_actions_39d4fc33.js
+    |   |   |   |           _next-internal_server_app_page_actions_39d4fc33.js.map
+    |   |   |   |           
+    |   |   |   +---edge
+    |   |   |   |   \---chunks
+    |   |   |   |           edge-wrapper_9e92712f.js.map
+    |   |   |   |           turbopack-edge-wrapper_9e92712f.js
+    |   |   |   |           [root-of-the-server]__ac750f79._.js
+    |   |   |   |           [root-of-the-server]__ac750f79._.js.map
+    |   |   |   |           _50a9a4dd._.js
+    |   |   |   |           _50a9a4dd._.js.map
+    |   |   |   |           
+    |   |   |   \---middleware
+    |   |   |           middleware-manifest.json
+    |   |   |           
+    |   |   +---static
+    |   |   |   +---chunks
+    |   |   |   |       1dff6_next_dist_19094a42._.js
+    |   |   |   |       1dff6_next_dist_19094a42._.js.map
+    |   |   |   |       1dff6_next_dist_4512f89c._.js
+    |   |   |   |       1dff6_next_dist_4512f89c._.js.map
+    |   |   |   |       1dff6_next_dist_build_polyfills_polyfill-nomodule.js
+    |   |   |   |       1dff6_next_dist_client_components_builtin_global-error_6ce19d2f.js
+    |   |   |   |       1dff6_next_dist_client_e3c2bcb2._.js
+    |   |   |   |       1dff6_next_dist_client_e3c2bcb2._.js.map
+    |   |   |   |       1dff6_next_dist_compiled_c5f28bd9._.js
+    |   |   |   |       1dff6_next_dist_compiled_c5f28bd9._.js.map
+    |   |   |   |       1dff6_next_dist_compiled_next-devtools_index_b10aad90.js
+    |   |   |   |       1dff6_next_dist_compiled_next-devtools_index_b10aad90.js.map
+    |   |   |   |       1dff6_next_dist_compiled_react-dom_987ad27f._.js
+    |   |   |   |       1dff6_next_dist_compiled_react-dom_987ad27f._.js.map
+    |   |   |   |       1dff6_next_dist_compiled_react-server-dom-turbopack_b69c1d6b._.js
+    |   |   |   |       1dff6_next_dist_compiled_react-server-dom-turbopack_b69c1d6b._.js.map
+    |   |   |   |       1dff6_next_f17e0ea5._.js
+    |   |   |   |       1dff6_next_f17e0ea5._.js.map
+    |   |   |   |       69652_@swc_helpers_cjs_679851cc._.js
+    |   |   |   |       69652_@swc_helpers_cjs_679851cc._.js.map
+    |   |   |   |       app_globals_71f961d1.css
+    |   |   |   |       app_globals_71f961d1.css.map
+    |   |   |   |       app_layout_tsx_6ce19d2f._.js
+    |   |   |   |       app_operator-login_page_tsx_ab1dbbc0._.js
+    |   |   |   |       app_operator_page_tsx_ab1dbbc0._.js
+    |   |   |   |       turbopack-_8177140e._.js
+    |   |   |   |       [turbopack]_browser_dev_hmr-client_hmr-client_ts_af657b2f._.js
+    |   |   |   |       [turbopack]_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js
+    |   |   |   |       [turbopack]_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js.map
+    |   |   |   |       [turbopack]_browser_dev_hmr-client_hmr-client_ts_f1d3f032._.js
+    |   |   |   |       [turbopack]_browser_dev_hmr-client_hmr-client_ts_f1d3f032._.js.map
+    |   |   |   |       _013f4afa._.js
+    |   |   |   |       _013f4afa._.js.map
+    |   |   |   |       _8177140e._.js.map
+    |   |   |   |       _a0ff3932._.js
+    |   |   |   |       _d32d6c2e._.js
+    |   |   |   |       _d32d6c2e._.js.map
+    |   |   |   |       
+    |   |   |   \---development
+    |   |   |           _buildManifest.js
+    |   |   |           _clientMiddlewareManifest.json
+    |   |   |           _ssgManifest.js
+    |   |   |           
+    |   |   \---types
+    |   |           cache-life.d.ts
+    |   |           routes.d.ts
+    |   |           validator.ts
+    |   |           
+    |   +---diagnostics
+    |   |       build-diagnostics.json
+    |   |       framework.json
+    |   |       
+    |   +---server
+    |   |   |   app-paths-manifest.json
+    |   |   |   functions-config-manifest.json
+    |   |   |   interception-route-rewrite-manifest.js
+    |   |   |   middleware-build-manifest.js
+    |   |   |   middleware-manifest.json
+    |   |   |   next-font-manifest.js
+    |   |   |   next-font-manifest.json
+    |   |   |   pages-manifest.json
+    |   |   |   server-reference-manifest.js
+    |   |   |   server-reference-manifest.json
+    |   |   |   
+    |   |   +---app
+    |   |   |   |   embed.html
+    |   |   |   |   embed.meta
+    |   |   |   |   embed.rsc
+    |   |   |   |   index.html
+    |   |   |   |   index.meta
+    |   |   |   |   index.rsc
+    |   |   |   |   operator-login.html
+    |   |   |   |   operator-login.meta
+    |   |   |   |   operator-login.rsc
+    |   |   |   |   page.js
+    |   |   |   |   page.js.map
+    |   |   |   |   page.js.nft.json
+    |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   _global-error.html
+    |   |   |   |   _global-error.meta
+    |   |   |   |   _global-error.rsc
+    |   |   |   |   _not-found.html
+    |   |   |   |   _not-found.meta
+    |   |   |   |   _not-found.rsc
+    |   |   |   |   
+    |   |   |   +---api
+    |   |   |   |   +---chat
+    |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   route.js.nft.json
+    |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---route
+    |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |           build-manifest.json
+    |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |           
+    |   |   |   |   +---cron
+    |   |   |   |   |   \---daily-summary
+    |   |   |   |   |       |   route.js
+    |   |   |   |   |       |   route.js.map
+    |   |   |   |   |       |   route.js.nft.json
+    |   |   |   |   |       |   route_client-reference-manifest.js
+    |   |   |   |   |       |   
+    |   |   |   |   |       \---route
+    |   |   |   |   |               app-paths-manifest.json
+    |   |   |   |   |               build-manifest.json
+    |   |   |   |   |               server-reference-manifest.json
+    |   |   |   |   |               
+    |   |   |   |   +---intel
+    |   |   |   |   |   +---knowledge
+    |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   route.js.nft.json
+    |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   
+    |   |   |   |   |   |   \---route
+    |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |           
+    |   |   |   |   |   +---knowledge-graph
+    |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   route.js.nft.json
+    |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   
+    |   |   |   |   |   |   \---route
+    |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |           
+    |   |   |   |   |   +---prime
+    |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   route.js.nft.json
+    |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   
+    |   |   |   |   |   |   \---route
+    |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |           
+    |   |   |   |   |   +---prime-narrative
+    |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   route.js.nft.json
+    |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   
+    |   |   |   |   |   |   \---route
+    |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |           
+    |   |   |   |   |   +---reflection
+    |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   route.js.nft.json
+    |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   
+    |   |   |   |   |   |   \---route
+    |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |           
+    |   |   |   |   |   \---summary
+    |   |   |   |   |       |   route.js
+    |   |   |   |   |       |   route.js.map
+    |   |   |   |   |       |   route.js.nft.json
+    |   |   |   |   |       |   route_client-reference-manifest.js
+    |   |   |   |   |       |   
+    |   |   |   |   |       \---route
+    |   |   |   |   |               app-paths-manifest.json
+    |   |   |   |   |               build-manifest.json
+    |   |   |   |   |               server-reference-manifest.json
+    |   |   |   |   |               
+    |   |   |   |   +---monitoring
+    |   |   |   |   |   +---diagnose
+    |   |   |   |   |   |   |   route.js
+    |   |   |   |   |   |   |   route.js.map
+    |   |   |   |   |   |   |   route.js.nft.json
+    |   |   |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   |   |   
+    |   |   |   |   |   |   \---route
+    |   |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |   |           build-manifest.json
+    |   |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |   |           
+    |   |   |   |   |   \---events
+    |   |   |   |   |       |   route.js
+    |   |   |   |   |       |   route.js.map
+    |   |   |   |   |       |   route.js.nft.json
+    |   |   |   |   |       |   route_client-reference-manifest.js
+    |   |   |   |   |       |   
+    |   |   |   |   |       \---route
+    |   |   |   |   |               app-paths-manifest.json
+    |   |   |   |   |               build-manifest.json
+    |   |   |   |   |               server-reference-manifest.json
+    |   |   |   |   |               
+    |   |   |   |   \---operator
+    |   |   |   |       +---fix
+    |   |   |   |       |   |   route.js
+    |   |   |   |       |   |   route.js.map
+    |   |   |   |       |   |   route.js.nft.json
+    |   |   |   |       |   |   route_client-reference-manifest.js
+    |   |   |   |       |   |   
+    |   |   |   |       |   \---route
+    |   |   |   |       |           app-paths-manifest.json
+    |   |   |   |       |           build-manifest.json
+    |   |   |   |       |           server-reference-manifest.json
+    |   |   |   |       |           
+    |   |   |   |       +---login
+    |   |   |   |       |   |   route.js
+    |   |   |   |       |   |   route.js.map
+    |   |   |   |       |   |   route.js.nft.json
+    |   |   |   |       |   |   route_client-reference-manifest.js
+    |   |   |   |       |   |   
+    |   |   |   |       |   \---route
+    |   |   |   |       |           app-paths-manifest.json
+    |   |   |   |       |           build-manifest.json
+    |   |   |   |       |           server-reference-manifest.json
+    |   |   |   |       |           
+    |   |   |   |       +---logout
+    |   |   |   |       |   |   route.js
+    |   |   |   |       |   |   route.js.map
+    |   |   |   |       |   |   route.js.nft.json
+    |   |   |   |       |   |   route_client-reference-manifest.js
+    |   |   |   |       |   |   
+    |   |   |   |       |   \---route
+    |   |   |   |       |           app-paths-manifest.json
+    |   |   |   |       |           build-manifest.json
+    |   |   |   |       |           server-reference-manifest.json
+    |   |   |   |       |           
+    |   |   |   |       +---rollback
+    |   |   |   |       |   |   route.js
+    |   |   |   |       |   |   route.js.map
+    |   |   |   |       |   |   route.js.nft.json
+    |   |   |   |       |   |   route_client-reference-manifest.js
+    |   |   |   |       |   |   
+    |   |   |   |       |   \---route
+    |   |   |   |       |           app-paths-manifest.json
+    |   |   |   |       |           build-manifest.json
+    |   |   |   |       |           server-reference-manifest.json
+    |   |   |   |       |           
+    |   |   |   |       \---users
+    |   |   |   |           +---add
+    |   |   |   |           |   |   route.js
+    |   |   |   |           |   |   route.js.map
+    |   |   |   |           |   |   route.js.nft.json
+    |   |   |   |           |   |   route_client-reference-manifest.js
+    |   |   |   |           |   |   
+    |   |   |   |           |   \---route
+    |   |   |   |           |           app-paths-manifest.json
+    |   |   |   |           |           build-manifest.json
+    |   |   |   |           |           server-reference-manifest.json
+    |   |   |   |           |           
+    |   |   |   |           +---delete
+    |   |   |   |           |   |   route.js
+    |   |   |   |           |   |   route.js.map
+    |   |   |   |           |   |   route.js.nft.json
+    |   |   |   |           |   |   route_client-reference-manifest.js
+    |   |   |   |           |   |   
+    |   |   |   |           |   \---route
+    |   |   |   |           |           app-paths-manifest.json
+    |   |   |   |           |           build-manifest.json
+    |   |   |   |           |           server-reference-manifest.json
+    |   |   |   |           |           
+    |   |   |   |           \---set-role
+    |   |   |   |               |   route.js
+    |   |   |   |               |   route.js.map
+    |   |   |   |               |   route.js.nft.json
+    |   |   |   |               |   route_client-reference-manifest.js
+    |   |   |   |               |   
+    |   |   |   |               \---route
+    |   |   |   |                       app-paths-manifest.json
+    |   |   |   |                       build-manifest.json
+    |   |   |   |                       server-reference-manifest.json
+    |   |   |   |                       
+    |   |   |   +---embed
+    |   |   |   |   |   page.js
+    |   |   |   |   |   page.js.map
+    |   |   |   |   |   page.js.nft.json
+    |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   
+    |   |   |   |   \---page
+    |   |   |   |           app-paths-manifest.json
+    |   |   |   |           build-manifest.json
+    |   |   |   |           next-font-manifest.json
+    |   |   |   |           react-loadable-manifest.json
+    |   |   |   |           server-reference-manifest.json
+    |   |   |   |           
+    |   |   |   +---embed.segments
+    |   |   |   |   |   embed.segment.rsc
+    |   |   |   |   |   _full.segment.rsc
+    |   |   |   |   |   _head.segment.rsc
+    |   |   |   |   |   _index.segment.rsc
+    |   |   |   |   |   _tree.segment.rsc
+    |   |   |   |   |   
+    |   |   |   |   \---embed
+    |   |   |   |           __PAGE__.segment.rsc
+    |   |   |   |           
+    |   |   |   +---favicon.ico
+    |   |   |   |   |   route_client-reference-manifest.js
+    |   |   |   |   |   
+    |   |   |   |   \---route
+    |   |   |   |           app-paths-manifest.json
+    |   |   |   |           build-manifest.json
+    |   |   |   |           middleware-manifest.json
+    |   |   |   |           server-reference-manifest.json
+    |   |   |   |           
+    |   |   |   +---index.segments
+    |   |   |   |       _full.segment.rsc
+    |   |   |   |       _head.segment.rsc
+    |   |   |   |       _index.segment.rsc
+    |   |   |   |       _tree.segment.rsc
+    |   |   |   |       __PAGE__.segment.rsc
+    |   |   |   |       
+    |   |   |   +---operator
+    |   |   |   |   |   page.js
+    |   |   |   |   |   page.js.map
+    |   |   |   |   |   page.js.nft.json
+    |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   
+    |   |   |   |   +---not-authorized
+    |   |   |   |   |   |   page.js
+    |   |   |   |   |   |   page.js.map
+    |   |   |   |   |   |   page.js.nft.json
+    |   |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   |   
+    |   |   |   |   |   \---page
+    |   |   |   |   |           app-paths-manifest.json
+    |   |   |   |   |           build-manifest.json
+    |   |   |   |   |           next-font-manifest.json
+    |   |   |   |   |           react-loadable-manifest.json
+    |   |   |   |   |           server-reference-manifest.json
+    |   |   |   |   |           
+    |   |   |   |   +---page
+    |   |   |   |   |       app-paths-manifest.json
+    |   |   |   |   |       build-manifest.json
+    |   |   |   |   |       next-font-manifest.json
+    |   |   |   |   |       react-loadable-manifest.json
+    |   |   |   |   |       server-reference-manifest.json
+    |   |   |   |   |       
+    |   |   |   |   \---users
+    |   |   |   |       |   page.js
+    |   |   |   |       |   page.js.map
+    |   |   |   |       |   page.js.nft.json
+    |   |   |   |       |   page_client-reference-manifest.js
+    |   |   |   |       |   
+    |   |   |   |       \---page
+    |   |   |   |               app-paths-manifest.json
+    |   |   |   |               build-manifest.json
+    |   |   |   |               next-font-manifest.json
+    |   |   |   |               react-loadable-manifest.json
+    |   |   |   |               server-reference-manifest.json
+    |   |   |   |               
+    |   |   |   +---operator-login
+    |   |   |   |   |   page.js
+    |   |   |   |   |   page.js.map
+    |   |   |   |   |   page.js.nft.json
+    |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   
+    |   |   |   |   \---page
+    |   |   |   |           app-paths-manifest.json
+    |   |   |   |           build-manifest.json
+    |   |   |   |           next-font-manifest.json
+    |   |   |   |           react-loadable-manifest.json
+    |   |   |   |           server-reference-manifest.json
+    |   |   |   |           
+    |   |   |   +---operator-login.segments
+    |   |   |   |   |   operator-login.segment.rsc
+    |   |   |   |   |   _full.segment.rsc
+    |   |   |   |   |   _head.segment.rsc
+    |   |   |   |   |   _index.segment.rsc
+    |   |   |   |   |   _tree.segment.rsc
+    |   |   |   |   |   
+    |   |   |   |   \---operator-login
+    |   |   |   |           __PAGE__.segment.rsc
+    |   |   |   |           
+    |   |   |   +---page
+    |   |   |   |       app-paths-manifest.json
+    |   |   |   |       build-manifest.json
+    |   |   |   |       next-font-manifest.json
+    |   |   |   |       react-loadable-manifest.json
+    |   |   |   |       server-reference-manifest.json
+    |   |   |   |       
+    |   |   |   +---_global-error
+    |   |   |   |   |   page.js
+    |   |   |   |   |   page.js.map
+    |   |   |   |   |   page.js.nft.json
+    |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   
+    |   |   |   |   \---page
+    |   |   |   |           app-paths-manifest.json
+    |   |   |   |           build-manifest.json
+    |   |   |   |           next-font-manifest.json
+    |   |   |   |           react-loadable-manifest.json
+    |   |   |   |           server-reference-manifest.json
+    |   |   |   |           
+    |   |   |   +---_global-error.segments
+    |   |   |   |       _full.segment.rsc
+    |   |   |   |       _head.segment.rsc
+    |   |   |   |       _index.segment.rsc
+    |   |   |   |       _tree.segment.rsc
+    |   |   |   |       __PAGE__.segment.rsc
+    |   |   |   |       
+    |   |   |   +---_not-found
+    |   |   |   |   |   page.js
+    |   |   |   |   |   page.js.map
+    |   |   |   |   |   page.js.nft.json
+    |   |   |   |   |   page_client-reference-manifest.js
+    |   |   |   |   |   
+    |   |   |   |   \---page
+    |   |   |   |           app-paths-manifest.json
+    |   |   |   |           build-manifest.json
+    |   |   |   |           next-font-manifest.json
+    |   |   |   |           react-loadable-manifest.json
+    |   |   |   |           server-reference-manifest.json
+    |   |   |   |           
+    |   |   |   \---_not-found.segments
+    |   |   |       |   _full.segment.rsc
+    |   |   |       |   _head.segment.rsc
+    |   |   |       |   _index.segment.rsc
+    |   |   |       |   _not-found.segment.rsc
+    |   |   |       |   _tree.segment.rsc
+    |   |   |       |   
+    |   |   |       \---_not-found
+    |   |   |               __PAGE__.segment.rsc
+    |   |   |               
+    |   |   +---chunks
+    |   |   |   |   lib_operator-auth-node_ts_0586f567._.js
+    |   |   |   |   lib_operator-auth-node_ts_0586f567._.js.map
+    |   |   |   |   [root-of-the-server]__0015c0ff._.js
+    |   |   |   |   [root-of-the-server]__0015c0ff._.js.map
+    |   |   |   |   [root-of-the-server]__12d32ead._.js
+    |   |   |   |   [root-of-the-server]__12d32ead._.js.map
+    |   |   |   |   [root-of-the-server]__28fedd7e._.js
+    |   |   |   |   [root-of-the-server]__28fedd7e._.js.map
+    |   |   |   |   [root-of-the-server]__3647470b._.js
+    |   |   |   |   [root-of-the-server]__3647470b._.js.map
+    |   |   |   |   [root-of-the-server]__3bc779f7._.js
+    |   |   |   |   [root-of-the-server]__3bc779f7._.js.map
+    |   |   |   |   [root-of-the-server]__49bad008._.js
+    |   |   |   |   [root-of-the-server]__49bad008._.js.map
+    |   |   |   |   [root-of-the-server]__4fc6ffee._.js
+    |   |   |   |   [root-of-the-server]__4fc6ffee._.js.map
+    |   |   |   |   [root-of-the-server]__590ec6de._.js
+    |   |   |   |   [root-of-the-server]__590ec6de._.js.map
+    |   |   |   |   [root-of-the-server]__6fe048a2._.js
+    |   |   |   |   [root-of-the-server]__6fe048a2._.js.map
+    |   |   |   |   [root-of-the-server]__7aca7442._.js
+    |   |   |   |   [root-of-the-server]__7aca7442._.js.map
+    |   |   |   |   [root-of-the-server]__7b58d6d6._.js
+    |   |   |   |   [root-of-the-server]__7b58d6d6._.js.map
+    |   |   |   |   [root-of-the-server]__b22950b4._.js
+    |   |   |   |   [root-of-the-server]__b22950b4._.js.map
+    |   |   |   |   [root-of-the-server]__b69dbdd3._.js
+    |   |   |   |   [root-of-the-server]__b69dbdd3._.js.map
+    |   |   |   |   [root-of-the-server]__c48baa3a._.js
+    |   |   |   |   [root-of-the-server]__c48baa3a._.js.map
+    |   |   |   |   [root-of-the-server]__d212b6b8._.js
+    |   |   |   |   [root-of-the-server]__d212b6b8._.js.map
+    |   |   |   |   [root-of-the-server]__da57e096._.js
+    |   |   |   |   [root-of-the-server]__da57e096._.js.map
+    |   |   |   |   [root-of-the-server]__db662f27._.js
+    |   |   |   |   [root-of-the-server]__db662f27._.js.map
+    |   |   |   |   [root-of-the-server]__f4255f5e._.js
+    |   |   |   |   [root-of-the-server]__f4255f5e._.js.map
+    |   |   |   |   [root-of-the-server]__fb23d012._.js
+    |   |   |   |   [root-of-the-server]__fb23d012._.js.map
+    |   |   |   |   [turbopack]_runtime.js
+    |   |   |   |   [turbopack]_runtime.js.map
+    |   |   |   |   _d63ccc97._.js
+    |   |   |   |   _d63ccc97._.js.map
+    |   |   |   |   _next-internal_server_app_api_chat_route_actions_ac0c75e3.js
+    |   |   |   |   _next-internal_server_app_api_chat_route_actions_ac0c75e3.js.map
+    |   |   |   |   _next-internal_server_app_api_cron_daily-summary_route_actions_1de5ded5.js
+    |   |   |   |   _next-internal_server_app_api_cron_daily-summary_route_actions_1de5ded5.js.map
+    |   |   |   |   _next-internal_server_app_api_intel_knowledge-graph_route_actions_fe0138b2.js
+    |   |   |   |   _next-internal_server_app_api_intel_knowledge-graph_route_actions_fe0138b2.js.map
+    |   |   |   |   _next-internal_server_app_api_intel_knowledge_route_actions_68605014.js
+    |   |   |   |   _next-internal_server_app_api_intel_knowledge_route_actions_68605014.js.map
+    |   |   |   |   _next-internal_server_app_api_intel_prime-narrative_route_actions_6f584fc5.js
+    |   |   |   |   _next-internal_server_app_api_intel_prime-narrative_route_actions_6f584fc5.js.map
+    |   |   |   |   _next-internal_server_app_api_intel_prime_route_actions_c88d5927.js
+    |   |   |   |   _next-internal_server_app_api_intel_prime_route_actions_c88d5927.js.map
+    |   |   |   |   _next-internal_server_app_api_intel_reflection_route_actions_88c7dd66.js
+    |   |   |   |   _next-internal_server_app_api_intel_reflection_route_actions_88c7dd66.js.map
+    |   |   |   |   _next-internal_server_app_api_intel_summary_route_actions_d1ade429.js
+    |   |   |   |   _next-internal_server_app_api_intel_summary_route_actions_d1ade429.js.map
+    |   |   |   |   _next-internal_server_app_api_monitoring_diagnose_route_actions_aa7fe066.js
+    |   |   |   |   _next-internal_server_app_api_monitoring_diagnose_route_actions_aa7fe066.js.map
+    |   |   |   |   _next-internal_server_app_api_monitoring_events_route_actions_73719e4a.js
+    |   |   |   |   _next-internal_server_app_api_monitoring_events_route_actions_73719e4a.js.map
+    |   |   |   |   _next-internal_server_app_api_operator_fix_route_actions_3874f7b8.js
+    |   |   |   |   _next-internal_server_app_api_operator_fix_route_actions_3874f7b8.js.map
+    |   |   |   |   _next-internal_server_app_api_operator_login_route_actions_3b69f1e1.js
+    |   |   |   |   _next-internal_server_app_api_operator_login_route_actions_3b69f1e1.js.map
+    |   |   |   |   _next-internal_server_app_api_operator_logout_route_actions_51eddb68.js
+    |   |   |   |   _next-internal_server_app_api_operator_logout_route_actions_51eddb68.js.map
+    |   |   |   |   _next-internal_server_app_api_operator_rollback_route_actions_c8620a01.js
+    |   |   |   |   _next-internal_server_app_api_operator_rollback_route_actions_c8620a01.js.map
+    |   |   |   |   _next-internal_server_app_api_operator_users_add_route_actions_467a1489.js
+    |   |   |   |   _next-internal_server_app_api_operator_users_add_route_actions_467a1489.js.map
+    |   |   |   |   _next-internal_server_app_api_operator_users_delete_route_actions_46fd4a5e.js
+    |   |   |   |   _next-internal_server_app_api_operator_users_delete_route_actions_46fd4a5e.js.map
+    |   |   |   |   _next-internal_server_app_api_operator_users_set-role_route_actions_6e41650a.js
+    |   |   |   |   _next-internal_server_app_api_operator_users_set-role_route_actions_6e41650a.js.map
+    |   |   |   |   
+    |   |   |   \---ssr
+    |   |   |           1dff6_next_9b98d01d._.js
+    |   |   |           1dff6_next_9b98d01d._.js.map
+    |   |   |           1dff6_next_dist_5bf88bcc._.js
+    |   |   |           1dff6_next_dist_5bf88bcc._.js.map
+    |   |   |           1dff6_next_dist_6a24d1f8._.js
+    |   |   |           1dff6_next_dist_6a24d1f8._.js.map
+    |   |   |           1dff6_next_dist_7f108c7d._.js
+    |   |   |           1dff6_next_dist_7f108c7d._.js.map
+    |   |   |           1dff6_next_dist_94a25509._.js
+    |   |   |           1dff6_next_dist_94a25509._.js.map
+    |   |   |           1dff6_next_dist_a22370ed._.js
+    |   |   |           1dff6_next_dist_a22370ed._.js.map
+    |   |   |           1dff6_next_dist_client_components_9e67838b._.js
+    |   |   |           1dff6_next_dist_client_components_9e67838b._.js.map
+    |   |   |           1dff6_next_dist_client_components_builtin_forbidden_ffd215e8.js
+    |   |   |           1dff6_next_dist_client_components_builtin_forbidden_ffd215e8.js.map
+    |   |   |           1dff6_next_dist_client_components_builtin_global-error_66953fd8.js
+    |   |   |           1dff6_next_dist_client_components_builtin_global-error_66953fd8.js.map
+    |   |   |           1dff6_next_dist_client_components_builtin_unauthorized_cc7a8467.js
+    |   |   |           1dff6_next_dist_client_components_builtin_unauthorized_cc7a8467.js.map
+    |   |   |           1dff6_next_dist_esm_build_templates_app-page_99f22ea6.js
+    |   |   |           1dff6_next_dist_esm_build_templates_app-page_99f22ea6.js.map
+    |   |   |           1dff6_next_dist_f85c2723._.js
+    |   |   |           1dff6_next_dist_f85c2723._.js.map
+    |   |   |           app_layout_tsx_271801d7._.js
+    |   |   |           app_layout_tsx_271801d7._.js.map
+    |   |   |           components_IntelligencePanel_tsx_81c75bb1._.js
+    |   |   |           components_IntelligencePanel_tsx_81c75bb1._.js.map
+    |   |   |           components_OperatorShell_tsx_49fb0103._.js
+    |   |   |           components_OperatorShell_tsx_49fb0103._.js.map
+    |   |   |           [root-of-the-server]__0581f0b9._.js
+    |   |   |           [root-of-the-server]__0581f0b9._.js.map
+    |   |   |           [root-of-the-server]__0af500cd._.js
+    |   |   |           [root-of-the-server]__0af500cd._.js.map
+    |   |   |           [root-of-the-server]__1228489f._.js
+    |   |   |           [root-of-the-server]__1228489f._.js.map
+    |   |   |           [root-of-the-server]__15a441d9._.js
+    |   |   |           [root-of-the-server]__15a441d9._.js.map
+    |   |   |           [root-of-the-server]__16a09608._.js
+    |   |   |           [root-of-the-server]__16a09608._.js.map
+    |   |   |           [root-of-the-server]__1d9468a8._.js
+    |   |   |           [root-of-the-server]__1d9468a8._.js.map
+    |   |   |           [root-of-the-server]__52ecf710._.js
+    |   |   |           [root-of-the-server]__52ecf710._.js.map
+    |   |   |           [root-of-the-server]__56f66ac0._.js
+    |   |   |           [root-of-the-server]__56f66ac0._.js.map
+    |   |   |           [root-of-the-server]__6586b779._.js
+    |   |   |           [root-of-the-server]__6586b779._.js.map
+    |   |   |           [root-of-the-server]__78e20d43._.js
+    |   |   |           [root-of-the-server]__78e20d43._.js.map
+    |   |   |           [root-of-the-server]__87bb69b2._.js
+    |   |   |           [root-of-the-server]__87bb69b2._.js.map
+    |   |   |           [root-of-the-server]__99a492f5._.js
+    |   |   |           [root-of-the-server]__99a492f5._.js.map
+    |   |   |           [root-of-the-server]__a5295e65._.js
+    |   |   |           [root-of-the-server]__a5295e65._.js.map
+    |   |   |           [root-of-the-server]__ba5e3969._.js
+    |   |   |           [root-of-the-server]__ba5e3969._.js.map
+    |   |   |           [root-of-the-server]__c5c3ec74._.js
+    |   |   |           [root-of-the-server]__c5c3ec74._.js.map
+    |   |   |           [root-of-the-server]__cbc241e4._.js
+    |   |   |           [root-of-the-server]__cbc241e4._.js.map
+    |   |   |           [turbopack]_runtime.js
+    |   |   |           [turbopack]_runtime.js.map
+    |   |   |           _02bcc998._.js
+    |   |   |           _02bcc998._.js.map
+    |   |   |           _0ea7c788._.js
+    |   |   |           _0ea7c788._.js.map
+    |   |   |           _17ad6edb._.js
+    |   |   |           _17ad6edb._.js.map
+    |   |   |           _a18673f3._.js
+    |   |   |           _a18673f3._.js.map
+    |   |   |           _d2ca1600._.js
+    |   |   |           _d2ca1600._.js.map
+    |   |   |           _d5209ab1._.js
+    |   |   |           _d5209ab1._.js.map
+    |   |   |           _db0d9a76._.js
+    |   |   |           _db0d9a76._.js.map
+    |   |   |           _ef07b01f._.js
+    |   |   |           _ef07b01f._.js.map
+    |   |   |           _f42c8c38._.js
+    |   |   |           _f42c8c38._.js.map
+    |   |   |           _next-internal_server_app_embed_page_actions_f4e7d382.js
+    |   |   |           _next-internal_server_app_embed_page_actions_f4e7d382.js.map
+    |   |   |           _next-internal_server_app_operator-login_page_actions_3c741950.js
+    |   |   |           _next-internal_server_app_operator-login_page_actions_3c741950.js.map
+    |   |   |           _next-internal_server_app_operator_not-authorized_page_actions_641f2bbf.js
+    |   |   |           _next-internal_server_app_operator_not-authorized_page_actions_641f2bbf.js.map
+    |   |   |           _next-internal_server_app_operator_page_actions_b1e6df31.js
+    |   |   |           _next-internal_server_app_operator_page_actions_b1e6df31.js.map
+    |   |   |           _next-internal_server_app_operator_users_page_actions_2b5cff6a.js
+    |   |   |           _next-internal_server_app_operator_users_page_actions_2b5cff6a.js.map
+    |   |   |           _next-internal_server_app_page_actions_39d4fc33.js
+    |   |   |           _next-internal_server_app_page_actions_39d4fc33.js.map
+    |   |   |           _next-internal_server_app__global-error_page_actions_75761787.js
+    |   |   |           _next-internal_server_app__global-error_page_actions_75761787.js.map
+    |   |   |           _next-internal_server_app__not-found_page_actions_554ec2bf.js
+    |   |   |           _next-internal_server_app__not-found_page_actions_554ec2bf.js.map
+    |   |   |           
+    |   |   +---edge
+    |   |   |   \---chunks
+    |   |   |           1dff6_next_dist_40569643._.js
+    |   |   |           1dff6_next_dist_40569643._.js.map
+    |   |   |           1dff6_next_dist_7259e436._.js
+    |   |   |           1dff6_next_dist_7259e436._.js.map
+    |   |   |           edge-wrapper_0eb75364.js.map
+    |   |   |           edge-wrapper_fd1d8e39.js.map
+    |   |   |           turbopack-edge-wrapper_0eb75364.js
+    |   |   |           turbopack-edge-wrapper_fd1d8e39.js
+    |   |   |           [root-of-the-server]__340fab42._.js
+    |   |   |           [root-of-the-server]__340fab42._.js.map
+    |   |   |           [root-of-the-server]__8e1fdd22._.js
+    |   |   |           [root-of-the-server]__8e1fdd22._.js.map
+    |   |   |           _next-internal_server_app_favicon_ico_route_actions_9a40e195.js
+    |   |   |           _next-internal_server_app_favicon_ico_route_actions_9a40e195.js.map
+    |   |   |           
+    |   |   +---middleware
+    |   |   |       middleware-manifest.json
+    |   |   |       
+    |   |   \---pages
+    |   |           404.html
+    |   |           500.html
+    |   |           
+    |   +---static
+    |   |   +---4uHVjU79tcAQHVrLD25qa
+    |   |   |       _buildManifest.js
+    |   |   |       _clientMiddlewareManifest.json
+    |   |   |       _ssgManifest.js
+    |   |   |       
+    |   |   \---chunks
+    |   |           041b3e0e3c954a8f.js
+    |   |           173004a90f8a4130.js
+    |   |           3337476739009024.js
+    |   |           3d5483ddaeb685cb.js
+    |   |           796e7f5bb07ad38d.js
+    |   |           7af99b4fe779898e.js
+    |   |           81eb92a4e8de6052.css
+    |   |           90329f55a80dac71.js
+    |   |           92e0473f5be0bb7a.js
+    |   |           a6dad97d9634a72d.js
+    |   |           ae1217dd580779c3.js
+    |   |           b2a120c67b2d5d0a.js
+    |   |           e21d5ad7513855ba.js
+    |   |           ea51a422d6ccc48b.js
+    |   |           turbopack-244aea55936d1f6b.js
+    |   |           
+    |   \---types
+    |           routes.d.ts
+    |           validator.ts
+    |           
+    +---.vercel
+    |       project.json
+    |       
+    +---app
+    |   |   globals.css
+    |   |   layout.tsx
+    |   |   page.tsx
+    |   |   
+    |   +---api
+    |   |   +---chat
+    |   |   |       route.ts
+    |   |   |       
+    |   |   +---cron
+    |   |   |   \---daily-summary
+    |   |   |           route.ts
+    |   |   |           
+    |   |   +---intel
+    |   |   |   +---knowledge
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   +---knowledge-graph
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   +---prime
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   +---prime-narrative
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   +---reflection
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   \---summary
+    |   |   |           route.ts
+    |   |   |           
+    |   |   +---monitoring
+    |   |   |   +---diagnose
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   \---events
+    |   |   |           route.ts
+    |   |   |           
+    |   |   +---operator
+    |   |   |   +---fix
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   +---login
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   +---logout
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   +---rollback
+    |   |   |   |       route.ts
+    |   |   |   |       
+    |   |   |   \---users
+    |   |   |       +---add
+    |   |   |       |       route.ts
+    |   |   |       |       
+    |   |   |       +---delete
+    |   |   |       |       route.ts
+    |   |   |       |       
+    |   |   |       \---set-role
+    |   |   |               route.ts
+    |   |   |               
+    |   |   \---video
+    |   |           session.ts
+    |   |           
+    |   +---embed
+    |   |       page.tsx
+    |   |       
+    |   +---favicon.ico
+    |   |       route.ts
+    |   |       
+    |   +---operator
+    |   |   |   page.tsx
+    |   |   |   
+    |   |   +---not-authorized
+    |   |   |       page.tsx
+    |   |   |       
+    |   |   \---users
+    |   |           page.tsx
+    |   |           
+    |   \---operator-login
+    |           page.tsx
+    |           
+    +---components
+    |       AutonomyPanel.tsx
+    |       ChatPanel.tsx
+    |       EmailSettingsPanel.tsx
+    |       FixReviewPanel.tsx
+    |       IntelligencePanel.tsx
+    |       MonitoringPanel.tsx
+    |       OperatorShell.tsx
+    |       OperatorTopBar.tsx
+    |       OperatorUsersTable.tsx
+    |       VideoPanel.tsx
+    |       
+    +---data
+    |       operator-audit.json
+    |       operator-users.json
+    |       
+    +---lib
+    |       audit.ts
+    |       autonomy.ts
+    |       chat.ts
+    |       coaching.ts
+    |       dev-seeder.ts
+    |       diagnostics.ts
+    |       email.ts
+    |       fixes.ts
+    |       foresight.ts
+    |       intel.ts
+    |       knowledge-graph.ts
+    |       knowledge.ts
+    |       memory.ts
+    |       onboarding.ts
+    |       operator-audit.ts
+    |       operator-auth-node.ts
+    |       operator-auth.ts
+    |       operator-prime.ts
+    |       operator-session.ts
+    |       persona.ts
+    |       playbooks.ts
+    |       predictive.ts
+    |       prime-autonomy.ts
+    |       prime-cognition.ts
+    |       prime-intel.ts
+    |       prime-knowledge.ts
+    |       prime-narrative.ts
+    |       protocol.ts
+    |       rag.ts
+    |       reflection.ts
+    |       rollback.ts
+    |       snapshots.ts
+    |       trends.ts
+    |       types.ts
+    |       video.ts
+    |       voice.ts
+    |       
+    +---node_modules
+    |   |   .modules.yaml
+    |   |   .pnpm-workspace-state-v1.json
+    |   |   
+    |   +---.bin
+    |   |       bcrypt
+    |   |       bcrypt.CMD
+    |   |       bcrypt.ps1
+    |   |       next
+    |   |       next.CMD
+    |   |       next.ps1
+    |   |       ts-node
+    |   |       ts-node-cwd
+    |   |       ts-node-cwd.CMD
+    |   |       ts-node-cwd.ps1
+    |   |       ts-node-esm
+    |   |       ts-node-esm.CMD
+    |   |       ts-node-esm.ps1
+    |   |       ts-node-script
+    |   |       ts-node-script.CMD
+    |   |       ts-node-script.ps1
+    |   |       ts-node-transpile-only
+    |   |       ts-node-transpile-only.CMD
+    |   |       ts-node-transpile-only.ps1
+    |   |       ts-node.CMD
+    |   |       ts-node.ps1
+    |   |       ts-script
+    |   |       ts-script.CMD
+    |   |       ts-script.ps1
+    |   |       tsc
+    |   |       tsc.CMD
+    |   |       tsc.ps1
+    |   |       tsserver
+    |   |       tsserver.CMD
+    |   |       tsserver.ps1
+    |   |       
+    |   \---.pnpm
+    |       |   lock.yaml
+    |       |   
+    |       +---@cspotcode+source-map-support@0.8.1
+    |       |   \---node_modules
+    |       |       +---@cspotcode
+    |       |       |   \---source-map-support
+    |       |       |           browser-source-map-support.js
+    |       |       |           LICENSE.md
+    |       |       |           package.json
+    |       |       |           README.md
+    |       |       |           register-hook-require.d.ts
+    |       |       |           register-hook-require.js
+    |       |       |           register.d.ts
+    |       |       |           register.js
+    |       |       |           source-map-support.d.ts
+    |       |       |           source-map-support.js
+    |       |       |           
+    |       |       \---@jridgewell
+    |       |           \---trace-mapping
+    |       |               |   LICENSE
+    |       |               |   package.json
+    |       |               |   README.md
+    |       |               |   
+    |       |               \---dist
+    |       |                   |   trace-mapping.mjs
+    |       |                   |   trace-mapping.mjs.map
+    |       |                   |   trace-mapping.umd.js
+    |       |                   |   trace-mapping.umd.js.map
+    |       |                   |   
+    |       |                   \---types
+    |       |                           any-map.d.ts
+    |       |                           binary-search.d.ts
+    |       |                           by-source.d.ts
+    |       |                           resolve.d.ts
+    |       |                           sort.d.ts
+    |       |                           sourcemap-segment.d.ts
+    |       |                           strip-filename.d.ts
+    |       |                           trace-mapping.d.ts
+    |       |                           types.d.ts
+    |       |                           
+    |       +---@img+colour@1.0.0
+    |       |   \---node_modules
+    |       |       \---@img
+    |       |           \---colour
+    |       |                   color.cjs
+    |       |                   index.cjs
+    |       |                   LICENSE.md
+    |       |                   package.json
+    |       |                   README.md
+    |       |                   
+    |       +---@img+sharp-win32-x64@0.34.5
+    |       |   \---node_modules
+    |       |       \---@img
+    |       |           \---sharp-win32-x64
+    |       |               |   LICENSE
+    |       |               |   package.json
+    |       |               |   README.md
+    |       |               |   versions.json
+    |       |               |   
+    |       |               \---lib
+    |       |                       libvips-42.dll
+    |       |                       libvips-cpp-8.17.3.dll
+    |       |                       sharp-win32-x64.node
+    |       |                       
+    |       +---@jridgewell+resolve-uri@3.1.2
+    |       |   \---node_modules
+    |       |       \---@jridgewell
+    |       |           \---resolve-uri
+    |       |               |   LICENSE
+    |       |               |   package.json
+    |       |               |   README.md
+    |       |               |   
+    |       |               \---dist
+    |       |                   |   resolve-uri.mjs
+    |       |                   |   resolve-uri.mjs.map
+    |       |                   |   resolve-uri.umd.js
+    |       |                   |   resolve-uri.umd.js.map
+    |       |                   |   
+    |       |                   \---types
+    |       |                           resolve-uri.d.ts
+    |       |                           
+    |       +---@jridgewell+sourcemap-codec@1.5.5
+    |       |   \---node_modules
+    |       |       \---@jridgewell
+    |       |           \---sourcemap-codec
+    |       |               |   LICENSE
+    |       |               |   package.json
+    |       |               |   README.md
+    |       |               |   
+    |       |               +---dist
+    |       |               |       sourcemap-codec.mjs
+    |       |               |       sourcemap-codec.mjs.map
+    |       |               |       sourcemap-codec.umd.js
+    |       |               |       sourcemap-codec.umd.js.map
+    |       |               |       
+    |       |               +---src
+    |       |               |       scopes.ts
+    |       |               |       sourcemap-codec.ts
+    |       |               |       strings.ts
+    |       |               |       vlq.ts
+    |       |               |       
+    |       |               \---types
+    |       |                       scopes.d.cts
+    |       |                       scopes.d.cts.map
+    |       |                       scopes.d.mts
+    |       |                       scopes.d.mts.map
+    |       |                       sourcemap-codec.d.cts
+    |       |                       sourcemap-codec.d.cts.map
+    |       |                       sourcemap-codec.d.mts
+    |       |                       sourcemap-codec.d.mts.map
+    |       |                       strings.d.cts
+    |       |                       strings.d.cts.map
+    |       |                       strings.d.mts
+    |       |                       strings.d.mts.map
+    |       |                       vlq.d.cts
+    |       |                       vlq.d.cts.map
+    |       |                       vlq.d.mts
+    |       |                       vlq.d.mts.map
+    |       |                       
+    |       \---@jridgewell+trace-mapping@0.3.9
+    |           \---node_modules
+    |               \---@jridgewell
+    |                   \---resolve-uri
+    \---operator-app
+        +---public
+        |       operator-icon.png
+        |       
+        \---scripts
+                create-operator-admin.ts
+                operator-users.ts
+                

@@ -1,0 +1,13 @@
+{
+  "/api/intel/knowledge-graph/route": "app/api/intel/knowledge-graph/route.js",
+  "/api/intel/knowledge/route": "app/api/intel/knowledge/route.js",
+  "/api/intel/prime-narrative/route": "app/api/intel/prime-narrative/route.js",
+  "/api/intel/prime/route": "app/api/intel/prime/route.js",
+  "/api/intel/reflection/route": "app/api/intel/reflection/route.js",
+  "/api/intel/summary/route": "app/api/intel/summary/route.js",
+  "/api/operator/login/route": "app/api/operator/login/route.js",
+  "/api/operator/logout/route": "app/api/operator/logout/route.js",
+  "/operator-login/page": "app/operator-login/page.js",
+  "/operator/page": "app/operator/page.js",
+  "/page": "app/page.js"
+}

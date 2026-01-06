@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/AjaySidal/buildwithai-V0DEV-up/buildwithai-V0DEV-up/operator-app/app/page.tsx"],"sourcesContent":["export default function HomePage() {\r\n  return (\r\n    <main style={{ padding: \"32px\", maxWidth: 720, margin: \"0 auto\" }}>\r\n      <h1 style={{ fontSize: \"24px\", marginBottom: \"12px\" }}>Operator App</h1>\r\n      <p style={{ color: \"#cbd5e1\" }}>Operator App is running. Use /embed for iframe mode.</p>\r\n    </main>\r\n  )\r\n}\r\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8WAAC;QAAK,OAAO;YAAE,SAAS;YAAQ,UAAU;YAAK,QAAQ;QAAS;;0BAC9D,8WAAC;gBAAG,OAAO;oBAAE,UAAU;oBAAQ,cAAc;gBAAO;0BAAG;;;;;;0BACvD,8WAAC;gBAAE,OAAO;oBAAE,OAAO;gBAAU;0BAAG;;;;;;;;;;;;AAGtC"}}]
+}

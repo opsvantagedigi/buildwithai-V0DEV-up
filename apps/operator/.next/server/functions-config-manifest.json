@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "functions": {
+    "/api/operator/logout": {},
+    "/api/operator/users/add": {},
+    "/api/operator/login": {},
+    "/api/operator/users/delete": {},
+    "/api/operator/users/set-role": {},
+    "/favicon.ico": {},
+    "/operator/not-authorized": {},
+    "/operator/users": {}
+  }
+}

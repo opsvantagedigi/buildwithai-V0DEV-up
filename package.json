@@ -1,0 +1,23 @@
+{
+  "name": "buildwithai-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9",
+  "workspaces": [
+    "apps/marketing",
+    "apps/operator"
+  ],
+  "scripts": {
+    "dev": "pnpm dev:marketing",
+    "dev:marketing": "pnpm -C apps/marketing dev",
+    "dev:operator": "pnpm -C apps/operator dev",
+    "build": "pnpm build:marketing && pnpm build:operator",
+    "build:marketing": "pnpm -C apps/marketing build",
+    "build:operator": "pnpm -C apps/operator build",
+    "lint": "pnpm lint:marketing && pnpm lint:operator",
+    "lint:marketing": "pnpm -C apps/marketing lint",
+    "lint:operator": "pnpm -C apps/operator lint",
+    "start:marketing": "pnpm -C apps/marketing start",
+    "start:operator": "pnpm -C apps/operator start"
+  }
+}

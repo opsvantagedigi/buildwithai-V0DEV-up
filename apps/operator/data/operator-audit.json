@@ -1,0 +1,29 @@
+[
+  {
+    "id": "03f954b3-c95f-4975-8a0e-f99e9214017b",
+    "ts": 1767638005631,
+    "action": "login-success",
+    "actorEmail": "admin@buildwithai.digital",
+    "actorRole": "admin",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": "1785e9e1-78aa-4a55-92b6-842a07b30e17",
+    "ts": 1767641415557,
+    "action": "logout",
+    "actorEmail": "admin@buildwithai.digital",
+    "actorRole": "admin",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  },
+  {
+    "id": "db5d0d27-87c9-4e2c-839f-111a01fd3853",
+    "ts": 1767641420479,
+    "action": "login-success",
+    "actorEmail": "admin@buildwithai.digital",
+    "actorRole": "admin",
+    "ip": "127.0.0.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+  }
+]

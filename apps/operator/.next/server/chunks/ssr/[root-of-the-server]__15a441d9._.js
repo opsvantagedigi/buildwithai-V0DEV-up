@@ -1,0 +1,3 @@
+module.exports=[93695,(a,b,c)=>{b.exports=a.x("next/dist/shared/lib/no-fallback-error.external.js",()=>require("next/dist/shared/lib/no-fallback-error.external.js"))},70864,a=>{a.n(a.i(33290))},23659,a=>{a.n(a.i(26859))},98441,a=>{a.n(a.i(15757))},51557,a=>{a.n(a.i(69338))},53554,a=>{a.n(a.i(96382))},50708,a=>{"use strict";var b=a.i(55008);function c(){return(0,b.jsxs)("main",{style:{padding:"32px",maxWidth:720,margin:"0 auto"},children:[(0,b.jsx)("h1",{style:{fontSize:"24px",marginBottom:"12px"},children:"Operator App"}),(0,b.jsx)("p",{style:{color:"#cbd5e1"},children:"Operator App is running. Use /embed for iframe mode."})]})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__15a441d9._.js.map

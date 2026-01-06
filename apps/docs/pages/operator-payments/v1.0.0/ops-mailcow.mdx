@@ -1,0 +1,93 @@
+---
+title: Mailcow Email System
+version: 1.0.0
+---
+
+# Mailcow Email System
+
+This section documents deploying and integrating Mailcow with Build With AI's Operator Payments System.
+
+## Overview
+
+Mailcow will run on a dedicated VPS (Docker) and provide SMTP/IMAP, webmail, DKIM, and an API for mailbox management. DNS remains on Vercel.
+
+## DNS Records (add in Vercel)
+
+- A records:
+  - `mail.<your-domain>` → A → `203.0.113.10`
+  - `autoconfig.<your-domain>` → A → `203.0.113.10`
+  - `autodiscover.<your-domain>` → A → `203.0.113.10`
+
+- MX record:
+  - Host: `@` → Priority: `10` → `mail.<your-domain>`
+
+- SPF (TXT @):
+  - `v=spf1 mx a:mail.<your-domain> ~all`
+
+- DKIM:
+  - Mailcow provides a TXT record in `/opt/mailcow-dockerized/data/dkim/<your-domain>.txt`. Add it as `mail._domainkey.<your-domain>`.
+
+- DMARC (TXT _dmarc):
+  - `v=DMARC1; p=quarantine; rua=mailto:postmaster@<your-domain>`
+
+- Autodiscover SRV:
+  - `_autodiscover._tcp` SRV `0 0 443 mail.<your-domain>`
+
+## Mailcow API (provisioning)
+
+- API base: `https://mail.<your-domain>/api/v1`
+- Use `MAILCOW_API_KEY` and `MAILCOW_API_URL` in Vercel env.
+
+Example mailbox creation:
+
+```json
+POST https://mail.<your-domain>/api/v1/add/mailbox
+{
+  "domain": "<your-domain>",
+  "local_part": "support",
+  "name": "Support",
+  "quota": 2048,
+  "password": "GENERATED_PASSWORD"
+}
+```
+
+## Automated Provisioning
+
+- Use `scripts/provision-mailcow-accounts.ts` to idempotently create required mailboxes:
+  - `support@<your-domain>`
+  - `payments@<your-domain>`
+  - `operator@<your-domain>`
+  - `no-reply@<your-domain>`
+  - `marz@<your-domain>`
+
+- Store `MAILCOW_API_URL` and `MAILCOW_API_KEY` in Vercel.
+
+## SMTP Integration
+
+- SMTP environment variables:
+  - `SMTP_HOST=mail.<your-domain>`
+  - `SMTP_PORT=587`
+  - `SMTP_USER=no-reply@<your-domain>`
+  - `SMTP_PASS=<app-password>`
+  - `SMTP_FROM=no-reply@<your-domain>`
+
+- The app uses `libs/email/src/index.ts` for sending receipts, refunds, alerts and reconciliation summaries.
+
+## Backup & Security
+
+- Backup Mailcow data directory regularly (`/var/lib/mailcow`, `/opt/mailcow-dockerized/data`).
+- Use strong API keys and app passwords.
+- Enforce TLS 1.2+ and disable plaintext auth.
+- Rotate app passwords quarterly and revoke compromised keys.
+
+## Tests
+
+- Use `pnpm create:mailbox support@<your-domain>` to create a mailbox.
+- Send test emails via SMTP and verify SPF/DKIM/DMARC with `mail-tester.com`.
+
+## Troubleshooting
+
+- If mail not delivered, check:
+  - MX & A records propagation
+  - SPF/DKIM/DMARC record correctness
+  - Mailcow logs (`docker-compose logs`)
