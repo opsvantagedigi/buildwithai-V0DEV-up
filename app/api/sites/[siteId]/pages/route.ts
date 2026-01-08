@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server"
 import { ensurePostAuth } from "@/lib/auth"
 
-export async function GET(request: Request, { params }: { params: { siteId: string } }) {
+export async function GET(request: Request, context: any) {
   const authError = ensurePostAuth(request)
   if (authError) return authError
+
+  const params = context?.params
+  const resolved = typeof params?.then === "function" ? await params : params
+  const siteId = resolved?.siteId
 
   const pages = [
     { id: "home", title: "Home", path: "/" },
@@ -11,7 +15,7 @@ export async function GET(request: Request, { params }: { params: { siteId: stri
     { id: "about", title: "About", path: "/about" },
   ]
 
-  return NextResponse.json({ siteId: params.siteId, pages })
+  return NextResponse.json({ siteId, pages })
 }
 
 // TODO: Replace placeholder pages with user-owned site pages.
