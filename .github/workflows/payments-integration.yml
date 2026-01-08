@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
       - name: Install deps
         run: pnpm install --frozen-lockfile
-      - name: Run payments smoke tests
+      - name: Run tests
         env:
           PAYMENTS_PROVIDER_SECRET: ${{ secrets.PAYMENTS_PROVIDER_SECRET }}
-        run: pnpm test:payments
+        run: pnpm test

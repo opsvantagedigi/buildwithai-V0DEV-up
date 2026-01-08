@@ -6,8 +6,13 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
+    "test": "jest --runInBand",
     "test:payments": "node ./scripts/payments-integration-test.js",
     "start": "next start"
+  },
+  "devDependencies": {
+    "jest": "29.x",
+    "@types/jest": "29.x"
   },
   "dependencies": {
     "@fontsource/inter": "5.2.8",
