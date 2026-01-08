@@ -1,0 +1,7 @@
+6d26a02c fix(api): accept Next.js route context and resolve params for handlers
+.tsc-output.txt
+app/api/domains/[domainId]/status/route.ts
+app/api/sites/[siteId]/pages/route.ts
+app/api/sites/[siteId]/publish/route.ts
+build-output.txt
+tsc-output.txt
