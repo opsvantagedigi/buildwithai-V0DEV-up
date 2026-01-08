@@ -43,14 +43,13 @@ next-env.d.ts
 # logs
 *.log
 
-# temporary outputs from local checks
-.tsc-output*.txt
+# local captured CLI outputs (tests, builds, temp files)
+.tsc-output.txt
+tsc-output.txt
 build-output.txt
-tsc-output*.txt
 eslint-output.txt
-pr-*.json
+pr-2.json
 git-status.txt
-head-info.txt
 
 # backups
 *.bak
