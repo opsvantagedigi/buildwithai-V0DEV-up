@@ -2,6 +2,7 @@ name: Payments Integration Tests
 
 on:
   pull_request:
+<<<<<<< HEAD
     paths:
       - 'services/payments/**'
       - 'apps/**'
@@ -23,3 +24,41 @@ jobs:
         env:
           PAYMENTS_PROVIDER_SECRET: ${{ secrets.PAYMENTS_PROVIDER_SECRET }}
         run: pnpm test
+=======
+    types: [opened, synchronize, reopened]
+
+jobs:
+  payments-integration:
+    name: Payments Integration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Enable Corepack and activate pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.31.0 --activate
+
+      - name: Install dependencies (pnpm)
+        run: pnpm install --frozen-lockfile
+
+      - name: Run payments tests
+        run: pnpm -w test --filter "./tests/payments..." || pnpm -w test
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: payments-test-logs
+          path: |
+            ./tests/payments/test-results
+            ./jest-results
+            ./tests/__logs__
+            ./coverage
+>>>>>>> d3661cfc (ci: add payments integration workflow (ensure pnpm available))
