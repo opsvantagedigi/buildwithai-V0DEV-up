@@ -65,3 +65,45 @@ Where to find docs
 - RFCs: `docs/RFC.md`
 - Roadmap: `docs/ROADMAP.md`
 - Milestones: `docs/MILESTONES.md`
+
+Architecture Overview
+---------------------
+See the ASCII architecture diagram below and component list.
+
+ASCII Architecture Diagram
+--------------------------
+
+   +----------------------+        +----------------------+        +--------------------+
+   |  Next.js UI (Vercel) | <----> |  Payments API       | <----> |  Payment Provider  |
+   |  (apps/marketing)    |        |  (services/payments)|        |  (NOWPayments /    |
+   |                      |        |                      |        |   Coinbase)        |
+   +----------------------+        +----------+-----------+        +--------------------+
+                                                                  |
+                                                                  v
+                                                    +---------------------+
+                                                    |  Worker Queue       |
+                                                    |  (Redis + BullMQ)   |
+                                                    +----------+----------+
+                                                                     |
+                                                                     v
+                                                    +---------------------+
+                                                    |  Reconciliation     |
+                                                    |  & Reporting        |
+                                                    +----------+----------+
+                                                                     |
+                                                                     v
+                                                    +---------------------+
+                                                    |  Postgres (Orders,  |
+                                                    |  Transactions)      |
+                                                    +---------------------+
+
+Observability: Sentry / OpenTelemetry -> Traces & Alerts -> Grafana / PagerDuty
+
+Component list
+--------------
+- `apps/marketing` / `apps/operator`: Next.js frontends and operator dashboard (deployed on Vercel).
+- `services/payments-api`: Payment orchestration, idempotency, webhook handlers, refunds.
+- `Worker Queue (Redis)`: Background jobs (webhook retries, reconciliation, settlement polling).
+- `Postgres`: Persistent orders/transactions, audit logs, reconciliation records.
+- `Provider`: External payment processors and settlement endpoints.
+- `Observability`: Sentry for errors, OTel traces, Grafana dashboards and PagerDuty for alerts.

@@ -1,0 +1,25 @@
+name: Payments Integration Tests
+
+on:
+  pull_request:
+    paths:
+      - 'services/payments/**'
+      - 'apps/**'
+      - 'docs/**'
+  workflow_dispatch: {}
+
+jobs:
+  payments-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+      - name: Run payments smoke tests
+        env:
+          PAYMENTS_PROVIDER_SECRET: ${{ secrets.PAYMENTS_PROVIDER_SECRET }}
+        run: pnpm test:payments
