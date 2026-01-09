@@ -48,7 +48,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const url = process.env.PREVIEW_URL || '${{ steps.vercel_preview.outputs.url }}'
+            const url = process.env.PREVIEW_URL || `${{ steps.vercel_preview.outputs.url }}`
             const issue_number = context.payload.pull_request.number
             if (url) {
               github.rest.issues.createComment({
@@ -115,7 +115,7 @@ jobs:
       - name: Output deploy URL
         run: echo "Deployed to: ${{ steps.vercel.outputs.url }}"
 
-# Notes:
+  # Notes:
 # - Add the following repository secrets in GitHub: VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID
 # - You can find these values in your Vercel dashboard (Settings → General → Project/Team Settings).
 # - Workflow supports PR preview deploys (comments) and production deploys on push to main.
