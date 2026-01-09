@@ -17,13 +17,17 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies (npm)
-        run: npm ci
+      - name: Enable Corepack and pnpm
+        run: |
+          corepack prepare pnpm@latest --activate
+
+      - name: Install dependencies (pnpm)
+        run: pnpm install --frozen-lockfile
 
       - name: Build (capture log)
         run: |
           set -o pipefail || true
-          npm run build 2>&1 | tee build.log
+          pnpm build 2>&1 | tee build.log
 
       - name: Upload build log
         if: always()
