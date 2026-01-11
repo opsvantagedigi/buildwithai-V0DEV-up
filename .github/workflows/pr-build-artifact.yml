@@ -36,4 +36,3 @@ jobs:
         with:
           name: pr-build-log
           path: build.log
-name: PR Build Artifact
