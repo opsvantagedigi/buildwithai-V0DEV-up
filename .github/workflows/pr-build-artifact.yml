@@ -37,35 +37,3 @@ jobs:
           name: pr-build-log
           path: build.log
 name: PR Build Artifact
-
-on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-
-jobs:
-  build-and-upload:
-    name: Build and upload logs
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Use Node.js 18
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install dependencies (npm)
-        run: npm ci
-
-      - name: Build (capture log)
-        run: |
-          set -o pipefail || true
-          npm run build 2>&1 | tee build.log
-
-      - name: Upload build log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pr-build-log
-          path: build.log
